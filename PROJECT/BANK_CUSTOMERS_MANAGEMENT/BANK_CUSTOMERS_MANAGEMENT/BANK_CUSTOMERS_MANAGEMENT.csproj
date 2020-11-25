@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8766A015-9503-4DC0-B103-C7D717CD38B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BANK_CUSTOMERS_MANAGEMENT</RootNamespace>
+    <AssemblyName>BANK_CUSTOMERS_MANAGEMENT</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\SOFTWARE\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Deposit_List_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deposit_List_Viewer.Designer.cs">
+      <DependentUpon>Deposit_List_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DEPOSIT_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DEPOSIT_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Deposit_Slip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Deposit_Slip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Deposit_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deposit_Viewer.Designer.cs">
+      <DependentUpon>Deposit_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Communications\CommunicationsSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Communications\CommunicationsSender.Designer.cs">
+      <DependentUpon>CommunicationsSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loan_Slip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loan_Slip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Loan_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loan_Viewer.Designer.cs">
+      <DependentUpon>Loan_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repayment_Slip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repayment_Slip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repayment_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repayment_Viewer.Designer.cs">
+      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Communications\Communications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Communications\Communications.Designer.cs">
+      <DependentUpon>Communications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\AdministratorCreaation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\AdministratorCreaation.Designer.cs">
+      <DependentUpon>AdministratorCreaation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Home\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account Management\AccountManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account Management\AccountManagement.Designer.cs">
+      <DependentUpon>AccountManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Client Management\ApplicantDetailsManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Client Management\ApplicantDetailsManagement.Designer.cs">
+      <DependentUpon>ApplicantDetailsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Client Management\ClientManagementMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Client Management\ClientManagementMenu.Designer.cs">
+      <DependentUpon>ClientManagementMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Client Management\PersonnalDetailsManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Client Management\PersonnalDetailsManagement.Designer.cs">
+      <DependentUpon>PersonnalDetailsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Client Management\BankAccountDetailsManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Client Management\BankAccountDetailsManagement.Designer.cs">
+      <DependentUpon>BankAccountDetailsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Repayment\RepaymentTransactions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Repayment\RepaymentTransactions.Designer.cs">
+      <DependentUpon>RepaymentTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Loans\LoanTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Loans\LoanTransaction.Designer.cs">
+      <DependentUpon>LoanTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Deposit\DepositTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Deposit\DepositTransaction.Designer.cs">
+      <DependentUpon>DepositTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transactions\TransactionMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transactions\TransactionMenu.Designer.cs">
+      <DependentUpon>TransactionMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Repports\Repports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Repports\Repports.Designer.cs">
+      <DependentUpon>Repports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\ApplicantDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\ApplicantDetails.Designer.cs">
+      <DependentUpon>ApplicantDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\BankAccountDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\BankAccountDetails.Designer.cs">
+      <DependentUpon>BankAccountDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home and Admin\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\PersonnalDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account Creation\PersonnalDetails.Designer.cs">
+      <DependentUpon>PersonnalDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Transactions\Withdrawal\WithdrawalTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transactions\Withdrawal\WithdrawalTransaction.Designer.cs">
+      <DependentUpon>WithdrawalTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Withdrawal_Slip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Withdrawal_Slip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Withdrawal_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Withdrawal_Viewer.Designer.cs">
+      <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Deposit_List_Viewer.resx">
+      <DependentUpon>Deposit_List_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEPOSIT_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DEPOSIT_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deposit_Slip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Deposit_Slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deposit_Viewer.resx">
+      <DependentUpon>Deposit_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Communications\CommunicationsSender.resx">
+      <DependentUpon>CommunicationsSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loan_Slip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Loan_Slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loan_Viewer.resx">
+      <DependentUpon>Loan_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Repayment_Slip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Repayment_Slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repayment_Viewer.resx">
+      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Communications\Communications.resx">
+      <DependentUpon>Communications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home and Admin\AdministratorCreaation.resx">
+      <DependentUpon>AdministratorCreaation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home and Admin\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Home\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account Management\AccountManagement.resx">
+      <DependentUpon>AccountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Client Management\ApplicantDetailsManagement.resx">
+      <DependentUpon>ApplicantDetailsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Client Management\ClientManagementMenu.resx">
+      <DependentUpon>ClientManagementMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Client Management\PersonnalDetailsManagement.resx">
+      <DependentUpon>PersonnalDetailsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Client Management\BankAccountDetailsManagement.resx">
+      <DependentUpon>BankAccountDetailsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transactions\Loans\LoanTransaction.resx">
+      <DependentUpon>LoanTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transactions\Deposit\DepositTransaction.resx">
+      <DependentUpon>DepositTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transactions\Repayment\RepaymentTransactions.resx">
+      <DependentUpon>RepaymentTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transactions\TransactionMenu.resx">
+      <DependentUpon>TransactionMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Repports\Repports.resx">
+      <DependentUpon>Repports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account Creation\ApplicantDetails.resx">
+      <DependentUpon>ApplicantDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account Creation\BankAccountDetails.resx">
+      <DependentUpon>BankAccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home and Admin\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account Creation\PersonnalDetails.resx">
+      <DependentUpon>PersonnalDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Transactions\Withdrawal\WithdrawalTransaction.resx">
+      <DependentUpon>WithdrawalTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Withdrawal_Slip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Withdrawal_Slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Withdrawal_Viewer.resx">
+      <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xsc">
+      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BANK_CUSTOMERS_MANAGEMENTDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xss">
+      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\ReportViewer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User Male_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

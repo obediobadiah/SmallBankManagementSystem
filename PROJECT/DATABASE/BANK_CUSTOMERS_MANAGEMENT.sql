@@ -1,0 +1,179 @@
+CREATE DATABASE BANK_CUSTOMERS_MANAGEMENT
+
+USE BANK_CUSTOMERS_MANAGEMENT
+
+--PERSONAL_DETAILS table--
+CREATE TABLE PERSONAL_DETAILS (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+First_Name VARCHAR(50),
+Second_Name VARCHAR(50),
+Gender VARCHAR(15),
+Date_of_Birth NVARCHAR(50),
+Place_of_Birth NVARCHAR(50),
+Nationality VARCHAR(50),
+Merital_Status VARCHAR(50),
+Name_of_Spouse VARCHAR(50),
+Proffesion VARCHAR(50),
+Mobile_Number_Code NVARCHAR(10),
+Mobile_Number NVARCHAR(10),
+IDCard_Number VARCHAR(50),
+Country_Name VARCHAR(50),
+Province VARCHAR(50),
+Town VARCHAR(50),
+Township VARCHAR(50),
+Quarter VARCHAR(50),
+Avenue VARCHAR(50),
+House_Number NVARCHAR(10),
+Picture IMAGE
+);
+
+
+--APPLICANT_DETAILS Table--
+CREATE TABLE APPLICANT_DETAILS (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Identifier VARCHAR(50),
+First_Name VARCHAR(50),
+Second_Name VARCHAR(50),
+Gender VARCHAR(15),
+Date_of_Birth NVARCHAR(50),
+Place_of_Birth NVARCHAR(50),
+Nationality VARCHAR(50),
+Merital_Status VARCHAR(50),
+Name_of_Spouse VARCHAR(50),
+Proffesion VARCHAR(50),
+Mobile_Number_Code NVARCHAR(10),
+Mobile_Number NVARCHAR(10),
+Consideration VARCHAR(50),
+IDCard_Number VARCHAR(50),
+Country_Name VARCHAR(50),
+Province VARCHAR(50),
+Town VARCHAR(50),
+Township VARCHAR(50),
+Quarter VARCHAR(50),
+Avenue VARCHAR(50),
+House_Number NVARCHAR(10),
+Picture IMAGE
+);
+
+
+
+
+--BANK_ACCOUNT_DETAILS Table--
+CREATE TABLE BANK_ACCOUNT_DETAILS (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Bank_Account_Number NVARCHAR(50),
+Date_of_creation NVARCHAR(50),
+Identifier VARCHAR(50),
+Bank_Account_Type VARCHAR(15),
+Limit_Date NVARCHAR(50),
+);
+
+
+
+
+--DEPOSIT_TRANSACTION Table--
+CREATE TABLE DEPOSIT_TRANSACTION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Account_Name VARCHAR(50),
+Account_Number NVARCHAR(50),
+Deposer_Name VARCHAR(50),
+Transaction_Date NVARCHAR(50),
+Amount VARCHAR(50),
+Amount_In_Words VARCHAR(50),
+Currency VARCHAR(15),
+Narration VARCHAR(100),
+);
+
+
+
+
+--DEPOSIT_TRANSACTION Table--
+CREATE TABLE DEPOSIT_TRANSACTION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Account_Name VARCHAR(50),
+Account_Number NVARCHAR(50),
+Deposer_Name VARCHAR(50),
+Transaction_Date NVARCHAR(50),
+Transaction_Time NVARCHAR(50),
+Amount VARCHAR(50),
+Amount_In_Words VARCHAR(50),
+Currency VARCHAR(15),
+Narration VARCHAR(100),
+);
+
+
+
+
+--WITHDRAWAL_TRANSACTION Table--
+CREATE TABLE WITHDRAWAL_TRANSACTION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Account_Name VARCHAR(50),
+Account_Number NVARCHAR(50),
+Withdrawal_by VARCHAR(50),
+Transaction_Date NVARCHAR(50),
+Transaction_Time NVARCHAR(50),
+Amount VARCHAR(50),
+Amount_In_Words VARCHAR(50),
+Currency VARCHAR(15),
+Narration VARCHAR(100),
+);
+
+
+
+--LOAN_TRANSACTION Table--
+CREATE TABLE LOAN_TRANSACTION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Loan_Date NVARCHAR(50),
+Borrower VARCHAR(50),
+Account_Number NVARCHAR(50),
+Amount VARCHAR(50),
+Amount_In_Words VARCHAR(50),
+Currency VARCHAR(15),
+Purpose VARCHAR(100),
+Schedule NVARCHAR(100),
+Limit_Date NVARCHAR(50),
+Transaction_Time NVARCHAR(50)
+);
+
+
+--REPAYMENT_TRANSACTION Table--
+CREATE TABLE REPAYMENT_TRANSACTION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Loan_Date NVARCHAR(50),
+Borrower VARCHAR(50),
+Account_Number NVARCHAR(50),
+Amount VARCHAR(50),
+Amount_In_Words VARCHAR(50),
+Remaining_Time NVARCHAR(50),
+Transaction_Time NVARCHAR(50)
+);
+
+
+
+--ADMINISTRATOR_DETAILS Table--
+CREATE TABLE ADMINISTRATOR_DETAILS (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+First_Name VARCHAR(50),
+Fonction VARCHAR(50),
+Gender VARCHAR(15),
+Date_of_Birth NVARCHAR(50),
+Nationality VARCHAR(50),
+E_mail VARCHAR(50),
+User_Name VARCHAR(50),
+Password NVARCHAR(50),
+Mail VARCHAR(50),
+UserName VARCHAR(50),
+Pass_Word NVARCHAR(50),
+Email VARCHAR(50),
+);
+
+
+
+--MESSAGE_COMMUNICATION Table--
+CREATE TABLE MESSAGE_COMMUNICATION (
+ID_Number INT PRIMARY KEY IDENTITY(1,1),
+Port NVARCHAR(50),
+Mobile_Number_Code NVARCHAR(50),
+Domain VARCHAR(15),
+Message NVARCHAR(50),
+);
