@@ -147,5 +147,38 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 txt_WithdrwalNarration.Text = row.Cells["Narration"].Value.ToString();
             }
         }
+
+        private void button_delete_deposit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure that you want to delete??", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM WITHDRAWAL_TRANSACTION WHERE ID_Number = @ID_Number", conn);
+
+                    cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
+
+                    int i;
+                    i = cmd1.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Withdrawal transaction details deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Display();
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 }
