@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace BANK_CUSTOMERS_MANAGEMENT
 {
@@ -18,7 +20,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_MANAGEMENT;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
@@ -179,6 +181,77 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "Account Number") //")
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    bunifuCustomDataGrid1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (comboBox1.SelectedItem == "Account Name") ////Date")
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Name = '" + txt_Search.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    bunifuCustomDataGrid1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void button_deposit_clear_Click(object sender, EventArgs e)
+        {
+            txt_WithdrawalAccountName.Text = "";
+            txt_WithdrawalAccountNumber.Text = "";
+            txt_WithdrawalName.Text = "";
+            txt_WithdrawalAmount.Text = "";
+            txt_WithdrawalAmountInWord.Text = "";
+            cb_WithdrawalCurrency.SelectedItem = "";
+            txt_WithdrwalNarration.Text = "";
+        }
+
+        private void button_print_deposit_Click(object sender, EventArgs e)
+        {
+            Withdrawal_Viewer WithdrawalViewer = new Withdrawal_Viewer();
+            Withdrawal_Slip cr = new Withdrawal_Slip();
+            TextObject text = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text47"];
+            TextObject text1 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text46"];
+            TextObject text2 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text45"];
+            TextObject text3 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text44"];
+            TextObject text4 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text43"];
+            TextObject text5 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text42"];
+            TextObject text6 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text41"];
+            TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text40"];
+            TextObject text8 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text39"];
+            text.Text = txt_WithdrawalAccountName.Text;
+            text1.Text = txt_WithdrawalAccountNumber.Text;
+            text2.Text = txt_WithdrawalName.Text;
+            text3.Text = Date_Withdrawal.Text;
+            text4.Text = label_WithdrawalTime.Text;
+            text5.Text = txt_WithdrawalAmount.Text;
+            text6.Text = txt_WithdrawalAmountInWord.Text;
+            text7.Text = cb_WithdrawalCurrency.Text;
+            text8.Text = txt_WithdrwalNarration.Text;
+            WithdrawalViewer.crystalReportViewer1.ReportSource = cr;
+            WithdrawalViewer.Show();
         }
     }
 }

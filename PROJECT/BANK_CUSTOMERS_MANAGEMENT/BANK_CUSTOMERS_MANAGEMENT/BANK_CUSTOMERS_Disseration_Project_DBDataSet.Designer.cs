@@ -20,9 +20,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BANK_CUSTOMERS_MANAGEMENTDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BANK_CUSTOMERS_Disseration_Project_DBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BANK_CUSTOMERS_MANAGEMENTDataSet : global::System.Data.DataSet {
+    public partial class BANK_CUSTOMERS_Disseration_Project_DBDataSet : global::System.Data.DataSet {
         
         private ADMINISTRATOR_DETAILSDataTable tableADMINISTRATOR_DETAILS;
         
@@ -30,7 +30,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         
         private BANK_ACCOUNT_DETAILSDataTable tableBANK_ACCOUNT_DETAILS;
         
-        private DEPOSIT_TRANSACTIONDataTable tableDEPOSIT_TRANSACTION;
+        private DEPOSIT_TRANSDataTable tableDEPOSIT_TRANS;
         
         private LOAN_TRANSACTIONDataTable tableLOAN_TRANSACTION;
         
@@ -46,7 +46,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BANK_CUSTOMERS_MANAGEMENTDataSet() {
+        public BANK_CUSTOMERS_Disseration_Project_DBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -57,7 +57,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected BANK_CUSTOMERS_MANAGEMENTDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BANK_CUSTOMERS_Disseration_Project_DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -79,8 +79,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 if ((ds.Tables["BANK_ACCOUNT_DETAILS"] != null)) {
                     base.Tables.Add(new BANK_ACCOUNT_DETAILSDataTable(ds.Tables["BANK_ACCOUNT_DETAILS"]));
                 }
-                if ((ds.Tables["DEPOSIT_TRANSACTION"] != null)) {
-                    base.Tables.Add(new DEPOSIT_TRANSACTIONDataTable(ds.Tables["DEPOSIT_TRANSACTION"]));
+                if ((ds.Tables["DEPOSIT_TRANS"] != null)) {
+                    base.Tables.Add(new DEPOSIT_TRANSDataTable(ds.Tables["DEPOSIT_TRANS"]));
                 }
                 if ((ds.Tables["LOAN_TRANSACTION"] != null)) {
                     base.Tables.Add(new LOAN_TRANSACTIONDataTable(ds.Tables["LOAN_TRANSACTION"]));
@@ -149,9 +149,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DEPOSIT_TRANSACTIONDataTable DEPOSIT_TRANSACTION {
+        public DEPOSIT_TRANSDataTable DEPOSIT_TRANS {
             get {
-                return this.tableDEPOSIT_TRANSACTION;
+                return this.tableDEPOSIT_TRANS;
             }
         }
         
@@ -247,7 +247,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BANK_CUSTOMERS_MANAGEMENTDataSet cln = ((BANK_CUSTOMERS_MANAGEMENTDataSet)(base.Clone()));
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet cln = ((BANK_CUSTOMERS_Disseration_Project_DBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -281,8 +281,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 if ((ds.Tables["BANK_ACCOUNT_DETAILS"] != null)) {
                     base.Tables.Add(new BANK_ACCOUNT_DETAILSDataTable(ds.Tables["BANK_ACCOUNT_DETAILS"]));
                 }
-                if ((ds.Tables["DEPOSIT_TRANSACTION"] != null)) {
-                    base.Tables.Add(new DEPOSIT_TRANSACTIONDataTable(ds.Tables["DEPOSIT_TRANSACTION"]));
+                if ((ds.Tables["DEPOSIT_TRANS"] != null)) {
+                    base.Tables.Add(new DEPOSIT_TRANSDataTable(ds.Tables["DEPOSIT_TRANS"]));
                 }
                 if ((ds.Tables["LOAN_TRANSACTION"] != null)) {
                     base.Tables.Add(new LOAN_TRANSACTIONDataTable(ds.Tables["LOAN_TRANSACTION"]));
@@ -350,10 +350,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                     this.tableBANK_ACCOUNT_DETAILS.InitVars();
                 }
             }
-            this.tableDEPOSIT_TRANSACTION = ((DEPOSIT_TRANSACTIONDataTable)(base.Tables["DEPOSIT_TRANSACTION"]));
+            this.tableDEPOSIT_TRANS = ((DEPOSIT_TRANSDataTable)(base.Tables["DEPOSIT_TRANS"]));
             if ((initTable == true)) {
-                if ((this.tableDEPOSIT_TRANSACTION != null)) {
-                    this.tableDEPOSIT_TRANSACTION.InitVars();
+                if ((this.tableDEPOSIT_TRANS != null)) {
+                    this.tableDEPOSIT_TRANS.InitVars();
                 }
             }
             this.tableLOAN_TRANSACTION = ((LOAN_TRANSACTIONDataTable)(base.Tables["LOAN_TRANSACTION"]));
@@ -391,9 +391,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BANK_CUSTOMERS_MANAGEMENTDataSet";
+            this.DataSetName = "BANK_CUSTOMERS_Disseration_Project_DBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableADMINISTRATOR_DETAILS = new ADMINISTRATOR_DETAILSDataTable();
@@ -402,8 +402,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             base.Tables.Add(this.tableAPPLICANT_DETAILS);
             this.tableBANK_ACCOUNT_DETAILS = new BANK_ACCOUNT_DETAILSDataTable();
             base.Tables.Add(this.tableBANK_ACCOUNT_DETAILS);
-            this.tableDEPOSIT_TRANSACTION = new DEPOSIT_TRANSACTIONDataTable();
-            base.Tables.Add(this.tableDEPOSIT_TRANSACTION);
+            this.tableDEPOSIT_TRANS = new DEPOSIT_TRANSDataTable();
+            base.Tables.Add(this.tableDEPOSIT_TRANS);
             this.tableLOAN_TRANSACTION = new LOAN_TRANSACTIONDataTable();
             base.Tables.Add(this.tableLOAN_TRANSACTION);
             this.tableMESSAGE_COMMUNICATION = new MESSAGE_COMMUNICATIONDataTable();
@@ -436,7 +436,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDEPOSIT_TRANSACTION() {
+        private bool ShouldSerializeDEPOSIT_TRANS() {
             return false;
         }
         
@@ -481,7 +481,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -535,7 +535,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         public delegate void BANK_ACCOUNT_DETAILSRowChangeEventHandler(object sender, BANK_ACCOUNT_DETAILSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DEPOSIT_TRANSACTIONRowChangeEventHandler(object sender, DEPOSIT_TRANSACTIONRowChangeEvent e);
+        public delegate void DEPOSIT_TRANSRowChangeEventHandler(object sender, DEPOSIT_TRANSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void LOAN_TRANSACTIONRowChangeEventHandler(object sender, LOAN_TRANSACTIONRowChangeEvent e);
@@ -935,7 +935,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1548,7 +1548,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1801,7 +1801,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 this.columnID_Number.Unique = true;
                 this.columnDate_of_creation.MaxLength = 50;
                 this.columnIdentifier.MaxLength = 50;
-                this.columnBank_Account_Type.MaxLength = 15;
+                this.columnBank_Account_Type.MaxLength = 50;
                 this.columnLimit_Date.MaxLength = 50;
             }
             
@@ -1870,7 +1870,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1934,7 +1934,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DEPOSIT_TRANSACTIONDataTable : global::System.Data.TypedTableBase<DEPOSIT_TRANSACTIONRow> {
+        public partial class DEPOSIT_TRANSDataTable : global::System.Data.TypedTableBase<DEPOSIT_TRANSRow> {
             
             private global::System.Data.DataColumn columnID_Number;
             
@@ -1958,8 +1958,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONDataTable() {
-                this.TableName = "DEPOSIT_TRANSACTION";
+            public DEPOSIT_TRANSDataTable() {
+                this.TableName = "DEPOSIT_TRANS";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1967,7 +1967,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DEPOSIT_TRANSACTIONDataTable(global::System.Data.DataTable table) {
+            internal DEPOSIT_TRANSDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1984,7 +1984,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DEPOSIT_TRANSACTIONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DEPOSIT_TRANSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2080,34 +2080,34 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow this[int index] {
+            public DEPOSIT_TRANSRow this[int index] {
                 get {
-                    return ((DEPOSIT_TRANSACTIONRow)(this.Rows[index]));
+                    return ((DEPOSIT_TRANSRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DEPOSIT_TRANSACTIONRowChangeEventHandler DEPOSIT_TRANSACTIONRowChanging;
+            public event DEPOSIT_TRANSRowChangeEventHandler DEPOSIT_TRANSRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DEPOSIT_TRANSACTIONRowChangeEventHandler DEPOSIT_TRANSACTIONRowChanged;
+            public event DEPOSIT_TRANSRowChangeEventHandler DEPOSIT_TRANSRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DEPOSIT_TRANSACTIONRowChangeEventHandler DEPOSIT_TRANSACTIONRowDeleting;
+            public event DEPOSIT_TRANSRowChangeEventHandler DEPOSIT_TRANSRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DEPOSIT_TRANSACTIONRowChangeEventHandler DEPOSIT_TRANSACTIONRowDeleted;
+            public event DEPOSIT_TRANSRowChangeEventHandler DEPOSIT_TRANSRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDEPOSIT_TRANSACTIONRow(DEPOSIT_TRANSACTIONRow row) {
+            public void AddDEPOSIT_TRANSRow(DEPOSIT_TRANSRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow AddDEPOSIT_TRANSACTIONRow(string Account_Name, string Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, string Amount, string Amount_In_Words, string Currency, string Narration) {
-                DEPOSIT_TRANSACTIONRow rowDEPOSIT_TRANSACTIONRow = ((DEPOSIT_TRANSACTIONRow)(this.NewRow()));
+            public DEPOSIT_TRANSRow AddDEPOSIT_TRANSRow(string Account_Name, string Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, string Amount, string Amount_In_Words, string Currency, string Narration) {
+                DEPOSIT_TRANSRow rowDEPOSIT_TRANSRow = ((DEPOSIT_TRANSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Account_Name,
@@ -2119,22 +2119,22 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                         Amount_In_Words,
                         Currency,
                         Narration};
-                rowDEPOSIT_TRANSACTIONRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDEPOSIT_TRANSACTIONRow);
-                return rowDEPOSIT_TRANSACTIONRow;
+                rowDEPOSIT_TRANSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDEPOSIT_TRANSRow);
+                return rowDEPOSIT_TRANSRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow FindByID_Number(int ID_Number) {
-                return ((DEPOSIT_TRANSACTIONRow)(this.Rows.Find(new object[] {
+            public DEPOSIT_TRANSRow FindByID_Number(int ID_Number) {
+                return ((DEPOSIT_TRANSRow)(this.Rows.Find(new object[] {
                             ID_Number})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DEPOSIT_TRANSACTIONDataTable cln = ((DEPOSIT_TRANSACTIONDataTable)(base.Clone()));
+                DEPOSIT_TRANSDataTable cln = ((DEPOSIT_TRANSDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2142,7 +2142,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DEPOSIT_TRANSACTIONDataTable();
+                return new DEPOSIT_TRANSDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2197,35 +2197,35 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 this.columnTransaction_Date.MaxLength = 50;
                 this.columnTransaction_Time.MaxLength = 50;
                 this.columnAmount.MaxLength = 50;
-                this.columnAmount_In_Words.MaxLength = 50;
-                this.columnCurrency.MaxLength = 15;
+                this.columnAmount_In_Words.MaxLength = 100;
+                this.columnCurrency.MaxLength = 50;
                 this.columnNarration.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow NewDEPOSIT_TRANSACTIONRow() {
-                return ((DEPOSIT_TRANSACTIONRow)(this.NewRow()));
+            public DEPOSIT_TRANSRow NewDEPOSIT_TRANSRow() {
+                return ((DEPOSIT_TRANSRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DEPOSIT_TRANSACTIONRow(builder);
+                return new DEPOSIT_TRANSRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DEPOSIT_TRANSACTIONRow);
+                return typeof(DEPOSIT_TRANSRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DEPOSIT_TRANSACTIONRowChanged != null)) {
-                    this.DEPOSIT_TRANSACTIONRowChanged(this, new DEPOSIT_TRANSACTIONRowChangeEvent(((DEPOSIT_TRANSACTIONRow)(e.Row)), e.Action));
+                if ((this.DEPOSIT_TRANSRowChanged != null)) {
+                    this.DEPOSIT_TRANSRowChanged(this, new DEPOSIT_TRANSRowChangeEvent(((DEPOSIT_TRANSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2233,8 +2233,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DEPOSIT_TRANSACTIONRowChanging != null)) {
-                    this.DEPOSIT_TRANSACTIONRowChanging(this, new DEPOSIT_TRANSACTIONRowChangeEvent(((DEPOSIT_TRANSACTIONRow)(e.Row)), e.Action));
+                if ((this.DEPOSIT_TRANSRowChanging != null)) {
+                    this.DEPOSIT_TRANSRowChanging(this, new DEPOSIT_TRANSRowChangeEvent(((DEPOSIT_TRANSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2242,8 +2242,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DEPOSIT_TRANSACTIONRowDeleted != null)) {
-                    this.DEPOSIT_TRANSACTIONRowDeleted(this, new DEPOSIT_TRANSACTIONRowChangeEvent(((DEPOSIT_TRANSACTIONRow)(e.Row)), e.Action));
+                if ((this.DEPOSIT_TRANSRowDeleted != null)) {
+                    this.DEPOSIT_TRANSRowDeleted(this, new DEPOSIT_TRANSRowChangeEvent(((DEPOSIT_TRANSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2251,14 +2251,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DEPOSIT_TRANSACTIONRowDeleting != null)) {
-                    this.DEPOSIT_TRANSACTIONRowDeleting(this, new DEPOSIT_TRANSACTIONRowChangeEvent(((DEPOSIT_TRANSACTIONRow)(e.Row)), e.Action));
+                if ((this.DEPOSIT_TRANSRowDeleting != null)) {
+                    this.DEPOSIT_TRANSRowDeleting(this, new DEPOSIT_TRANSRowChangeEvent(((DEPOSIT_TRANSRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDEPOSIT_TRANSACTIONRow(DEPOSIT_TRANSACTIONRow row) {
+            public void RemoveDEPOSIT_TRANSRow(DEPOSIT_TRANSRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2267,7 +2267,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2285,7 +2285,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DEPOSIT_TRANSACTIONDataTable";
+                attribute2.FixedValue = "DEPOSIT_TRANSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2607,7 +2607,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 this.columnAccount_Number.MaxLength = 50;
                 this.columnAmount.MaxLength = 50;
                 this.columnAmount_In_Words.MaxLength = 50;
-                this.columnCurrency.MaxLength = 15;
+                this.columnCurrency.MaxLength = 50;
                 this.columnPurpose.MaxLength = 100;
                 this.columnSchedule.MaxLength = 100;
                 this.columnLimit_Date.MaxLength = 50;
@@ -2679,7 +2679,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3001,7 +3001,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3582,7 +3582,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3949,7 +3949,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4346,7 +4346,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BANK_CUSTOMERS_MANAGEMENTDataSet ds = new BANK_CUSTOMERS_MANAGEMENTDataSet();
+                BANK_CUSTOMERS_Disseration_Project_DBDataSet ds = new BANK_CUSTOMERS_Disseration_Project_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5553,25 +5553,25 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DEPOSIT_TRANSACTIONRow : global::System.Data.DataRow {
+        public partial class DEPOSIT_TRANSRow : global::System.Data.DataRow {
             
-            private DEPOSIT_TRANSACTIONDataTable tableDEPOSIT_TRANSACTION;
+            private DEPOSIT_TRANSDataTable tableDEPOSIT_TRANS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DEPOSIT_TRANSACTIONRow(global::System.Data.DataRowBuilder rb) : 
+            internal DEPOSIT_TRANSRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDEPOSIT_TRANSACTION = ((DEPOSIT_TRANSACTIONDataTable)(this.Table));
+                this.tableDEPOSIT_TRANS = ((DEPOSIT_TRANSDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID_Number {
                 get {
-                    return ((int)(this[this.tableDEPOSIT_TRANSACTION.ID_NumberColumn]));
+                    return ((int)(this[this.tableDEPOSIT_TRANS.ID_NumberColumn]));
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.ID_NumberColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.ID_NumberColumn] = value;
                 }
             }
             
@@ -5580,14 +5580,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Account_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Account_NameColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Account_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Account_Name\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Account_Name\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Account_NameColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Account_NameColumn] = value;
                 }
             }
             
@@ -5596,14 +5596,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Account_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Account_NumberColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Account_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Account_Number\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Account_Number\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Account_NumberColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Account_NumberColumn] = value;
                 }
             }
             
@@ -5612,14 +5612,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Deposer_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Deposer_NameColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Deposer_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Deposer_Name\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Deposer_Name\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Deposer_NameColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Deposer_NameColumn] = value;
                 }
             }
             
@@ -5628,15 +5628,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Transaction_Date {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Transaction_DateColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Transaction_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction_Date\' in table \'DEPOSIT_TRANSACTION\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction_Date\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Transaction_DateColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Transaction_DateColumn] = value;
                 }
             }
             
@@ -5645,15 +5644,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Transaction_Time {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Transaction_TimeColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Transaction_TimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction_Time\' in table \'DEPOSIT_TRANSACTION\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction_Time\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Transaction_TimeColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Transaction_TimeColumn] = value;
                 }
             }
             
@@ -5662,14 +5660,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Amount {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.AmountColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.AmountColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.AmountColumn] = value;
                 }
             }
             
@@ -5678,14 +5676,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Amount_In_Words {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.Amount_In_WordsColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.Amount_In_WordsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Amount_In_Words\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Amount_In_Words\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.Amount_In_WordsColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.Amount_In_WordsColumn] = value;
                 }
             }
             
@@ -5694,14 +5692,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Currency {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.CurrencyColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.CurrencyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Currency\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Currency\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.CurrencyColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.CurrencyColumn] = value;
                 }
             }
             
@@ -5710,123 +5708,123 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             public string Narration {
                 get {
                     try {
-                        return ((string)(this[this.tableDEPOSIT_TRANSACTION.NarrationColumn]));
+                        return ((string)(this[this.tableDEPOSIT_TRANS.NarrationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Narration\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Narration\' in table \'DEPOSIT_TRANS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDEPOSIT_TRANSACTION.NarrationColumn] = value;
+                    this[this.tableDEPOSIT_TRANS.NarrationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAccount_NameNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Account_NameColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Account_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAccount_NameNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Account_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Account_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAccount_NumberNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Account_NumberColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Account_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAccount_NumberNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Account_NumberColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Account_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDeposer_NameNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Deposer_NameColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Deposer_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDeposer_NameNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Deposer_NameColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Deposer_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTransaction_DateNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Transaction_DateColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Transaction_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTransaction_DateNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Transaction_DateColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Transaction_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTransaction_TimeNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Transaction_TimeColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Transaction_TimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTransaction_TimeNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Transaction_TimeColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Transaction_TimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAmountNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.AmountColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.AmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAmountNull() {
-                this[this.tableDEPOSIT_TRANSACTION.AmountColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.AmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAmount_In_WordsNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.Amount_In_WordsColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.Amount_In_WordsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAmount_In_WordsNull() {
-                this[this.tableDEPOSIT_TRANSACTION.Amount_In_WordsColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.Amount_In_WordsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCurrencyNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.CurrencyColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.CurrencyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCurrencyNull() {
-                this[this.tableDEPOSIT_TRANSACTION.CurrencyColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.CurrencyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNarrationNull() {
-                return this.IsNull(this.tableDEPOSIT_TRANSACTION.NarrationColumn);
+                return this.IsNull(this.tableDEPOSIT_TRANS.NarrationColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNarrationNull() {
-                this[this.tableDEPOSIT_TRANSACTION.NarrationColumn] = global::System.Convert.DBNull;
+                this[this.tableDEPOSIT_TRANS.NarrationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7476,22 +7474,22 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DEPOSIT_TRANSACTIONRowChangeEvent : global::System.EventArgs {
+        public class DEPOSIT_TRANSRowChangeEvent : global::System.EventArgs {
             
-            private DEPOSIT_TRANSACTIONRow eventRow;
+            private DEPOSIT_TRANSRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRowChangeEvent(DEPOSIT_TRANSACTIONRow row, global::System.Data.DataRowAction action) {
+            public DEPOSIT_TRANSRowChangeEvent(DEPOSIT_TRANSRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow Row {
+            public DEPOSIT_TRANSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7677,7 +7675,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         }
     }
 }
-namespace BANK_CUSTOMERS_MANAGEMENT.BANK_CUSTOMERS_MANAGEMENTDataSetTableAdapters {
+namespace BANK_CUSTOMERS_MANAGEMENT.BANK_CUSTOMERS_Disseration_Project_DBDataSetTableAdapters {
     
     
     /// <summary>
@@ -7831,19 +7829,19 @@ namespace BANK_CUSTOMERS_MANAGEMENT.BANK_CUSTOMERS_MANAGEMENTDataSetTableAdapter
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_E_mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_E_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_E_mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_User_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pass_Word", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pass_Word", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ADMINISTRATOR_DETAILS] ([First_Name], [Fonction], [Gender], [Date_of_Birth], [Nationality], [E_mail], [User_Name], [Password], [Mail], [UserName], [Pass_Word], [Email]) VALUES (@First_Name, @Fonction, @Gender, @Date_of_Birth, @Nationality, @E_mail, @User_Name, @Password, @Mail, @UserName, @Pass_Word, @Email);
@@ -7854,13 +7852,13 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_of_Birth", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@E_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@E_mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@User_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pass_Word", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[ADMINISTRATOR_DETAILS] SET [First_Name] = @First_Name, [Fonction] =" +
@@ -7890,13 +7888,13 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_of_Birth", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@E_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@E_mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@User_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pass_Word", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_First_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_First_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7909,19 +7907,19 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_E_mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_E_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_E_mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "E_mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_User_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pass_Word", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pass_Word", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pass_Word", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7929,7 +7927,7 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7948,7 +7946,7 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.ADMINISTRATOR_DETAILSDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.ADMINISTRATOR_DETAILSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7961,9 +7959,9 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.ADMINISTRATOR_DETAILSDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.ADMINISTRATOR_DETAILSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.ADMINISTRATOR_DETAILSDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.ADMINISTRATOR_DETAILSDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.ADMINISTRATOR_DETAILSDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.ADMINISTRATOR_DETAILSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7971,14 +7969,14 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.ADMINISTRATOR_DETAILSDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.ADMINISTRATOR_DETAILSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ADMINISTRATOR_DETAILS");
         }
         
@@ -8820,7 +8818,7 @@ SELECT ID_Number, Identifier, First_Name, Second_Name, Gender, Date_of_Birth, Pl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8837,7 +8835,7 @@ SELECT ID_Number, Identifier, First_Name, Second_Name, Gender, Date_of_Birth, Pl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.APPLICANT_DETAILSDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.APPLICANT_DETAILSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8850,9 +8848,9 @@ SELECT ID_Number, Identifier, First_Name, Second_Name, Gender, Date_of_Birth, Pl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.APPLICANT_DETAILSDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.APPLICANT_DETAILSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.APPLICANT_DETAILSDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.APPLICANT_DETAILSDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.APPLICANT_DETAILSDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.APPLICANT_DETAILSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8860,14 +8858,14 @@ SELECT ID_Number, Identifier, First_Name, Second_Name, Gender, Date_of_Birth, Pl
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.APPLICANT_DETAILSDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.APPLICANT_DETAILSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "APPLICANT_DETAILS");
         }
         
@@ -9868,7 +9866,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9886,7 +9884,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9899,9 +9897,9 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.BANK_ACCOUNT_DETAILSDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.BANK_ACCOUNT_DETAILSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.BANK_ACCOUNT_DETAILSDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.BANK_ACCOUNT_DETAILSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9909,14 +9907,14 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.BANK_ACCOUNT_DETAILSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "BANK_ACCOUNT_DETAILS");
         }
         
@@ -10131,7 +10129,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DEPOSIT_TRANSACTIONTableAdapter : global::System.ComponentModel.Component {
+    public partial class DEPOSIT_TRANSTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -10145,7 +10143,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DEPOSIT_TRANSACTIONTableAdapter() {
+        public DEPOSIT_TRANSTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -10242,7 +10240,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DEPOSIT_TRANSACTION";
+            tableMapping.DataSetTable = "DEPOSIT_TRANS";
             tableMapping.ColumnMappings.Add("ID_Number", "ID_Number");
             tableMapping.ColumnMappings.Add("Account_Name", "Account_Name");
             tableMapping.ColumnMappings.Add("Account_Number", "Account_Number");
@@ -10256,13 +10254,13 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DEPOSIT_TRANSACTION] WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Name = 1 AND [Account_Name] IS NULL) OR ([Account_Name] = @Original_Account_Name)) AND ((@IsNull_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @Original_Account_Number)) AND ((@IsNull_Deposer_Name = 1 AND [Deposer_Name] IS NULL) OR ([Deposer_Name] = @Original_Deposer_Name)) AND ((@IsNull_Transaction_Date = 1 AND [Transaction_Date] IS NULL) OR ([Transaction_Date] = @Original_Transaction_Date)) AND ((@IsNull_Transaction_Time = 1 AND [Transaction_Time] IS NULL) OR ([Transaction_Time] = @Original_Transaction_Time)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Amount_In_Words = 1 AND [Amount_In_Words] IS NULL) OR ([Amount_In_Words] = @Original_Amount_In_Words)) AND ((@IsNull_Currency = 1 AND [Currency] IS NULL) OR ([Currency] = @Original_Currency)) AND ((@IsNull_Narration = 1 AND [Narration] IS NULL) OR ([Narration] = @Original_Narration)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DEPOSIT_TRANS] WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Name = 1 AND [Account_Name] IS NULL) OR ([Account_Name] = @Original_Account_Name)) AND ((@IsNull_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @Original_Account_Number)) AND ((@IsNull_Deposer_Name = 1 AND [Deposer_Name] IS NULL) OR ([Deposer_Name] = @Original_Deposer_Name)) AND ((@IsNull_Transaction_Date = 1 AND [Transaction_Date] IS NULL) OR ([Transaction_Date] = @Original_Transaction_Date)) AND ((@IsNull_Transaction_Time = 1 AND [Transaction_Time] IS NULL) OR ([Transaction_Time] = @Original_Transaction_Time)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Amount_In_Words = 1 AND [Amount_In_Words] IS NULL) OR ([Amount_In_Words] = @Original_Amount_In_Words)) AND ((@IsNull_Currency = 1 AND [Currency] IS NULL) OR ([Currency] = @Original_Currency)) AND ((@IsNull_Narration = 1 AND [Narration] IS NULL) OR ([Narration] = @Original_Narration)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Deposer_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10270,7 +10268,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10279,46 +10277,46 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DEPOSIT_TRANSACTION] ([Account_Name], [Account_Number], [Deposer_Name], [Transaction_Date], [Transaction_Time], [Amount], [Amount_In_Words], [Currency], [Narration]) VALUES (@Account_Name, @Account_Number, @Deposer_Name, @Transaction_Date, @Transaction_Time, @Amount, @Amount_In_Words, @Currency, @Narration);
-SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, Transaction_Time, Amount, Amount_In_Words, Currency, Narration FROM DEPOSIT_TRANSACTION WHERE (ID_Number = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DEPOSIT_TRANS] ([Account_Name], [Account_Number], [Deposer_Name], [Transaction_Date], [Transaction_Time], [Amount], [Amount_In_Words], [Currency], [Narration]) VALUES (@Account_Name, @Account_Number, @Deposer_Name, @Transaction_Date, @Transaction_Time, @Amount, @Amount_In_Words, @Currency, @Narration);
+SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, Transaction_Time, Amount, Amount_In_Words, Currency, Narration FROM DEPOSIT_TRANS WHERE (ID_Number = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DEPOSIT_TRANSACTION] SET [Account_Name] = @Account_Name, [Account_N" +
-                "umber] = @Account_Number, [Deposer_Name] = @Deposer_Name, [Transaction_Date] = @" +
-                "Transaction_Date, [Transaction_Time] = @Transaction_Time, [Amount] = @Amount, [A" +
-                "mount_In_Words] = @Amount_In_Words, [Currency] = @Currency, [Narration] = @Narra" +
-                "tion WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Name = 1 A" +
-                "ND [Account_Name] IS NULL) OR ([Account_Name] = @Original_Account_Name)) AND ((@" +
-                "IsNull_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @" +
-                "Original_Account_Number)) AND ((@IsNull_Deposer_Name = 1 AND [Deposer_Name] IS N" +
-                "ULL) OR ([Deposer_Name] = @Original_Deposer_Name)) AND ((@IsNull_Transaction_Dat" +
-                "e = 1 AND [Transaction_Date] IS NULL) OR ([Transaction_Date] = @Original_Transac" +
-                "tion_Date)) AND ((@IsNull_Transaction_Time = 1 AND [Transaction_Time] IS NULL) O" +
-                "R ([Transaction_Time] = @Original_Transaction_Time)) AND ((@IsNull_Amount = 1 AN" +
-                "D [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Amount_In_Wo" +
-                "rds = 1 AND [Amount_In_Words] IS NULL) OR ([Amount_In_Words] = @Original_Amount_" +
-                "In_Words)) AND ((@IsNull_Currency = 1 AND [Currency] IS NULL) OR ([Currency] = @" +
-                "Original_Currency)) AND ((@IsNull_Narration = 1 AND [Narration] IS NULL) OR ([Na" +
-                "rration] = @Original_Narration)));\r\nSELECT ID_Number, Account_Name, Account_Numb" +
-                "er, Deposer_Name, Transaction_Date, Transaction_Time, Amount, Amount_In_Words, C" +
-                "urrency, Narration FROM DEPOSIT_TRANSACTION WHERE (ID_Number = @ID_Number)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DEPOSIT_TRANS] SET [Account_Name] = @Account_Name, [Account_Number]" +
+                " = @Account_Number, [Deposer_Name] = @Deposer_Name, [Transaction_Date] = @Transa" +
+                "ction_Date, [Transaction_Time] = @Transaction_Time, [Amount] = @Amount, [Amount_" +
+                "In_Words] = @Amount_In_Words, [Currency] = @Currency, [Narration] = @Narration W" +
+                "HERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Name = 1 AND [Ac" +
+                "count_Name] IS NULL) OR ([Account_Name] = @Original_Account_Name)) AND ((@IsNull" +
+                "_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @Origin" +
+                "al_Account_Number)) AND ((@IsNull_Deposer_Name = 1 AND [Deposer_Name] IS NULL) O" +
+                "R ([Deposer_Name] = @Original_Deposer_Name)) AND ((@IsNull_Transaction_Date = 1 " +
+                "AND [Transaction_Date] IS NULL) OR ([Transaction_Date] = @Original_Transaction_D" +
+                "ate)) AND ((@IsNull_Transaction_Time = 1 AND [Transaction_Time] IS NULL) OR ([Tr" +
+                "ansaction_Time] = @Original_Transaction_Time)) AND ((@IsNull_Amount = 1 AND [Amo" +
+                "unt] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Amount_In_Words = " +
+                "1 AND [Amount_In_Words] IS NULL) OR ([Amount_In_Words] = @Original_Amount_In_Wor" +
+                "ds)) AND ((@IsNull_Currency = 1 AND [Currency] IS NULL) OR ([Currency] = @Origin" +
+                "al_Currency)) AND ((@IsNull_Narration = 1 AND [Narration] IS NULL) OR ([Narratio" +
+                "n] = @Original_Narration)));\r\nSELECT ID_Number, Account_Name, Account_Number, De" +
+                "poser_Name, Transaction_Date, Transaction_Time, Amount, Amount_In_Words, Currenc" +
+                "y, Narration FROM DEPOSIT_TRANS WHERE (ID_Number = @ID_Number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10326,7 +10324,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Deposer_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10334,7 +10332,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10348,7 +10346,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10359,7 +10357,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, T" +
                 "ransaction_Time, Amount, Amount_In_Words, Currency, Narration FROM dbo.DEPOSIT_T" +
-                "RANSACTION";
+                "RANS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10367,7 +10365,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.DEPOSIT_TRANSACTIONDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.DEPOSIT_TRANSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10380,9 +10378,9 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.DEPOSIT_TRANSACTIONDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.DEPOSIT_TRANSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.DEPOSIT_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.DEPOSIT_TRANSACTIONDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.DEPOSIT_TRANSDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.DEPOSIT_TRANSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10390,15 +10388,15 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.DEPOSIT_TRANSACTIONDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.DEPOSIT_TRANSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "DEPOSIT_TRANSACTION");
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "DEPOSIT_TRANS");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10927,7 +10925,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10948,7 +10946,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Purpose", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Purpose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10981,7 +10979,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Purpose", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Purpose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10996,7 +10994,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -11016,7 +11014,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11035,7 +11033,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.LOAN_TRANSACTIONDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.LOAN_TRANSACTIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11048,9 +11046,9 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.LOAN_TRANSACTIONDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.LOAN_TRANSACTIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.LOAN_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.LOAN_TRANSACTIONDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.LOAN_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.LOAN_TRANSACTIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11058,14 +11056,14 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.LOAN_TRANSACTIONDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.LOAN_TRANSACTIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LOAN_TRANSACTION");
         }
         
@@ -11656,7 +11654,7 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11674,7 +11672,7 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.MESSAGE_COMMUNICATIONDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.MESSAGE_COMMUNICATIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11687,9 +11685,9 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.MESSAGE_COMMUNICATIONDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.MESSAGE_COMMUNICATIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.MESSAGE_COMMUNICATIONDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.MESSAGE_COMMUNICATIONDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.MESSAGE_COMMUNICATIONDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.MESSAGE_COMMUNICATIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11697,14 +11695,14 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.MESSAGE_COMMUNICATIONDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.MESSAGE_COMMUNICATIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "MESSAGE_COMMUNICATION");
         }
         
@@ -12251,7 +12249,7 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12268,7 +12266,7 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.PERSONAL_DETAILSDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.PERSONAL_DETAILSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12281,9 +12279,9 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.PERSONAL_DETAILSDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.PERSONAL_DETAILSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.PERSONAL_DETAILSDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.PERSONAL_DETAILSDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.PERSONAL_DETAILSDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.PERSONAL_DETAILSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12291,14 +12289,14 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.PERSONAL_DETAILSDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.PERSONAL_DETAILSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PERSONAL_DETAILS");
         }
         
@@ -13199,7 +13197,7 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remaining_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -13214,7 +13212,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remaining_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13226,7 +13224,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remaining_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13238,7 +13236,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remaining_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -13252,7 +13250,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13270,7 +13268,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.REPAYMENT_TRANSACTIONDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.REPAYMENT_TRANSACTIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13283,9 +13281,9 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.REPAYMENT_TRANSACTIONDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.REPAYMENT_TRANSACTIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.REPAYMENT_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.REPAYMENT_TRANSACTIONDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.REPAYMENT_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.REPAYMENT_TRANSACTIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13293,14 +13291,14 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.REPAYMENT_TRANSACTIONDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.REPAYMENT_TRANSACTIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "REPAYMENT_TRANSACTION");
         }
         
@@ -13833,7 +13831,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_MANAGEMENTConnectionString1;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13852,7 +13850,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BANK_CUSTOMERS_MANAGEMENTDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable) {
+        public virtual int Fill(BANK_CUSTOMERS_Disseration_Project_DBDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13865,9 +13863,9 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BANK_CUSTOMERS_MANAGEMENTDataSet.WITHDRAWAL_TRANSACTIONDataTable GetData() {
+        public virtual BANK_CUSTOMERS_Disseration_Project_DBDataSet.WITHDRAWAL_TRANSACTIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BANK_CUSTOMERS_MANAGEMENTDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_MANAGEMENTDataSet.WITHDRAWAL_TRANSACTIONDataTable();
+            BANK_CUSTOMERS_Disseration_Project_DBDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable = new BANK_CUSTOMERS_Disseration_Project_DBDataSet.WITHDRAWAL_TRANSACTIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13875,14 +13873,14 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet.WITHDRAWAL_TRANSACTIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int Update(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "WITHDRAWAL_TRANSACTION");
         }
         
@@ -14285,7 +14283,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         
         private BANK_ACCOUNT_DETAILSTableAdapter _bANK_ACCOUNT_DETAILSTableAdapter;
         
-        private DEPOSIT_TRANSACTIONTableAdapter _dEPOSIT_TRANSACTIONTableAdapter;
+        private DEPOSIT_TRANSTableAdapter _dEPOSIT_TRANSTableAdapter;
         
         private LOAN_TRANSACTIONTableAdapter _lOAN_TRANSACTIONTableAdapter;
         
@@ -14359,12 +14357,12 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DEPOSIT_TRANSACTIONTableAdapter DEPOSIT_TRANSACTIONTableAdapter {
+        public DEPOSIT_TRANSTableAdapter DEPOSIT_TRANSTableAdapter {
             get {
-                return this._dEPOSIT_TRANSACTIONTableAdapter;
+                return this._dEPOSIT_TRANSTableAdapter;
             }
             set {
-                this._dEPOSIT_TRANSACTIONTableAdapter = value;
+                this._dEPOSIT_TRANSTableAdapter = value;
             }
         }
         
@@ -14469,9 +14467,9 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                             && (this._bANK_ACCOUNT_DETAILSTableAdapter.Connection != null))) {
                     return this._bANK_ACCOUNT_DETAILSTableAdapter.Connection;
                 }
-                if (((this._dEPOSIT_TRANSACTIONTableAdapter != null) 
-                            && (this._dEPOSIT_TRANSACTIONTableAdapter.Connection != null))) {
-                    return this._dEPOSIT_TRANSACTIONTableAdapter.Connection;
+                if (((this._dEPOSIT_TRANSTableAdapter != null) 
+                            && (this._dEPOSIT_TRANSTableAdapter.Connection != null))) {
+                    return this._dEPOSIT_TRANSTableAdapter.Connection;
                 }
                 if (((this._lOAN_TRANSACTIONTableAdapter != null) 
                             && (this._lOAN_TRANSACTIONTableAdapter.Connection != null))) {
@@ -14515,7 +14513,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                 if ((this._bANK_ACCOUNT_DETAILSTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
+                if ((this._dEPOSIT_TRANSTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._lOAN_TRANSACTIONTableAdapter != null)) {
@@ -14542,7 +14540,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._aDMINISTRATOR_DETAILSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ADMINISTRATOR_DETAILS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -14571,12 +14569,12 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DEPOSIT_TRANSACTION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dEPOSIT_TRANSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DEPOSIT_TRANS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._dEPOSIT_TRANSACTIONTableAdapter.Update(updatedRows));
+                    result = (result + this._dEPOSIT_TRANSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14633,7 +14631,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._aDMINISTRATOR_DETAILSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ADMINISTRATOR_DETAILS.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -14659,11 +14657,11 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DEPOSIT_TRANSACTION.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dEPOSIT_TRANSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DEPOSIT_TRANS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._dEPOSIT_TRANSACTIONTableAdapter.Update(addedRows));
+                    result = (result + this._dEPOSIT_TRANSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14715,7 +14713,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._wITHDRAWAL_TRANSACTIONTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.WITHDRAWAL_TRANSACTION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -14757,11 +14755,11 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DEPOSIT_TRANSACTION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._dEPOSIT_TRANSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DEPOSIT_TRANS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._dEPOSIT_TRANSACTIONTableAdapter.Update(deletedRows));
+                    result = (result + this._dEPOSIT_TRANSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14821,7 +14819,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(BANK_CUSTOMERS_MANAGEMENTDataSet dataSet) {
+        public virtual int UpdateAll(BANK_CUSTOMERS_Disseration_Project_DBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -14843,8 +14841,8 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._dEPOSIT_TRANSACTIONTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._dEPOSIT_TRANSACTIONTableAdapter.Connection) == false))) {
+            if (((this._dEPOSIT_TRANSTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._dEPOSIT_TRANSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -14932,13 +14930,13 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                         adaptersWithAcceptChangesDuringUpdate.Add(this._bANK_ACCOUNT_DETAILSTableAdapter.Adapter);
                     }
                 }
-                if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
-                    revertConnections.Add(this._dEPOSIT_TRANSACTIONTableAdapter, this._dEPOSIT_TRANSACTIONTableAdapter.Connection);
-                    this._dEPOSIT_TRANSACTIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._dEPOSIT_TRANSACTIONTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._dEPOSIT_TRANSACTIONTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._dEPOSIT_TRANSACTIONTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._dEPOSIT_TRANSACTIONTableAdapter.Adapter);
+                if ((this._dEPOSIT_TRANSTableAdapter != null)) {
+                    revertConnections.Add(this._dEPOSIT_TRANSTableAdapter, this._dEPOSIT_TRANSTableAdapter.Connection);
+                    this._dEPOSIT_TRANSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._dEPOSIT_TRANSTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._dEPOSIT_TRANSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._dEPOSIT_TRANSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._dEPOSIT_TRANSTableAdapter.Adapter);
                     }
                 }
                 if ((this._lOAN_TRANSACTIONTableAdapter != null)) {
@@ -15056,9 +15054,9 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     this._bANK_ACCOUNT_DETAILSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._bANK_ACCOUNT_DETAILSTableAdapter]));
                     this._bANK_ACCOUNT_DETAILSTableAdapter.Transaction = null;
                 }
-                if ((this._dEPOSIT_TRANSACTIONTableAdapter != null)) {
-                    this._dEPOSIT_TRANSACTIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dEPOSIT_TRANSACTIONTableAdapter]));
-                    this._dEPOSIT_TRANSACTIONTableAdapter.Transaction = null;
+                if ((this._dEPOSIT_TRANSTableAdapter != null)) {
+                    this._dEPOSIT_TRANSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dEPOSIT_TRANSTableAdapter]));
+                    this._dEPOSIT_TRANSTableAdapter.Transaction = null;
                 }
                 if ((this._lOAN_TRANSACTIONTableAdapter != null)) {
                     this._lOAN_TRANSACTIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lOAN_TRANSACTIONTableAdapter]));

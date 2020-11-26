@@ -19,7 +19,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             label5.Visible = false;
             Date_BankAccountLimitDate.Visible = false;
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_MANAGEMENT;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cb_BankAccountType.SelectedItem == "Savings Account")
@@ -57,11 +57,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     conn.Open();
                     SqlCommand cmd1 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
-
                     cmd1.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
                     cmd1.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
                     cmd1.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Limit_Date", "--");
+                    cmd1.Parameters.AddWithValue("@Limit_Date", "----");
 
                     int i;
                     i = cmd1.ExecuteNonQuery();

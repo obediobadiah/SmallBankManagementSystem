@@ -44,5 +44,16 @@ namespace BANK_CUSTOMERS_MANAGEMENT.Properties {
                 return ((string)(this["BANK_CUSTOMERS_MANAGEMENTConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Int" +
+            "egrated Security=True")]
+        public string BANK_CUSTOMERS_Disseration_Project_DBConnectionString {
+            get {
+                return ((string)(this["BANK_CUSTOMERS_Disseration_Project_DBConnectionString"]));
+            }
+        }
     }
 }

@@ -78,10 +78,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.Designer.cs">
+    <Compile Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+      <DependentUpon>BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Deposit_List_Viewer.cs">
       <SubType>Form</SubType>
@@ -371,16 +371,16 @@
     <EmbeddedResource Include="Withdrawal_Viewer.resx">
       <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xsc">
-      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+    <None Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsc">
+      <DependentUpon>BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd">
+    <None Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BANK_CUSTOMERS_MANAGEMENTDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>BANK_CUSTOMERS_Disseration_Project_DBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BANK_CUSTOMERS_MANAGEMENTDataSet1.xss">
-      <DependentUpon>BANK_CUSTOMERS_MANAGEMENTDataSet1.xsd</DependentUpon>
+    <None Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.xss">
+      <DependentUpon>BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
