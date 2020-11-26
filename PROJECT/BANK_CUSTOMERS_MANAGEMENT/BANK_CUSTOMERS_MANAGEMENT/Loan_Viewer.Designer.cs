@@ -57,8 +57,7 @@
         }
 
         #endregion
-
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private Loan_Slip Loan_Slip1;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

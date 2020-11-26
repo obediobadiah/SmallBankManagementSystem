@@ -55,14 +55,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (!Form1.instance.pane3.Controls.ContainsKey("RepaymentTransactions"))
+            if (!Form1.instance.pane3.Controls.ContainsKey("RepaymentTransaction"))
             {
                 Form1.instance.pane3.Controls.Clear();
-                RepaymentTransactions user = new RepaymentTransactions();
+                RepaymentTransaction user = new RepaymentTransaction();
                 user.Dock = DockStyle.None;
                 Form1.instance.pane3.Controls.Add(user);
             }
-            Form1.instance.pane3.Controls["RepaymentTransactions"].BringToFront();
+            Form1.instance.pane3.Controls["RepaymentTransaction"].BringToFront();
         }
     }
 }
