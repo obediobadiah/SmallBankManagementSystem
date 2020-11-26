@@ -20,7 +20,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_MANAGEMENT;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         string imgLocation = "";
 
         private void button_next_acc_cr_Click(object sender, EventArgs e)

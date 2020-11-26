@@ -18,7 +18,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_MANAGEMENT;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void Home_Load(object sender, EventArgs e)
         {
             Personal_Total_Viewer();
@@ -31,7 +31,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         public void Personal_Total_Viewer()
         {
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM PERSONAL_DETAILS";
+            cmd.CommandText = "SELECT count (*) AS MyCount FROM BANK_ACCOUNT_DETAILS";
             conn.Open();
 
             int ReturnValue = (int)cmd.ExecuteScalar();
@@ -41,7 +41,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         public void Deposit_Total_Viewer()
         {
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM DEPOSIT_TRANSACTION";
+            cmd.CommandText = "SELECT count (*) AS MyCount FROM DEPOSIT_TRANS";
             conn.Open();
 
             int ReturnValue = (int)cmd.ExecuteScalar();
