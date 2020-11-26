@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanTransaction));
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -38,6 +38,7 @@
             this.button_delete_deposit = new System.Windows.Forms.Button();
             this.button_save_deposit = new System.Windows.Forms.Button();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.ID_NumberLabel = new System.Windows.Forms.Label();
             this.button_deposit_clear = new System.Windows.Forms.Button();
             this.button_print_deposit = new System.Windows.Forms.Button();
             this.cb_LoanScheduler = new System.Windows.Forms.ComboBox();
@@ -79,7 +80,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.ID_NumberLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
@@ -90,20 +90,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -114,6 +114,7 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(558, 469);
             this.bunifuCustomDataGrid1.TabIndex = 22;
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // groupBox1
             // 
@@ -160,6 +161,7 @@
             this.button_delete_deposit.Text = "DELETE";
             this.button_delete_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_delete_deposit.UseVisualStyleBackColor = false;
+            this.button_delete_deposit.Click += new System.EventHandler(this.button_delete_deposit_Click);
             // 
             // button_save_deposit
             // 
@@ -227,6 +229,16 @@
             this.bunifuCards1.Size = new System.Drawing.Size(560, 575);
             this.bunifuCards1.TabIndex = 20;
             // 
+            // ID_NumberLabel
+            // 
+            this.ID_NumberLabel.AutoSize = true;
+            this.ID_NumberLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_NumberLabel.Location = new System.Drawing.Point(187, 56);
+            this.ID_NumberLabel.Name = "ID_NumberLabel";
+            this.ID_NumberLabel.Size = new System.Drawing.Size(0, 37);
+            this.ID_NumberLabel.TabIndex = 30;
+            this.ID_NumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // button_deposit_clear
             // 
             this.button_deposit_clear.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -242,6 +254,7 @@
             this.button_deposit_clear.TabIndex = 28;
             this.button_deposit_clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_deposit_clear.UseVisualStyleBackColor = false;
+            this.button_deposit_clear.Click += new System.EventHandler(this.button_deposit_clear_Click);
             // 
             // button_print_deposit
             // 
@@ -258,6 +271,7 @@
             this.button_print_deposit.TabIndex = 27;
             this.button_print_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_print_deposit.UseVisualStyleBackColor = false;
+            this.button_print_deposit.Click += new System.EventHandler(this.button_print_deposit_Click);
             // 
             // cb_LoanScheduler
             // 
@@ -305,7 +319,8 @@
             "Congolese Francs",
             "Burundian Francs",
             "Tanzanian Shilling",
-            "Ugandan Shilling"});
+            "Ugandan Shilling",
+            "Dollars"});
             this.cb_LoanCurrency.Location = new System.Drawing.Point(184, 341);
             this.cb_LoanCurrency.Name = "cb_LoanCurrency";
             this.cb_LoanCurrency.Size = new System.Drawing.Size(312, 26);
@@ -672,16 +687,6 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
-            // 
-            // ID_NumberLabel
-            // 
-            this.ID_NumberLabel.AutoSize = true;
-            this.ID_NumberLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_NumberLabel.Location = new System.Drawing.Point(187, 56);
-            this.ID_NumberLabel.Name = "ID_NumberLabel";
-            this.ID_NumberLabel.Size = new System.Drawing.Size(0, 37);
-            this.ID_NumberLabel.TabIndex = 30;
-            this.ID_NumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LoanTransaction
             // 
