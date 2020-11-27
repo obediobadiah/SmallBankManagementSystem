@@ -20,6 +20,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
+            LoanAmountEditor ();
+
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_RepaymentAccountNumber.Text + "' AND Identifier = '" + txt_RepaymentBorrower.Text + "'", conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -50,6 +52,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         MessageBox.Show("Repayment transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     Display();
+                    
                 }
 
             }
@@ -58,6 +61,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 MessageBox.Show("The entered Borrower name and Account Number doesn't match", "Information");
             }
             conn.Close();
+            DeleteLoanDetails();
         }
 
         private void RepaymentTransaction_Load(object sender, EventArgs e)
@@ -81,9 +85,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 Date_Loan.Text = row.Cells["Loan_Date"].Value.ToString();
                 txt_RepaymentBorrower.Text = row.Cells["Borrower"].Value.ToString();
                 txt_RepaymentAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
-                //txt_RepaymentAmount.Text = row.Cells["Amount"].Value.ToString();
-                txt_RepaymentAmountInWords.Text = row.Cells["Amount_In_Words"].Value.ToString();
-                label_RepaymentTime.Text = row.Cells["Transaction_Time"].Value.ToString();
+
+
             }
         }
         public void Display()
@@ -145,51 +148,137 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             
             conn.Open();
-            SqlCommand cmd1 = new SqlCommand("SELECT Amount FROM REPAYMENT_TRANSACTION WHERE Account_Number = '" + txt_RepaymentAccountNumber.Text + "'", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd1);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+                    SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_RepaymentAccountNumber.Text + "'", conn);
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                    DataTable dt1 = new DataTable();
+                    da1.Fill(dt1);
+                    if (dt1.Rows.Count > 0)
+                    {
+                        label_LoanAmount.Text = dt1.Rows[0]["Amount"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Account Number that you make doesn't Exists in the Loan Storage");
+                    }
+            conn.Close();
+        }
+        public void LoanAmountEditor()
+        {
+            conn.Open();
+            SqlCommand cmd1 = new SqlCommand("UPDATE LOAN_TRANSACTION SET  Amount = @Amount,Amount_In_Words = @Amount_In_Words WHERE Account_Number = @Account_Number", conn);
+
+            cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
+            cmd1.Parameters.AddWithValue("@Amount", label_RemainingAmount.Text);
+            cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RemainingAmounInWord.Text);
+            int i;
+            i = cmd1.ExecuteNonQuery();
+            if (i > 0)
             {
-                /*DialogResult result = */MessageBox.Show("The Account Exists in the repayment storage", "Information"/*, MessageBoxButtons.YesNo, MessageBoxIcon.Question*/);
-                //if (result == DialogResult.OK)
-                //{
-                //    SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_RepaymentAccountNumber.Text + "'", conn);
-                //    SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-                //    DataTable dt1 = new DataTable();
-                //    da1.Fill(dt1);
-                //    if (dt1.Rows.Count > 0)
-                //    {
-                //        label_LoanAmount.Text = dt1.Rows[0]["Amount"].ToString();
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("The Account Number that you make doesn't Exists in the Loan Storage");
-                //    }
-                //}
-                //else
-                //{
-                      
-                //}
-                
+                MessageBox.Show("Loan transaction details updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            Display();
+            conn.Close();
+        }
+
+        public void DeleteLoanDetails()
+        {
+            if (label_RemainingAmount.Text == "0")
+            {
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM LOAN_TRANSACTION WHERE Account_Number = @Account_Number", conn);
+
+                    cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
+
+                    int i;
+                    i = cmd1.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show(" The Loan solde of this account is 000 ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Display();
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoanAmountEditor();
+        }
+
+        private void button_delete_deposit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure that you want to delete??", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM REPAYMENT_TRANSACTION WHERE ID_Number = @ID_Number", conn);
+
+                    cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
+
+                    int i;
+                    i = cmd1.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show(" Transaction details deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Display();
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
-                SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_RepaymentAccountNumber.Text + "'", conn);
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-                DataTable dt1 = new DataTable();
-                da1.Fill(dt1);
-                if (dt1.Rows.Count == 1)
-                {
-                    label_LoanAmount.Text = dt1.Rows[0]["Amount"].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("The Account Number that you make doesn't Exists in the Loan Storage");
-                }
 
             }
-            conn.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "Account Number")
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    bunifuCustomDataGrid1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (comboBox1.SelectedItem == "Account Name")
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Borrower = '" + txt_Search.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    bunifuCustomDataGrid1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
