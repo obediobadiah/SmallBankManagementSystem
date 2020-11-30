@@ -92,6 +92,7 @@
             // 
             // cb_BankAccountType
             // 
+            this.cb_BankAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_BankAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_BankAccountType.FormattingEnabled = true;
             this.cb_BankAccountType.Items.AddRange(new object[] {
@@ -177,10 +178,10 @@
             // txt_BankAcccountIdentifier
             // 
             this.txt_BankAcccountIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_BankAcccountIdentifier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_BankAcccountIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_BankAcccountIdentifier.Location = new System.Drawing.Point(97, 236);
             this.txt_BankAcccountIdentifier.Name = "txt_BankAcccountIdentifier";
-            this.txt_BankAcccountIdentifier.Size = new System.Drawing.Size(352, 22);
+            this.txt_BankAcccountIdentifier.Size = new System.Drawing.Size(352, 19);
             this.txt_BankAcccountIdentifier.TabIndex = 37;
             // 
             // BankAccountDetails

@@ -112,6 +112,7 @@
             // 
             // cb_MeritalStatus
             // 
+            this.cb_MeritalStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_MeritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_MeritalStatus.FormattingEnabled = true;
             this.cb_MeritalStatus.Items.AddRange(new object[] {
@@ -191,6 +192,7 @@
             // 
             // cb_code
             // 
+            this.cb_code.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_code.FormattingEnabled = true;
             this.cb_code.Items.AddRange(new object[] {
@@ -422,6 +424,7 @@
             // 
             // cb_Nationality
             // 
+            this.cb_Nationality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_Nationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Nationality.FormattingEnabled = true;
             this.cb_Nationality.Items.AddRange(new object[] {
@@ -517,6 +520,7 @@
             // 
             // cb_ApplicantReq
             // 
+            this.cb_ApplicantReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ApplicantReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ApplicantReq.FormattingEnabled = true;
             this.cb_ApplicantReq.Items.AddRange(new object[] {

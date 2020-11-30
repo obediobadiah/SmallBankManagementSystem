@@ -77,6 +77,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_next_applicant = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_ApplicantIdentifier = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button_save_applicant = new System.Windows.Forms.Button();
@@ -102,7 +103,6 @@
             this.txt_ApplicantCountryName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.txt_ApplicantIdentifier = new System.Windows.Forms.TextBox();
             this.bunifuCards1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -194,6 +194,7 @@
             // 
             // cb_Applicantcode
             // 
+            this.cb_Applicantcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_Applicantcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Applicantcode.FormattingEnabled = true;
             this.cb_Applicantcode.Items.AddRange(new object[] {
@@ -208,6 +209,7 @@
             // 
             // cb_ApplicantMeritalStatus
             // 
+            this.cb_ApplicantMeritalStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ApplicantMeritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ApplicantMeritalStatus.FormattingEnabled = true;
             this.cb_ApplicantMeritalStatus.Items.AddRange(new object[] {
@@ -222,6 +224,7 @@
             // 
             // cb_ApplicantNationality
             // 
+            this.cb_ApplicantNationality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ApplicantNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ApplicantNationality.FormattingEnabled = true;
             this.cb_ApplicantNationality.Items.AddRange(new object[] {
@@ -643,6 +646,15 @@
             this.groupBox2.Text = "Account Owner\'s Name";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // txt_ApplicantIdentifier
+            // 
+            this.txt_ApplicantIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ApplicantIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ApplicantIdentifier.Location = new System.Drawing.Point(132, 32);
+            this.txt_ApplicantIdentifier.Name = "txt_ApplicantIdentifier";
+            this.txt_ApplicantIdentifier.Size = new System.Drawing.Size(387, 17);
+            this.txt_ApplicantIdentifier.TabIndex = 5;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -924,15 +936,6 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txt_ApplicantIdentifier
-            // 
-            this.txt_ApplicantIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ApplicantIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ApplicantIdentifier.Location = new System.Drawing.Point(132, 32);
-            this.txt_ApplicantIdentifier.Name = "txt_ApplicantIdentifier";
-            this.txt_ApplicantIdentifier.Size = new System.Drawing.Size(387, 17);
-            this.txt_ApplicantIdentifier.TabIndex = 5;
             // 
             // ApplicantDetails
             // 
