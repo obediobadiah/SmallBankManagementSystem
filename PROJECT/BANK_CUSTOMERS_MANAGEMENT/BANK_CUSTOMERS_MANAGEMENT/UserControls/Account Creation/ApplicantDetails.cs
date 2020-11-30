@@ -65,7 +65,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button_save_applicant_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT Identifier FROM APPLICANT_DETAILS WHERE Identifier = '" + txt_ApplicantIdentifier.Text + "'",conn);
+            SqlCommand cmd = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_ApplicantIdentifier.Text + "'",conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

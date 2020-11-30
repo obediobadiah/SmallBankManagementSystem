@@ -234,7 +234,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     Display();
                     conn.Close();
-
                 }
                 catch (Exception ex)
                 {
