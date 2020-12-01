@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label_AccountBalance = new System.Windows.Forms.Label();
             this.label_AccountNumber = new System.Windows.Forms.Label();
+            this.label_Currency = new System.Windows.Forms.Label();
             this.label_AccountLoan = new System.Windows.Forms.Label();
             this.label_AccountType = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -58,11 +59,9 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.label_Currency = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.bunifuCards2.SuspendLayout();
@@ -113,10 +112,10 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SteelBlue;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(11, 178);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(11, 150);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(443, 526);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(443, 554);
             this.bunifuCustomDataGrid1.TabIndex = 19;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
@@ -273,6 +272,16 @@
             this.label_AccountNumber.TabIndex = 23;
             this.label_AccountNumber.Text = "Account Number";
             // 
+            // label_Currency
+            // 
+            this.label_Currency.AutoSize = true;
+            this.label_Currency.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Currency.ForeColor = System.Drawing.Color.Gray;
+            this.label_Currency.Location = new System.Drawing.Point(336, 261);
+            this.label_Currency.Name = "label_Currency";
+            this.label_Currency.Size = new System.Drawing.Size(0, 25);
+            this.label_Currency.TabIndex = 22;
+            // 
             // label_AccountLoan
             // 
             this.label_AccountLoan.AutoSize = true;
@@ -410,7 +419,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.panel4);
             this.groupBox3.Controls.Add(this.txt_Search);
@@ -418,23 +426,10 @@
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox3.Location = new System.Drawing.Point(12, 54);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(442, 118);
+            this.groupBox3.Size = new System.Drawing.Size(442, 90);
             this.groupBox3.TabIndex = 57;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Account Number",
-            "Account Name"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(379, 26);
-            this.comboBox1.TabIndex = 118;
-            this.comboBox1.Text = "By";
             // 
             // button3
             // 
@@ -445,7 +440,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(397, 57);
+            this.button3.Location = new System.Drawing.Point(397, 29);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(35, 38);
             this.button3.TabIndex = 38;
@@ -455,7 +450,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.Location = new System.Drawing.Point(8, 91);
+            this.panel4.Location = new System.Drawing.Point(8, 63);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(379, 2);
             this.panel4.TabIndex = 6;
@@ -464,20 +459,10 @@
             // 
             this.txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Search.Location = new System.Drawing.Point(8, 70);
+            this.txt_Search.Location = new System.Drawing.Point(8, 42);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
-            // 
-            // label_Currency
-            // 
-            this.label_Currency.AutoSize = true;
-            this.label_Currency.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Currency.ForeColor = System.Drawing.Color.Gray;
-            this.label_Currency.Location = new System.Drawing.Point(336, 261);
-            this.label_Currency.Name = "label_Currency";
-            this.label_Currency.Size = new System.Drawing.Size(0, 25);
-            this.label_Currency.TabIndex = 22;
             // 
             // AccountManagement
             // 
@@ -530,7 +515,6 @@
         private System.Windows.Forms.Label label_SecondName;
         private System.Windows.Forms.Label label_FirstName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;

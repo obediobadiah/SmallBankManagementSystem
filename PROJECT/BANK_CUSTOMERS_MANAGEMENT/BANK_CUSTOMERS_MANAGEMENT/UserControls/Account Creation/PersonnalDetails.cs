@@ -98,7 +98,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
 
         }
-
+        public byte[] savephoto()
+        {
+            MemoryStream stem = new MemoryStream();
+            pictureBox1.Image.Save(stem, pictureBox1.Image.RawFormat);
+            return stem.GetBuffer();
+        }
         private void button_save_acc_cr_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_FirstName.Text + "'", conn);
@@ -151,14 +156,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             cmd1.Parameters.AddWithValue("@Quarter", txt_Quarter.Text);
                             cmd1.Parameters.AddWithValue("@Avenue", txt_Avenue.Text);
                             cmd1.Parameters.AddWithValue("@House_Number", txt_HouseNumber.Text);
-
-                            MemoryStream ms1 = new MemoryStream();
-                            pictureBox1.Image.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
-                            byte[] images = new byte[ms1.Length];
-                            ms1.Read(images, 0, images.Length);
-
-                            cmd1.Parameters.Add(new SqlParameter("@Picture", images));
-
+                            cmd1.Parameters.Add(new SqlParameter("@Picture",savephoto()));
                         int i;
                         i = cmd1.ExecuteNonQuery();
                         if (i > 0)

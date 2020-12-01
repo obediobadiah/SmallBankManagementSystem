@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using System.IO;
 
 namespace BANK_CUSTOMERS_MANAGEMENT
 {
@@ -45,6 +46,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             AccountNumber();
             AccountType();
             LoanAmount();
+            AccountBalance();
         }
         public void AccountNumber()
         {
@@ -102,6 +104,43 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         }
 
+        public void PictureView()
+        {
+            conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM PERSONAL_DETAILS where First_Name = '" + label_FirstName.Text + "'", conn);
+                SqlDataReader da1 = cmd2.ExecuteReader();
+            da1.Read();
+                
+                if (da1.HasRows)
+                {
+                    byte[] image =(byte [])da1["Picture"];
+                    if (image == null)
+                    {
+                        pictureBox2.Image = null;
+                    }
+                    else
+                    {
+                    MemoryStream stem = new MemoryStream(image);
+                    //BinaryReader red = new BinaryReader(stem);
+                    pictureBox2.Image = Image.FromStream(stem);
+                    }
+                conn.Close();
+                }
+        }
+        public void AccountBalance()
+        {
+            conn.Open();
+            SqlCommand cmd2 = new SqlCommand("SELECT SUM(CAST(Amount AS INTEGER)) FROM DEPOSIT_TRANS WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            if (dt1.Rows.Count > 0)
+            {
+                label_AccountBalance.Text = dt1.Rows[0]["Amount"].ToString();
+            }
+            conn.Close();
+        }
+
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -113,6 +152,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 label_Gender.Text = row.Cells["Gender"].Value.ToString();
                 label_Nationality.Text = row.Cells["Nationality"].Value.ToString();
             }
+            PictureView();
         }
     }
 }

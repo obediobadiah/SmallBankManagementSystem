@@ -22,7 +22,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
             SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
             string imgLocation = "";
-        SqlCommand cmd;
+            SqlCommand cmd;
 
         private void button_next_acc_cr_Click(object sender, EventArgs e)
         {
@@ -62,22 +62,27 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 txt_ApplicantNameOfSpouse.Text = "--";
             }
         }
-
+        public byte[] savephoto()
+        {
+            MemoryStream stem = new MemoryStream();
+            pictureBox1.Image.Save(stem, pictureBox1.Image.RawFormat);
+            return stem.GetBuffer();
+        }
         private void button_save_applicant_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_ApplicantIdentifier.Text + "'",conn);
+            SqlCommand cmd = new SqlCommand("SELECT Identifier FROM APPLICANT_DETAILS WHERE Identifier = '" + txt_ApplicantIdentifier.Text + "'",conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
             if (dt.Rows.Count >= 1)
             {
-                DialogResult result = MessageBox.Show("The Account Name  "+ txt_ApplicantIdentifier.Text +" already have an applicant, Do you want to Add another applicant for this account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("The Account Name  "+ txt_ApplicantIdentifier.Text +" already has an applicant, Do you want to Add another applicant for this account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (txt_ApplicantIdentifier.Text == "" || txt_ApplicantFirstName.Text == "" || txt_ApplicantSecondName.Text == "" || txt_ApplicantPlaceOfBirth.Text == "" || cb_ApplicantNationality.Text == "" || cb_ApplicantMeritalStatus.Text == "" || txt_ApplicantNameOfSpouse.Text == "" || txt_ApplicantProffesional.Text == "" || cb_Applicantcode.Text == "" || txt_ApplicantMobileNumber.Text == "" || txt_ApplicantIdCard.Text == "" || txt_ApplicantConsideration.Text == "" || txt_ApplicantCountryName.Text == "" || txt_ApplicantProvince.Text == "" || txt_ApplicantTown.Text == "" || txt_ApplicantTownship.Text == "" || txt_ApplicantQuarter.Text == "" || txt_ApplicantAvenue.Text == "" || txt_ApplicantHouseNumber.Text == "")
                     {
-                        MessageBox.Show("You miss something");
+                        MessageBox.Show("You miss some fields");
                     }
                     else
                     {
@@ -101,7 +106,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 if (txt_ApplicantIdentifier.Text == "" || txt_ApplicantFirstName.Text == "" || txt_ApplicantSecondName.Text == "" || txt_ApplicantPlaceOfBirth.Text == "" || cb_ApplicantNationality.Text == "" || cb_ApplicantMeritalStatus.Text == "" || txt_ApplicantNameOfSpouse.Text == "" || txt_ApplicantProffesional.Text == "" || cb_Applicantcode.Text == "" || txt_ApplicantMobileNumber.Text == "" || txt_ApplicantIdCard.Text == "" || txt_ApplicantConsideration.Text == "" || txt_ApplicantCountryName.Text == "" || txt_ApplicantProvince.Text == "" || txt_ApplicantTown.Text == "" || txt_ApplicantTownship.Text == "" || txt_ApplicantQuarter.Text == "" || txt_ApplicantAvenue.Text == "" || txt_ApplicantHouseNumber.Text == "")
                 {
-                    MessageBox.Show("You miss something");
+                    MessageBox.Show("You miss some fields");
                 }
                 else
                 {
@@ -149,12 +154,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 cmd1.Parameters.AddWithValue("@Quarter", txt_ApplicantQuarter.Text);
                 cmd1.Parameters.AddWithValue("@Avenue", txt_ApplicantAvenue.Text);
                 cmd1.Parameters.AddWithValue("@House_Number", txt_ApplicantHouseNumber.Text);
-
-                byte[] images = null;
-                FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(Stream);
-                images = brs.ReadBytes((int)Stream.Length);
-                cmd1.Parameters.Add(new SqlParameter("@Picture", images));
+                cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
 
                 int i;
                 i = cmd1.ExecuteNonQuery();
