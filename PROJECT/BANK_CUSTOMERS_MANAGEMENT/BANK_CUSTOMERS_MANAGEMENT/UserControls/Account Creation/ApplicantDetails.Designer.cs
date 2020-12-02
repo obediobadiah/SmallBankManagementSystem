@@ -479,11 +479,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(38, 420);
+            this.label10.Location = new System.Drawing.Point(53, 420);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 18);
+            this.label10.Size = new System.Drawing.Size(86, 18);
             this.label10.TabIndex = 2;
-            this.label10.Text = "Proffesional";
+            this.label10.Text = "Proffesion";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_ApplicantNameOfSpouse
