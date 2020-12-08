@@ -2607,7 +2607,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 this.columnAccount_Number.MaxLength = 50;
                 this.columnAmount.MaxLength = 50;
                 this.columnAmount_In_Words.MaxLength = 50;
-                this.columnCurrency.MaxLength = 50;
+                this.columnCurrency.MaxLength = 15;
                 this.columnPurpose.MaxLength = 100;
                 this.columnSchedule.MaxLength = 100;
                 this.columnLimit_Date.MaxLength = 50;
@@ -7927,7 +7927,7 @@ SELECT ID_Number, First_Name, Fonction, Gender, Date_of_Birth, Nationality, E_ma
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8818,7 +8818,7 @@ SELECT ID_Number, Identifier, First_Name, Second_Name, Gender, Date_of_Birth, Pl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9866,7 +9866,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10346,7 +10346,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11014,7 +11014,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11654,7 +11654,7 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12249,7 +12249,7 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13250,7 +13250,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13831,7 +13831,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString;
+            this._connection.ConnectionString = global::BANK_CUSTOMERS_MANAGEMENT.Properties.Settings.Default.BANK_CUSTOMERS_Disseration_Project_DBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

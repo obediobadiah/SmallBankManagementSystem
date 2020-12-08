@@ -19,7 +19,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             label5.Visible = false;
             Date_BankAccountLimitDate.Visible = false;
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cb_BankAccountType.SelectedItem == "Savings Account")
