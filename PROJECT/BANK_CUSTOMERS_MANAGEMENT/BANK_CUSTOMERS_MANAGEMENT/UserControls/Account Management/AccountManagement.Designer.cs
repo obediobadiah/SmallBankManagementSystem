@@ -49,7 +49,7 @@
             this.label_AccountLoan = new System.Windows.Forms.Label();
             this.label_AccountType = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button_print_deposit = new System.Windows.Forms.Button();
+            this.button_Account_management = new System.Windows.Forms.Button();
             this.label_Nationality = new System.Windows.Forms.Label();
             this.label_Gender = new System.Windows.Forms.Label();
             this.label_SecondName = new System.Windows.Forms.Label();
@@ -150,7 +150,7 @@
             this.bunifuCards2.color = System.Drawing.Color.SkyBlue;
             this.bunifuCards2.Controls.Add(this.groupBox1);
             this.bunifuCards2.Controls.Add(this.pictureBox2);
-            this.bunifuCards2.Controls.Add(this.button_print_deposit);
+            this.bunifuCards2.Controls.Add(this.button_Account_management);
             this.bunifuCards2.Controls.Add(this.label_Nationality);
             this.bunifuCards2.Controls.Add(this.label_Gender);
             this.bunifuCards2.Controls.Add(this.label_SecondName);
@@ -314,21 +314,21 @@
             this.pictureBox2.TabIndex = 107;
             this.pictureBox2.TabStop = false;
             // 
-            // button_print_deposit
+            // button_Account_management
             // 
-            this.button_print_deposit.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_print_deposit.FlatAppearance.BorderSize = 0;
-            this.button_print_deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_print_deposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_print_deposit.ForeColor = System.Drawing.Color.White;
-            this.button_print_deposit.Image = ((System.Drawing.Image)(resources.GetObject("button_print_deposit.Image")));
-            this.button_print_deposit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_print_deposit.Location = new System.Drawing.Point(621, 591);
-            this.button_print_deposit.Name = "button_print_deposit";
-            this.button_print_deposit.Size = new System.Drawing.Size(35, 38);
-            this.button_print_deposit.TabIndex = 103;
-            this.button_print_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_print_deposit.UseVisualStyleBackColor = false;
+            this.button_Account_management.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_Account_management.FlatAppearance.BorderSize = 0;
+            this.button_Account_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Account_management.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Account_management.ForeColor = System.Drawing.Color.White;
+            this.button_Account_management.Image = ((System.Drawing.Image)(resources.GetObject("button_Account_management.Image")));
+            this.button_Account_management.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Account_management.Location = new System.Drawing.Point(621, 591);
+            this.button_Account_management.Name = "button_Account_management";
+            this.button_Account_management.Size = new System.Drawing.Size(35, 38);
+            this.button_Account_management.TabIndex = 103;
+            this.button_Account_management.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Account_management.UseVisualStyleBackColor = false;
             // 
             // label_Nationality
             // 
@@ -446,6 +446,7 @@
             this.button3.TabIndex = 38;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel4
             // 
@@ -518,7 +519,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;
-        private System.Windows.Forms.Button button_print_deposit;
+        private System.Windows.Forms.Button button_Account_management;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label_AccountNumber;
         private System.Windows.Forms.Label label17;

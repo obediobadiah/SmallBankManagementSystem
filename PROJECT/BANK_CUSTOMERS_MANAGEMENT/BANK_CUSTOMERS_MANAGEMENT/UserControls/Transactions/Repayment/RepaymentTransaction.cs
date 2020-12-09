@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace BANK_CUSTOMERS_MANAGEMENT
 {
@@ -17,7 +19,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
             LoanAmountEditor ();
@@ -52,7 +54,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         MessageBox.Show("Repayment transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     Display();
-                    
                 }
 
             }
@@ -278,6 +279,41 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void button_deposit_clear_Click(object sender, EventArgs e)
+        {
+            txt_RepaymentBorrower.Text = "";
+            txt_RepaymentAccountNumber.Text = "";
+            txt_RepaymentAmount.Text = "";
+            txt_RepaymentAmountInWords.Text = "";
+            ID_NumberLabel.Text = "";
+            label_LoanAmount.Text = "";
+            label_RemainingAmount.Text = "";
+        }
+
+        private void button_print_deposit_Click(object sender, EventArgs e)
+        {
+            Repayment_Viewer RepaymentViewer = new Repayment_Viewer();
+            Repayment_Slip cr = new Repayment_Slip();
+            TextObject text = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text47"];
+            TextObject text1 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text46"];
+            TextObject text2 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text45"];
+            TextObject text3 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text44"];
+            TextObject text4 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text43"];
+            TextObject text5 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text39"];
+            TextObject text6 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text14"];
+            TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text3"];
+            text.Text = Date_Loan.Text;
+            text1.Text = txt_RepaymentBorrower.Text;
+            text2.Text = txt_RepaymentAccountNumber.Text;
+            text3.Text = txt_RepaymentAmount.Text;
+            text4.Text = txt_RepaymentAmountInWords.Text;
+            text5.Text = label_RemainingAmount.Text;
+            text6.Text = txt_RemainingAmounInWord.Text;
+            text7.Text = label_RepaymentTime.Text;
+            RepaymentViewer.crystalReportViewer1.ReportSource = cr;
+            RepaymentViewer.Show();
         }
     }
 }

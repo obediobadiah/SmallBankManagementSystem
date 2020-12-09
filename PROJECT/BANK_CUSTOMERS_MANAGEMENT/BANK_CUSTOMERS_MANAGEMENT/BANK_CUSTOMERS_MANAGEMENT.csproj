@@ -78,6 +78,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountManagementDetailsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountManagementDetailsViewer.Designer.cs">
+      <DependentUpon>AccountManagementDetailsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankManagementDetails_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankManagementDetails_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -265,6 +277,13 @@
     <Compile Include="Withdrawal_Viewer.Designer.cs">
       <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountManagementDetailsViewer.resx">
+      <DependentUpon>AccountManagementDetailsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankManagementDetails_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BankManagementDetails_Report.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deposit_List_Viewer.resx">
       <DependentUpon>Deposit_List_Viewer.cs</DependentUpon>
     </EmbeddedResource>

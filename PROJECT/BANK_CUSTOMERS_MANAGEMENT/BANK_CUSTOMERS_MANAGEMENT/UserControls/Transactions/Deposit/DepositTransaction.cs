@@ -19,7 +19,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void DepositTransaction_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -44,7 +44,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANS (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
+                    SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANSACTION (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
 
                     cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
                     cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
@@ -82,7 +82,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void Display()
         {
-            string qry = "SELECT * FROM DEPOSIT_TRANS";
+            string qry = "SELECT * FROM DEPOSIT_TRANSACTION";
             SqlDataAdapter sda = new SqlDataAdapter(qry, conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -122,7 +122,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    SqlCommand cmd1 = new SqlCommand("UPDATE DEPOSIT_TRANS SET Account_Name = @Account_Name,Account_Number = @Account_Number,Deposer_Name = @Deposer_Name,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
+                    SqlCommand cmd1 = new SqlCommand("UPDATE DEPOSIT_TRANSACTION SET Account_Name = @Account_Name,Account_Number = @Account_Number,Deposer_Name = @Deposer_Name,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
 
                     cmd1.Parameters.AddWithValue("@ID_Number",ID_NumberLabel.Text);
                     cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
@@ -161,7 +161,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 try
                 {
                     conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("DELETE FROM DEPOSIT_TRANS WHERE ID_Number = @ID_Number", conn);
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM DEPOSIT_TRANSACTION WHERE ID_Number = @ID_Number", conn);
 
                     cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
 
@@ -192,7 +192,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM DEPOSIT_TRANS where Account_Number = '" + txt_Search.Text + "'", conn);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM DEPOSIT_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
@@ -207,7 +207,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM DEPOSIT_TRANS where Account_Name = '" + txt_Search.Text + "'", conn);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM DEPOSIT_TRANSACTION where Account_Name = '" + txt_Search.Text + "'", conn);
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
