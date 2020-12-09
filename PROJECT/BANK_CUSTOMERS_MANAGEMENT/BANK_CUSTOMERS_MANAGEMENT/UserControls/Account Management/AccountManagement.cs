@@ -60,6 +60,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
             }
+            else
+            {
+                MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+            }
             conn.Close();
         }
         public void AccountType()
@@ -94,11 +98,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
                     label_Currency.Text = dt1.Rows[1]["Currency"].ToString();
                 }
-                
             }
             else
             {
                 label_AccountLoan.Text = "-----";
+                label_Currency.Text = "";
             }
             conn.Close();
 
@@ -121,7 +125,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     else
                     {
                     MemoryStream stem = new MemoryStream(image);
-                    //BinaryReader red = new BinaryReader(stem);
                     pictureBox2.Image = Image.FromStream(stem);
                     }
                 conn.Close();
@@ -130,13 +133,17 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         public void AccountBalance()
         {
             conn.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT SUM(CAST(Amount AS INTEGER)) FROM DEPOSIT_TRANS WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+            SqlCommand cmd2 = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
             SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             if (dt1.Rows.Count > 0)
             {
-                label_AccountBalance.Text = dt1.Rows[0]["Amount"].ToString();
+                label_AccountBalance.Text = dt1.Rows[0]["AmountSum"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
             }
             conn.Close();
         }
@@ -153,6 +160,23 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 label_Nationality.Text = row.Cells["Nationality"].Value.ToString();
             }
             PictureView();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name = '" + txt_Search.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    bunifuCustomDataGrid1.DataSource = dt;
+                }
+                catch (Exception ex)
+
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
     }
 }

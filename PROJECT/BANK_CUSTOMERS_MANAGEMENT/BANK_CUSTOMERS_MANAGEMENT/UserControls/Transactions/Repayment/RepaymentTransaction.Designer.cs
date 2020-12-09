@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepaymentTransaction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_RemainingAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button_deposit_clear = new System.Windows.Forms.Button();
@@ -67,14 +67,14 @@
             this.label_LoanAmount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_RemainingAmounInWord = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.txt_RemainingAmounInWord = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -119,6 +119,7 @@
             this.button_deposit_clear.TabIndex = 28;
             this.button_deposit_clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_deposit_clear.UseVisualStyleBackColor = false;
+            this.button_deposit_clear.Click += new System.EventHandler(this.button_deposit_clear_Click);
             // 
             // button_print_deposit
             // 
@@ -135,6 +136,7 @@
             this.button_print_deposit.TabIndex = 27;
             this.button_print_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_print_deposit.UseVisualStyleBackColor = false;
+            this.button_print_deposit.Click += new System.EventHandler(this.button_print_deposit_Click);
             // 
             // Date_Loan
             // 
@@ -201,20 +203,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -513,6 +515,34 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Location = new System.Drawing.Point(185, 379);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(311, 2);
+            this.panel7.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 363);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Amount In Words";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_RemainingAmounInWord
+            // 
+            this.txt_RemainingAmounInWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_RemainingAmounInWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_RemainingAmounInWord.Location = new System.Drawing.Point(183, 469);
+            this.txt_RemainingAmounInWord.Name = "txt_RemainingAmounInWord";
+            this.txt_RemainingAmounInWord.Size = new System.Drawing.Size(311, 17);
+            this.txt_RemainingAmounInWord.TabIndex = 3;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -574,34 +604,6 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
-            // 
-            // txt_RemainingAmounInWord
-            // 
-            this.txt_RemainingAmounInWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_RemainingAmounInWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_RemainingAmounInWord.Location = new System.Drawing.Point(183, 469);
-            this.txt_RemainingAmounInWord.Name = "txt_RemainingAmounInWord";
-            this.txt_RemainingAmounInWord.Size = new System.Drawing.Size(311, 17);
-            this.txt_RemainingAmounInWord.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 363);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 18);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Amount In Words";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(185, 379);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(311, 2);
-            this.panel7.TabIndex = 4;
             // 
             // RepaymentTransaction
             // 

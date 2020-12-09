@@ -37,7 +37,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void button_save_acc_cr_Click(object sender, EventArgs e)
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT Identifier FROM BANK_ACCOUNT_DETAILS WHERE Identifier = '" + txt_BankAcccountIdentifier.Text + "'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE Identifier = '" + txt_BankAcccountIdentifier.Text + "'", conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -49,46 +49,20 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
             else
             {
-                if (date_DateofCreation.Text == "" || txt_BankAcccountIdentifier.Text == "" || cb_BankAccountType.Text == "")
+                SqlCommand cmd1 = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_BankAcccountIdentifier.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+
+                if (dt1.Rows.Count >= 1)
                 {
-                    MessageBox.Show("You cannot end the procees without filling all required fields");
+                    Save();
                 }
-                else if (cb_BankAccountType.SelectedItem == "Checking Account")
+                else
                 {
-                    conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
-                    cmd1.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
-                    cmd1.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Limit_Date", "----");
-
-                    int i;
-                    i = cmd1.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    conn.Close();
-                    clear();
-                }
-                else if (cb_BankAccountType.SelectedItem == "Savings Account")
-                {
-                    conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
-
-                    cmd1.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
-                    cmd1.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Limit_Date", Date_BankAccountLimitDate.Value.Date.ToShortDateString());
-
-                    int i;
-                    i = cmd1.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    conn.Close();
-                    clear();
+                    //MessageBox.Show("Account name not found");
+                    MessageBox.Show("The Name  " + txt_BankAcccountIdentifier.Text + " Doesn't exit in the personal details");
+                    //clear();  
                 }
             }
             
@@ -99,6 +73,51 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             txt_BankAcccountIdentifier.Text = "";
             cb_BankAccountType.SelectedItem = "";
             Date_BankAccountLimitDate.Text = "";
+        }
+
+        public void Save()
+        {
+            if (date_DateofCreation.Text == "" || txt_BankAcccountIdentifier.Text == "" || cb_BankAccountType.Text == "")
+            {
+                MessageBox.Show("You cannot end the procees without filling all required fields");
+            }
+            else if (cb_BankAccountType.SelectedItem == "Checking Account")
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
+                cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                cmd2.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
+                cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
+                cmd2.Parameters.AddWithValue("@Limit_Date", "----");
+
+                int i;
+                i = cmd2.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                conn.Close();
+                clear();
+            }
+            else if (cb_BankAccountType.SelectedItem == "Savings Account")
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
+
+                cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                cmd2.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
+                cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
+                cmd2.Parameters.AddWithValue("@Limit_Date", Date_BankAccountLimitDate.Value.Date.ToShortDateString());
+
+                int i;
+                i = cmd2.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                conn.Close();
+                clear();
+            }
         }
             //CommunicationsSender CommSend = new CommunicationsSender();
             //CommSend.ShowDialog();

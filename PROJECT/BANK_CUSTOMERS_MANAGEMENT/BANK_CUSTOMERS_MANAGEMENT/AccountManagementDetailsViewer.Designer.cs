@@ -1,6 +1,6 @@
 ﻿namespace BANK_CUSTOMERS_MANAGEMENT
 {
-    partial class Repayment_Viewer
+    partial class AccountManagementDetailsViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Repayment_Slip1 = new BANK_CUSTOMERS_MANAGEMENT.Repayment_Slip();
+            this.BankManagementDetails_Report1 = new BANK_CUSTOMERS_MANAGEMENT.BankManagementDetails_Report();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,24 +40,25 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Repayment_Slip1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(872, 497);
+            this.crystalReportViewer1.ReportSource = this.BankManagementDetails_Report1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(786, 520);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // Repayment_Viewer
+            // AccountManagementDetailsViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 497);
+            this.ClientSize = new System.Drawing.Size(786, 520);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "Repayment_Viewer";
-            this.Text = "Repayment_Viewer";
+            this.Name = "AccountManagementDetailsViewer";
+            this.Text = "AccountManagementDetailsViewer";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Repayment_Slip Repayment_Slip1;
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private BankManagementDetails_Report BankManagementDetails_Report1;
     }
 }

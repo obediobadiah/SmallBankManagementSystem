@@ -19,7 +19,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=ULK_GISENYI;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
         private void LoanTransaction_Load(object sender, EventArgs e)
         {
@@ -115,7 +115,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if (comboBox1.SelectedItem == "Account Name") ////Date")
+            else if (comboBox1.SelectedItem == "Account Name")
             {
                 try
                 {
