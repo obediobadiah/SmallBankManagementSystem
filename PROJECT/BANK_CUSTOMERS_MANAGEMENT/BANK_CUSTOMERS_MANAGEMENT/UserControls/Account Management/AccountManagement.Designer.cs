@@ -329,6 +329,7 @@
             this.button_Account_management.TabIndex = 103;
             this.button_Account_management.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Account_management.UseVisualStyleBackColor = false;
+            this.button_Account_management.Click += new System.EventHandler(this.button_Account_management_Click);
             // 
             // label_Nationality
             // 
