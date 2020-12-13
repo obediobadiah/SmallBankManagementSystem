@@ -12,15 +12,15 @@ Merital_Status VARCHAR(50),
 Name_of_Spouse VARCHAR(50),
 Proffesion VARCHAR(50),
 Mobile_Number_Code NVARCHAR(10),
-Mobile_Number NVARCHAR(10),
-IDCard_Number VARCHAR(50),
+Mobile_Number int,
+IDCard_Number NVARCHAR(50),
 Country_Name VARCHAR(50),
 Province VARCHAR(50),
 Town VARCHAR(50),
 Township VARCHAR(50),
 Quarter VARCHAR(50),
 Avenue VARCHAR(50),
-House_Number NVARCHAR(10),
+House_Number int,
 Picture IMAGE
 );
 
@@ -40,8 +40,8 @@ Merital_Status VARCHAR(50),
 Name_of_Spouse VARCHAR(50),
 Proffesion VARCHAR(50),
 Mobile_Number_Code NVARCHAR(10),
-Mobile_Number NVARCHAR(10),
-IDCard_Number VARCHAR(50),
+Mobile_Number int,
+IDCard_Number NVARCHAR(50),
 Consideration VARCHAR(50),
 Country_Name VARCHAR(50),
 Province VARCHAR(50),
@@ -49,7 +49,7 @@ Town VARCHAR(50),
 Township VARCHAR(50),
 Quarter VARCHAR(50),
 Avenue VARCHAR(50),
-House_Number NVARCHAR(10),
+House_Number int,
 Picture IMAGE
 );
 
@@ -71,7 +71,7 @@ Limit_Date NVARCHAR(50),
 CREATE TABLE DEPOSIT_TRANSACTION(
 ID_Number INT PRIMARY KEY IDENTITY(1,1),
 Account_Name VARCHAR(50),
-Account_Number VARCHAR(50),
+Account_Number INT,
 Deposer_Name VARCHAR(50),
 Transaction_Date NVARCHAR(50),
 Transaction_Time NVARCHAR(50),
@@ -86,7 +86,7 @@ Narration VARCHAR(100),
 CREATE TABLE WITHDRAWAL_TRANSACTION (
 ID_Number INT PRIMARY KEY IDENTITY(1,1),
 Account_Name VARCHAR(50),
-Account_Number VARCHAR(50),
+Account_Number INT,
 Withdrawal_by VARCHAR(50),
 Transaction_Date NVARCHAR(50),
 Transaction_Time NVARCHAR(50),
@@ -102,7 +102,7 @@ CREATE TABLE LOAN_TRANSACTION (
 ID_Number INT PRIMARY KEY IDENTITY(1,1),
 Loan_Date NVARCHAR(50),
 Borrower VARCHAR(50),
-Account_Number NVARCHAR(50),
+Account_Number INT,
 Amount int,
 Amount_In_Words VARCHAR(50),
 Currency VARCHAR(15),
@@ -118,7 +118,7 @@ CREATE TABLE REPAYMENT_TRANSACTION (
 ID_Number INT PRIMARY KEY IDENTITY(1,1),
 Loan_Date NVARCHAR(50),
 Borrower VARCHAR(50),
-Account_Number NVARCHAR(50),
+Account_Number INT,
 Amount int,
 Amount_In_Words VARCHAR(50),
 Remaining_Time NVARCHAR(50),
@@ -158,10 +158,12 @@ Message NVARCHAR(50),
 --DROP TABLE APPLICANT_DETAILS
 --DROP TABLE BANK_ACCOUNT_DETAILS
 
---DROP TABLE DEPOSIT_TRANS
+--DROP TABLE DEPOSIT_TRANSACTION
 --DROP TABLE WITHDRAWAL_TRANSACTION
 --DROP TABLE LOAN_TRANSACTION
 --DROP TABLE REPAYMENT_TRANSACTION
+--DROP TABLE ADMINISTRATOR_DETAILS
+--DROP TABLE MESSAGE_COMMUNICATION
 
 SELECT * FROM PERSONAL_DETAILS
 SELECT * FROM APPLICANT_DETAILS
