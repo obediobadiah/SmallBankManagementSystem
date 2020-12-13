@@ -89,15 +89,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             da.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                SqlCommand cmd2 = new SqlCommand("SELECT (Amount,Currency) FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-                DataTable dt1 = new DataTable();
-                da1.Fill(dt1);
-                if (dt1.Rows.Count > 0)
-                {
-                    label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
-                    label_Currency.Text = dt1.Rows[1]["Currency"].ToString();
-                }
+                LoanDisplay();
+                LoanCurrencyDisplay();
             }
             else
             {
@@ -140,6 +133,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             if (dt1.Rows.Count > 0)
             {
                 label_AccountBalance.Text = dt1.Rows[0]["AmountSum"].ToString();
+                BalanceCurrencyDisplay();
             }
             else
             {
@@ -181,35 +175,40 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button_Account_management_Click(object sender, EventArgs e)
         {
-            AccountManagementDetailsViewer AccountManagementDetailsViewer = new AccountManagementDetailsViewer();
-            BankManagementDetails_Report cr = new BankManagementDetails_Report();
 
-            //DataSet ds = new DataSet();
-            //pictureBox2.Image.Save();
-
-
-            BlobFieldObject image = (BlobFieldObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Picture1"];
-            TextObject text = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text47"];
-            TextObject text1 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text46"];
-            TextObject text2 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text45"];
-            TextObject text3 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text44"];
-            TextObject text4 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text8"];
-            TextObject text5 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text7"];
-            TextObject text6 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text6"];
-            TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text5"];
-            TextObject text8 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text11"];
-
-            text.Text = label_FirstName.Text;
-            text1.Text = label_SecondName.Text;
-            text2.Text = label_Gender.Text;
-            text3.Text = label_Nationality.Text;
-            text4.Text = label_AccountNumber.Text;
-            text5.Text = label_AccountBalance.Text;
-            text6.Text = label_AccountType.Text;
-            text7.Text = label_AccountLoan.Text;
-            text8.Text = label_Currency.Text;
-            AccountManagementDetailsViewer.crystalReportViewer1.ReportSource = cr;
-            AccountManagementDetailsViewer.Show();
+        }
+        public void LoanDisplay()
+        {
+            SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            if (dt1.Rows.Count > 0)
+            {
+                label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
+            }
+        }
+        public void LoanCurrencyDisplay()
+        {
+            SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            if (dt1.Rows.Count > 0)
+            {
+                label_Currency.Text = dt1.Rows[0]["Currency"].ToString();
+            }
+        }
+        public void BalanceCurrencyDisplay()
+        {
+            SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM DEPOSIT_TRANSACTION where Account_Name = '" + label_FirstName.Text + "'", conn);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            if (dt1.Rows.Count > 0)
+            {
+                label_BalanceCurrency.Text = dt1.Rows[0]["Currency"].ToString();
+            }
         }
     }
 }

@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_BalanceCurrency = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label_AccountLoan = new System.Windows.Forms.Label();
             this.label_AccountType = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button_Account_management = new System.Windows.Forms.Button();
             this.label_Nationality = new System.Windows.Forms.Label();
             this.label_Gender = new System.Windows.Forms.Label();
             this.label_SecondName = new System.Windows.Forms.Label();
@@ -62,6 +62,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.bunifuCards2.SuspendLayout();
@@ -69,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel14.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,7 +156,6 @@
             this.bunifuCards2.color = System.Drawing.Color.SkyBlue;
             this.bunifuCards2.Controls.Add(this.groupBox1);
             this.bunifuCards2.Controls.Add(this.pictureBox2);
-            this.bunifuCards2.Controls.Add(this.button_Account_management);
             this.bunifuCards2.Controls.Add(this.label_Nationality);
             this.bunifuCards2.Controls.Add(this.label_Gender);
             this.bunifuCards2.Controls.Add(this.label_SecondName);
@@ -170,6 +175,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel7);
+            this.groupBox1.Controls.Add(this.panel6);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.label_BalanceCurrency);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label17);
@@ -181,12 +191,23 @@
             this.groupBox1.Controls.Add(this.label_AccountLoan);
             this.groupBox1.Controls.Add(this.label_AccountType);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(68, 313);
+            this.groupBox1.Location = new System.Drawing.Point(13, 313);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(532, 296);
+            this.groupBox1.Size = new System.Drawing.Size(635, 296);
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Details";
+            // 
+            // label_BalanceCurrency
+            // 
+            this.label_BalanceCurrency.AutoSize = true;
+            this.label_BalanceCurrency.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_BalanceCurrency.ForeColor = System.Drawing.Color.Gray;
+            this.label_BalanceCurrency.Location = new System.Drawing.Point(400, 141);
+            this.label_BalanceCurrency.Name = "label_BalanceCurrency";
+            this.label_BalanceCurrency.Size = new System.Drawing.Size(123, 25);
+            this.label_BalanceCurrency.TabIndex = 109;
+            this.label_BalanceCurrency.Text = "asfdasdfasdf";
             // 
             // button1
             // 
@@ -197,7 +218,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(33, 47);
+            this.button1.Location = new System.Drawing.Point(33, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 38);
             this.button1.TabIndex = 108;
@@ -209,44 +230,44 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(28, 154);
+            this.label6.Location = new System.Drawing.Point(27, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 25);
+            this.label6.Size = new System.Drawing.Size(145, 20);
             this.label6.TabIndex = 20;
             this.label6.Text = "ACCOUNT BALANCE";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label17.Location = new System.Drawing.Point(28, 113);
+            this.label17.Location = new System.Drawing.Point(27, 127);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(188, 25);
+            this.label17.Size = new System.Drawing.Size(141, 20);
             this.label17.TabIndex = 20;
             this.label17.Text = "ACCOUNT NUMBER";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(28, 228);
+            this.label8.Location = new System.Drawing.Point(27, 255);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 25);
+            this.label8.Size = new System.Drawing.Size(47, 20);
             this.label8.TabIndex = 20;
             this.label8.Text = "LOAN";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(28, 190);
+            this.label7.Location = new System.Drawing.Point(27, 206);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 25);
+            this.label7.Size = new System.Drawing.Size(113, 20);
             this.label7.TabIndex = 21;
             this.label7.Text = "ACCOUNT TYPE";
             // 
@@ -255,7 +276,7 @@
             this.label_AccountBalance.AutoSize = true;
             this.label_AccountBalance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountBalance.ForeColor = System.Drawing.Color.Gray;
-            this.label_AccountBalance.Location = new System.Drawing.Point(327, 154);
+            this.label_AccountBalance.Location = new System.Drawing.Point(222, 143);
             this.label_AccountBalance.Name = "label_AccountBalance";
             this.label_AccountBalance.Size = new System.Drawing.Size(159, 25);
             this.label_AccountBalance.TabIndex = 23;
@@ -266,7 +287,7 @@
             this.label_AccountNumber.AutoSize = true;
             this.label_AccountNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountNumber.ForeColor = System.Drawing.Color.Gray;
-            this.label_AccountNumber.Location = new System.Drawing.Point(327, 113);
+            this.label_AccountNumber.Location = new System.Drawing.Point(221, 100);
             this.label_AccountNumber.Name = "label_AccountNumber";
             this.label_AccountNumber.Size = new System.Drawing.Size(165, 25);
             this.label_AccountNumber.TabIndex = 23;
@@ -277,17 +298,18 @@
             this.label_Currency.AutoSize = true;
             this.label_Currency.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Currency.ForeColor = System.Drawing.Color.Gray;
-            this.label_Currency.Location = new System.Drawing.Point(336, 261);
+            this.label_Currency.Location = new System.Drawing.Point(400, 231);
             this.label_Currency.Name = "label_Currency";
-            this.label_Currency.Size = new System.Drawing.Size(0, 25);
+            this.label_Currency.Size = new System.Drawing.Size(123, 25);
             this.label_Currency.TabIndex = 22;
+            this.label_Currency.Text = "asdfasdfasdf";
             // 
             // label_AccountLoan
             // 
             this.label_AccountLoan.AutoSize = true;
             this.label_AccountLoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountLoan.ForeColor = System.Drawing.Color.Gray;
-            this.label_AccountLoan.Location = new System.Drawing.Point(327, 228);
+            this.label_AccountLoan.Location = new System.Drawing.Point(220, 232);
             this.label_AccountLoan.Name = "label_AccountLoan";
             this.label_AccountLoan.Size = new System.Drawing.Size(56, 25);
             this.label_AccountLoan.TabIndex = 22;
@@ -298,7 +320,7 @@
             this.label_AccountType.AutoSize = true;
             this.label_AccountType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountType.ForeColor = System.Drawing.Color.Gray;
-            this.label_AccountType.Location = new System.Drawing.Point(327, 190);
+            this.label_AccountType.Location = new System.Drawing.Point(221, 180);
             this.label_AccountType.Name = "label_AccountType";
             this.label_AccountType.Size = new System.Drawing.Size(133, 25);
             this.label_AccountType.TabIndex = 26;
@@ -307,29 +329,12 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(35, 100);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 100);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(167, 178);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 107;
             this.pictureBox2.TabStop = false;
-            // 
-            // button_Account_management
-            // 
-            this.button_Account_management.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button_Account_management.FlatAppearance.BorderSize = 0;
-            this.button_Account_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Account_management.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Account_management.ForeColor = System.Drawing.Color.White;
-            this.button_Account_management.Image = ((System.Drawing.Image)(resources.GetObject("button_Account_management.Image")));
-            this.button_Account_management.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Account_management.Location = new System.Drawing.Point(621, 591);
-            this.button_Account_management.Name = "button_Account_management";
-            this.button_Account_management.Size = new System.Drawing.Size(35, 38);
-            this.button_Account_management.TabIndex = 103;
-            this.button_Account_management.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Account_management.UseVisualStyleBackColor = false;
-            this.button_Account_management.Click += new System.EventHandler(this.button_Account_management_Click);
             // 
             // label_Nationality
             // 
@@ -466,6 +471,47 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Location = new System.Drawing.Point(29, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(574, 3);
+            this.panel2.TabIndex = 110;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Location = new System.Drawing.Point(29, 165);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(574, 3);
+            this.panel3.TabIndex = 111;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(606, 3);
+            this.panel5.TabIndex = 111;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel6.Location = new System.Drawing.Point(29, 204);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(574, 3);
+            this.panel6.TabIndex = 112;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel7.Location = new System.Drawing.Point(29, 254);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(574, 3);
+            this.panel7.TabIndex = 113;
+            // 
             // AccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +536,7 @@
             this.panel14.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -520,12 +567,17 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;
-        private System.Windows.Forms.Button button_Account_management;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label_AccountNumber;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label_Currency;
+        private System.Windows.Forms.Label label_BalanceCurrency;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
     }
 }

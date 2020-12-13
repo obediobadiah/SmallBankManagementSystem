@@ -117,58 +117,68 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         public void Saved()
         {
-            try
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_ApplicantIdentifier.Text + "'", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
             {
-                conn.Open();
-                SqlCommand cmd1 = new SqlCommand("INSERT into APPLICANT_DETAILS values (@Identifier,@First_Name,@Second_Name,@Gender,@Date_of_Birth,@Place_of_Birth,@Nationality,@Merital_Status,@Name_of_Spouse,@Proffesion,@Mobile_Number_Code,@Mobile_Number,@IDCard_Number,@Consideration,@Country_Name,@Province,@Town,@Township,@Quarter,@Avenue,@House_Number,@Picture)", conn);
-
-                cmd1.Parameters.AddWithValue("@Identifier", txt_ApplicantIdentifier.Text);
-                cmd1.Parameters.AddWithValue("@First_Name", txt_ApplicantFirstName.Text);
-                cmd1.Parameters.AddWithValue("@Second_Name", txt_ApplicantSecondName.Text);
-
-                String gender = string.Empty;
-
-                if (rb_ApplicantMale.Checked)
+                try
                 {
-                    gender = "Male";
-                }
-                else if (rb_ApplicantFemale.Checked)
-                {
-                    gender = "Female";
-                }
-                cmd1.Parameters.AddWithValue("@Gender", gender);
-                cmd1.Parameters.AddWithValue("@Date_of_Birth", date_ApplicantBirth.Value.Date.ToShortDateString());
-                cmd1.Parameters.AddWithValue("@Place_of_Birth", txt_ApplicantPlaceOfBirth.Text);
-                cmd1.Parameters.AddWithValue("@Nationality", cb_ApplicantNationality.SelectedItem);
-                cmd1.Parameters.AddWithValue("@Merital_Status", cb_ApplicantMeritalStatus.SelectedItem);
-                cmd1.Parameters.AddWithValue("@Name_of_Spouse", txt_ApplicantNameOfSpouse.Text);
-                cmd1.Parameters.AddWithValue("@Proffesion", txt_ApplicantProffesional.Text);
-                cmd1.Parameters.AddWithValue("@Mobile_Number_Code", cb_Applicantcode.SelectedItem);
-                cmd1.Parameters.AddWithValue("@Mobile_Number", txt_ApplicantMobileNumber.Text);
-                cmd1.Parameters.AddWithValue("@IDCard_Number", txt_ApplicantIdCard.Text);
-                cmd1.Parameters.AddWithValue("@Consideration", txt_ApplicantConsideration.Text);
-                cmd1.Parameters.AddWithValue("@Country_Name", txt_ApplicantCountryName.Text);
-                cmd1.Parameters.AddWithValue("@Province", txt_ApplicantProvince.Text);
-                cmd1.Parameters.AddWithValue("@Town", txt_ApplicantTown.Text);
-                cmd1.Parameters.AddWithValue("@Township", txt_ApplicantTownship.Text);
-                cmd1.Parameters.AddWithValue("@Quarter", txt_ApplicantQuarter.Text);
-                cmd1.Parameters.AddWithValue("@Avenue", txt_ApplicantAvenue.Text);
-                cmd1.Parameters.AddWithValue("@House_Number", txt_ApplicantHouseNumber.Text);
-                cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
+                    SqlCommand cmd1 = new SqlCommand("INSERT into APPLICANT_DETAILS values (@Identifier,@First_Name,@Second_Name,@Gender,@Date_of_Birth,@Place_of_Birth,@Nationality,@Merital_Status,@Name_of_Spouse,@Proffesion,@Mobile_Number_Code,@Mobile_Number,@IDCard_Number,@Consideration,@Country_Name,@Province,@Town,@Township,@Quarter,@Avenue,@House_Number,@Picture)", conn);
 
-                int i;
-                i = cmd1.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    MessageBox.Show("Applicants details saved successfully, Pass to the next level!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                conn.Close();
+                    cmd1.Parameters.AddWithValue("@Identifier", txt_ApplicantIdentifier.Text);
+                    cmd1.Parameters.AddWithValue("@First_Name", txt_ApplicantFirstName.Text);
+                    cmd1.Parameters.AddWithValue("@Second_Name", txt_ApplicantSecondName.Text);
 
+                    String gender = string.Empty;
+
+                    if (rb_ApplicantMale.Checked)
+                    {
+                        gender = "Male";
+                    }
+                    else if (rb_ApplicantFemale.Checked)
+                    {
+                        gender = "Female";
+                    }
+                    cmd1.Parameters.AddWithValue("@Gender", gender);
+                    cmd1.Parameters.AddWithValue("@Date_of_Birth", date_ApplicantBirth.Value.Date.ToShortDateString());
+                    cmd1.Parameters.AddWithValue("@Place_of_Birth", txt_ApplicantPlaceOfBirth.Text);
+                    cmd1.Parameters.AddWithValue("@Nationality", cb_ApplicantNationality.SelectedItem);
+                    cmd1.Parameters.AddWithValue("@Merital_Status", cb_ApplicantMeritalStatus.SelectedItem);
+                    cmd1.Parameters.AddWithValue("@Name_of_Spouse", txt_ApplicantNameOfSpouse.Text);
+                    cmd1.Parameters.AddWithValue("@Proffesion", txt_ApplicantProffesional.Text);
+                    cmd1.Parameters.AddWithValue("@Mobile_Number_Code", cb_Applicantcode.SelectedItem);
+                    cmd1.Parameters.AddWithValue("@Mobile_Number", txt_ApplicantMobileNumber.Text);
+                    cmd1.Parameters.AddWithValue("@IDCard_Number", txt_ApplicantIdCard.Text);
+                    cmd1.Parameters.AddWithValue("@Consideration", txt_ApplicantConsideration.Text);
+                    cmd1.Parameters.AddWithValue("@Country_Name", txt_ApplicantCountryName.Text);
+                    cmd1.Parameters.AddWithValue("@Province", txt_ApplicantProvince.Text);
+                    cmd1.Parameters.AddWithValue("@Town", txt_ApplicantTown.Text);
+                    cmd1.Parameters.AddWithValue("@Township", txt_ApplicantTownship.Text);
+                    cmd1.Parameters.AddWithValue("@Quarter", txt_ApplicantQuarter.Text);
+                    cmd1.Parameters.AddWithValue("@Avenue", txt_ApplicantAvenue.Text);
+                    cmd1.Parameters.AddWithValue("@House_Number", txt_ApplicantHouseNumber.Text);
+                    cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
+
+                    int i;
+                    i = cmd1.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Applicants details saved successfully, Pass to the next level!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("The entered Identifier name doesn't Personal details", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            conn.Close();
         }
         private void cb_Identifier_SelectedIndexChanged(object sender, EventArgs e)
         {

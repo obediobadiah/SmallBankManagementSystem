@@ -215,6 +215,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("With what you wanna search??", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
         }
 
         private void button_deposit_clear_Click(object sender, EventArgs e)

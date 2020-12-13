@@ -130,6 +130,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("With what you wanna search??", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
         }
 
         private void button_edit_deposit_Click(object sender, EventArgs e)
