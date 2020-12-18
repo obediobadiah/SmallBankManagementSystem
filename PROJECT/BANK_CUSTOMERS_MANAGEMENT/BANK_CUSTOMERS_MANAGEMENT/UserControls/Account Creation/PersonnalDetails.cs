@@ -87,6 +87,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 txt_NameOfSpouse.Text = "--";
             }
+            else if (cb_MeritalStatus.SelectedItem == "Married")
+            {
+                txt_NameOfSpouse.Text = "";
+            }
         }
 
         private void cb_ApplicantReq_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,6 +110,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         private void button_save_acc_cr_Click(object sender, EventArgs e)
         {
+            try
+            {
             SqlCommand cmd = new SqlCommand("SELECT First_Name FROM PERSONAL_DETAILS WHERE First_Name = '" + txt_FirstName.Text + "'", conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -171,6 +177,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         MessageBox.Show(ex.ToString());
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

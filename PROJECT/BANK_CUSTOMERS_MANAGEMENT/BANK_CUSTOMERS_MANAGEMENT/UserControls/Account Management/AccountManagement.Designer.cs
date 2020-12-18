@@ -38,6 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label_BalanceCurrency = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,19 +67,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.bunifuCards2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel14.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,6 +197,47 @@
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Details";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel7.Location = new System.Drawing.Point(29, 254);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(574, 3);
+            this.panel7.TabIndex = 113;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel6.Location = new System.Drawing.Point(29, 204);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(574, 3);
+            this.panel6.TabIndex = 112;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Location = new System.Drawing.Point(29, 165);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(574, 3);
+            this.panel3.TabIndex = 111;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(606, 3);
+            this.panel5.TabIndex = 111;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Location = new System.Drawing.Point(29, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(574, 3);
+            this.panel2.TabIndex = 110;
             // 
             // label_BalanceCurrency
             // 
@@ -471,47 +512,6 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel2.Location = new System.Drawing.Point(29, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(574, 3);
-            this.panel2.TabIndex = 110;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(29, 165);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(574, 3);
-            this.panel3.TabIndex = 111;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(606, 3);
-            this.panel5.TabIndex = 111;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel6.Location = new System.Drawing.Point(29, 204);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(574, 3);
-            this.panel6.TabIndex = 112;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel7.Location = new System.Drawing.Point(29, 254);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(574, 3);
-            this.panel7.TabIndex = 113;
-            // 
             // AccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,12 +531,12 @@
             this.bunifuCards2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

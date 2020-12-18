@@ -31,46 +31,54 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
+            try
             {
-                if(txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == " " || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Make sure you complete all required fields");
+                    if(txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == " " || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
+                    {
+                        MessageBox.Show("Make sure you complete all required fields");
+                    }
+                    else
+                    {
+                        SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANSACTION (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
+
+                        cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
+                        cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
+                        cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
+                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
+                        cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
+                        cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
+                        cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
+
+                        int i;
+                        i = cmd1.ExecuteNonQuery();
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Deposit transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        Display();
+                    }
+
                 }
                 else
                 {
-                    SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANSACTION (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
-
-                    cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
-                    cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
-                    cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                    cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                    cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
-                    cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
-                    cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
-
-                    int i;
-                    i = cmd1.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Deposit transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    Display();
+                    MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
                 }
-
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
+                MessageBox.Show(ex.ToString());
             }
-            conn.Close();
+
 
             //CommunicationsSender CommSend = new CommunicationsSender();
             //CommSend.ShowDialog();
@@ -82,11 +90,19 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void Display()
         {
-            string qry = "SELECT * FROM DEPOSIT_TRANSACTION";
-            SqlDataAdapter sda = new SqlDataAdapter(qry, conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            bunifuCustomDataGrid1.DataSource = dt;
+            try
+            {
+                string qry = "SELECT * FROM DEPOSIT_TRANSACTION";
+                SqlDataAdapter sda = new SqlDataAdapter(qry, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                bunifuCustomDataGrid1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -109,47 +125,55 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button_edit_deposit_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
+            try
             {
-                if (txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == " " || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Make sure you complete all required fields");
+                    if (txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == " " || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
+                    {
+                        MessageBox.Show("Make sure you complete all required fields");
+                    }
+                    else
+                    {
+                        SqlCommand cmd1 = new SqlCommand("UPDATE DEPOSIT_TRANSACTION SET Account_Name = @Account_Name,Account_Number = @Account_Number,Deposer_Name = @Deposer_Name,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
+
+                        cmd1.Parameters.AddWithValue("@ID_Number",ID_NumberLabel.Text);
+                        cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
+                        cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
+                        cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
+                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
+                        cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
+                        cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
+                        cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
+
+                        int i;
+                        i = cmd1.ExecuteNonQuery();
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Deposit transaction details updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        Display();
+                    }
+
                 }
                 else
                 {
-                    SqlCommand cmd1 = new SqlCommand("UPDATE DEPOSIT_TRANSACTION SET Account_Name = @Account_Name,Account_Number = @Account_Number,Deposer_Name = @Deposer_Name,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
-
-                    cmd1.Parameters.AddWithValue("@ID_Number",ID_NumberLabel.Text);
-                    cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
-                    cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
-                    cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                    cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                    cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
-                    cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
-                    cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
-
-                    int i;
-                    i = cmd1.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Deposit transaction details updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    Display();
+                    MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
                 }
-
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
+                MessageBox.Show(ex.ToString());
             }
-            conn.Close();
+
 
         }
 

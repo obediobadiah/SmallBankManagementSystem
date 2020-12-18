@@ -75,9 +75,6 @@
             this.txt_PersonnalMobileNumber = new System.Windows.Forms.TextBox();
             this.txt_PersonnalSecondName = new System.Windows.Forms.TextBox();
             this.txt_PersonnalPlaceOfBirth = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.txt_PersonnalIDNumber = new System.Windows.Forms.TextBox();
             this.rb_PersonalFemale = new System.Windows.Forms.RadioButton();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -102,6 +99,7 @@
             this.txt_PersonalHouseNumber = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label_IDNumber = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -289,6 +287,7 @@
             this.cb_PersonnalMeritalStatus.Size = new System.Drawing.Size(348, 28);
             this.cb_PersonnalMeritalStatus.TabIndex = 91;
             this.cb_PersonnalMeritalStatus.Text = "--Select--";
+            this.cb_PersonnalMeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_PersonnalMeritalStatus_SelectedIndexChanged);
             // 
             // cb_PersonnalNationality
             // 
@@ -591,34 +590,6 @@
             this.txt_PersonnalPlaceOfBirth.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalPlaceOfBirth.TabIndex = 75;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(520, 70);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 20);
-            this.label13.TabIndex = 93;
-            this.label13.Text = "ID Number";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Black;
-            this.panel16.Location = new System.Drawing.Point(636, 83);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(348, 2);
-            this.panel16.TabIndex = 95;
-            // 
-            // txt_PersonnalIDNumber
-            // 
-            this.txt_PersonnalIDNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_PersonnalIDNumber.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PersonnalIDNumber.Location = new System.Drawing.Point(636, 62);
-            this.txt_PersonnalIDNumber.Name = "txt_PersonnalIDNumber";
-            this.txt_PersonnalIDNumber.Size = new System.Drawing.Size(348, 19);
-            this.txt_PersonnalIDNumber.TabIndex = 94;
-            // 
             // rb_PersonalFemale
             // 
             this.rb_PersonalFemale.AutoSize = true;
@@ -855,11 +826,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label_IDNumber
+            // 
+            this.label_IDNumber.AutoSize = true;
+            this.label_IDNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_IDNumber.Location = new System.Drawing.Point(634, 57);
+            this.label_IDNumber.Name = "label_IDNumber";
+            this.label_IDNumber.Size = new System.Drawing.Size(0, 24);
+            this.label_IDNumber.TabIndex = 188;
+            this.label_IDNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PersonnalDetailsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label_IDNumber);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel17);
@@ -883,9 +865,6 @@
             this.Controls.Add(this.txt_PersonnalProvince);
             this.Controls.Add(this.txt_PersonnalQuarter);
             this.Controls.Add(this.txt_PersonalHouseNumber);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.txt_PersonnalIDNumber);
             this.Controls.Add(this.cb_Personnalcode);
             this.Controls.Add(this.cb_PersonnalMeritalStatus);
             this.Controls.Add(this.cb_PersonnalNationality);
@@ -984,9 +963,6 @@
         private System.Windows.Forms.TextBox txt_PersonnalMobileNumber;
         private System.Windows.Forms.TextBox txt_PersonnalSecondName;
         private System.Windows.Forms.TextBox txt_PersonnalPlaceOfBirth;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox txt_PersonnalIDNumber;
         private System.Windows.Forms.RadioButton rb_PersonalFemale;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel19;
@@ -1012,5 +988,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_IDNumber;
     }
 }

@@ -32,7 +32,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             if (txt_PersonnalFirstName.Text == "" || txt_PersonnalSecondName.Text == "" || date_PersonnalBirth.Text == "" || txt_PersonnalPlaceOfBirth.Text == "" || cb_PersonnalNationality.Text == "" || cb_PersonnalMeritalStatus.Text == "" || txt_PersonnalNameOfSpouse.Text == "" || txt_PersonnalProffesional.Text == "" || cb_Personnalcode.Text == "" || txt_PersonnalMobileNumber.Text == "" || txt_PersonnalCountryName.Text == "" || txt_PersonnalProvince.Text == "" || txt_PersonnalTown.Text == "" || txt_PersonnalTownship.Text == "" || txt_PersonnalQuarter.Text == "" || txt_PersonnalAvenue.Text == "" || txt_PersonalHouseNumber.Text == "")
             {
-                MessageBox.Show("You cannot end the procees without filling all required fields", "INFORMATION");
+                MessageBox.Show("You cannot edit customer personal details without filling all required fields", "INFORMATION");
             }
             else
             {
@@ -41,7 +41,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     conn.Open();
                     SqlCommand cmd1 = new SqlCommand("UPDATE PERSONAL_DETAILS SET  First_Name = @First_Name, Second_Name = @Second_Name,Gender = @Gender,Date_of_Birth = @Date_of_Birth,Place_of_Birth = @Place_of_Birth,Nationality = @Nationality,Merital_Status = @Merital_Status,Name_of_Spouse = @Name_of_Spouse,Proffesion = @Proffesion,Mobile_Number_Code = @Mobile_Number_Code,Mobile_Number = @Mobile_Number,IDCard_Number = @IDCard_Number,Country_Name = @Country_Name,Province = @Province,Town = @Town,Township = @Township,Quarter = @Quarter,Avenue = @Avenue,House_Number = @House_Number,Picture = @Picture WHERE ID_Number = @ID_Number", conn);
 
-                    cmd1.Parameters.AddWithValue("@ID_Number", txt_PersonnalIDNumber.Text);
+                    cmd1.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
                     cmd1.Parameters.AddWithValue("@First_Name", txt_PersonnalFirstName.Text);
                     cmd1.Parameters.AddWithValue("@Second_Name", txt_PersonnalSecondName.Text);
 
@@ -97,11 +97,19 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void Display()
         {
-            string qry = "SELECT * FROM PERSONAL_DETAILS";
-            SqlDataAdapter sda = new SqlDataAdapter(qry, conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            bunifuCustomDataGrid1.DataSource = dt;
+            try
+            {
+                string qry = "SELECT * FROM PERSONAL_DETAILS";
+                SqlDataAdapter sda = new SqlDataAdapter(qry, conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                bunifuCustomDataGrid1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         private void PersonnalDetailsManagement_Load(object sender, EventArgs e)
         {
@@ -110,26 +118,23 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dvg = new DataGridView();
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.bunifuCustomDataGrid1.Rows[e.RowIndex];
 
-                txt_PersonnalIDNumber.Text = row.Cells["ID_Number"].Value.ToString();
+                label_IDNumber.Text = row.Cells["ID_Number"].Value.ToString();
                 txt_PersonnalFirstName.Text = row.Cells["First_Name"].Value.ToString();
                 txt_PersonnalSecondName.Text = row.Cells["Second_Name"].Value.ToString();
 
 
-                if (row.Cells[4].Value == "Male")
-                {
+                if (row.Cells["Gender"].Value.Equals("Male"))
                     rb_PersonalMale.Checked = true;
-                }
                 else
                     rb_PersonalMale.Checked = false;
 
-                if (row.Cells[4].Value == "Female")
-                {
+                if (row.Cells["Gender"].Value.Equals("Female"))
                     rb_PersonalFemale.Checked = true;
-                }
                 else
                     rb_PersonalFemale.Checked = false;
 
@@ -156,30 +161,46 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         public void PictureView()
         {
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM PERSONAL_DETAILS where First_Name = '" + txt_PersonnalFirstName.Text + "'", conn);
-            SqlDataReader da1 = cmd2.ExecuteReader();
-            da1.Read();
-
-            if (da1.HasRows)
+            try
             {
-                byte[] image = (byte[])da1["Picture"];
-                if (image == null)
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM PERSONAL_DETAILS where First_Name = '" + txt_PersonnalFirstName.Text + "'", conn);
+                SqlDataReader da1 = cmd2.ExecuteReader();
+                da1.Read();
+
+                if (da1.HasRows)
                 {
-                    pictureBox1.Image = null;
+                    byte[] image = (byte[])da1["Picture"];
+                    if (image == null)
+                    {
+                        pictureBox1.Image = null;
+                    }
+                    else
+                    {
+                        MemoryStream stem = new MemoryStream(image);
+                        pictureBox1.Image = Image.FromStream(stem);
+                    }     
                 }
-                else
-                {
-                    MemoryStream stem = new MemoryStream(image);
-                    pictureBox1.Image = Image.FromStream(stem);
-                }     
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PictureView();
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "jpg|*.jpg|jpeg|*.jpeg|bmp|*.bmp|png|*.png|all files|*.*";
+            DialogResult res = open.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                imgLocation = open.FileName.ToString();
+                pictureBox1.ImageLocation = imgLocation;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -230,7 +251,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     conn.Open();
                     SqlCommand cmd1 = new SqlCommand("DELETE FROM PERSONAL_DETAILS WHERE ID_Number = @ID_Number", conn);
 
-                    cmd1.Parameters.AddWithValue("@ID_Number", txt_PersonnalIDNumber.Text);
+                    cmd1.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
 
                     int i;
                     i = cmd1.ExecuteNonQuery();
@@ -240,7 +261,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     Display();
                     conn.Close();
-
                 }
                 catch (Exception ex)
                 {
@@ -250,6 +270,18 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             else
             {
 
+            }
+        }
+
+        private void cb_PersonnalMeritalStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_PersonnalMeritalStatus.SelectedItem == "Unmarried")
+            {
+                txt_PersonnalNameOfSpouse.Text = "--";
+            }
+            else if (cb_PersonnalMeritalStatus.SelectedItem == "Married")
+            {
+                txt_PersonnalNameOfSpouse.Text = "";
             }
         }
     }

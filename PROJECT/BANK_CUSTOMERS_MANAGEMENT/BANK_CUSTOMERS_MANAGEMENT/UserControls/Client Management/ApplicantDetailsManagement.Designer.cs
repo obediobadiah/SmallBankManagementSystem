@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicantDetailsManagement));
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -52,9 +52,7 @@
             this.txt_ApplicantProvince = new System.Windows.Forms.TextBox();
             this.txt_ApplicantQuarter = new System.Windows.Forms.TextBox();
             this.txt_ApplicantHouseNumber = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.txt_ApplicantIDNumber = new System.Windows.Forms.TextBox();
+            this.label_IDNumber = new System.Windows.Forms.Label();
             this.cb_Applicantcode = new System.Windows.Forms.ComboBox();
             this.cb_ApplicantMeritalStatus = new System.Windows.Forms.ComboBox();
             this.cb_ApplicantNationality = new System.Windows.Forms.ComboBox();
@@ -72,16 +70,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.Second_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Of_Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Merital_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_ApplicantConsideration = new System.Windows.Forms.TextBox();
@@ -89,20 +82,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_ApplicantNameOfSpouse = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Name_Of_Space = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Place_Of_Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txt_ApplicantProffesional = new System.Windows.Forms.TextBox();
             this.txt_ApplicantFirstName = new System.Windows.Forms.TextBox();
             this.txt_ApplicantMobileNumber = new System.Windows.Forms.TextBox();
             this.txt_ApplicantSecondName = new System.Windows.Forms.TextBox();
-            this.Proffessional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Mobile_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Card_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_ApplicantPlaceOfBirth = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -322,33 +308,15 @@
             this.txt_ApplicantHouseNumber.Size = new System.Drawing.Size(346, 17);
             this.txt_ApplicantHouseNumber.TabIndex = 175;
             // 
-            // label13
+            // label_IDNumber
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(511, 70);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 18);
-            this.label13.TabIndex = 160;
-            this.label13.Text = "ID Number";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Black;
-            this.panel16.Location = new System.Drawing.Point(627, 83);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(350, 2);
-            this.panel16.TabIndex = 162;
-            // 
-            // txt_ApplicantIDNumber
-            // 
-            this.txt_ApplicantIDNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ApplicantIDNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ApplicantIDNumber.Location = new System.Drawing.Point(627, 62);
-            this.txt_ApplicantIDNumber.Name = "txt_ApplicantIDNumber";
-            this.txt_ApplicantIDNumber.Size = new System.Drawing.Size(350, 17);
-            this.txt_ApplicantIDNumber.TabIndex = 161;
+            this.label_IDNumber.AutoSize = true;
+            this.label_IDNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_IDNumber.Location = new System.Drawing.Point(622, 26);
+            this.label_IDNumber.Name = "label_IDNumber";
+            this.label_IDNumber.Size = new System.Drawing.Size(0, 24);
+            this.label_IDNumber.TabIndex = 160;
+            this.label_IDNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cb_Applicantcode
             // 
@@ -376,6 +344,7 @@
             this.cb_ApplicantMeritalStatus.Size = new System.Drawing.Size(349, 26);
             this.cb_ApplicantMeritalStatus.TabIndex = 158;
             this.cb_ApplicantMeritalStatus.Text = "--Select--";
+            this.cb_ApplicantMeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_ApplicantMeritalStatus_SelectedIndexChanged);
             // 
             // cb_ApplicantNationality
             // 
@@ -524,21 +493,6 @@
             this.label4.Text = "Gender";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Second_Name
-            // 
-            this.Second_Name.HeaderText = "Second Name";
-            this.Second_Name.Name = "Second_Name";
-            // 
-            // Date_Of_Birth
-            // 
-            this.Date_Of_Birth.HeaderText = "Date Of Birth";
-            this.Date_Of_Birth.Name = "Date_Of_Birth";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.Black;
@@ -587,16 +541,6 @@
             this.label9.TabIndex = 130;
             this.label9.Text = "Merital Status";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Nationality
-            // 
-            this.Nationality.HeaderText = "Nationality";
-            this.Nationality.Name = "Nationality";
-            // 
-            // Merital_Status
-            // 
-            this.Merital_Status.HeaderText = "Merital Status";
-            this.Merital_Status.Name = "Merital_Status";
             // 
             // panel15
             // 
@@ -666,21 +610,6 @@
             this.label6.Text = "Place of Birth";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Name_Of_Space
-            // 
-            this.Name_Of_Space.HeaderText = "Name Of Space";
-            this.Name_Of_Space.Name = "Name_Of_Space";
-            // 
-            // Place_Of_Birth
-            // 
-            this.Place_Of_Birth.HeaderText = "Place Of Birth";
-            this.Place_Of_Birth.Name = "Place_Of_Birth";
-            // 
-            // Code
-            // 
-            this.Code.HeaderText = "Code";
-            this.Code.Name = "Code";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -739,45 +668,22 @@
             this.txt_ApplicantSecondName.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantSecondName.TabIndex = 143;
             // 
-            // Proffessional
-            // 
-            this.Proffessional.HeaderText = "Proffessional";
-            this.Proffessional.Name = "Proffessional";
-            // 
-            // First_Name
-            // 
-            this.First_Name.HeaderText = "First Name";
-            this.First_Name.Name = "First_Name";
-            // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.First_Name,
-            this.Second_Name,
-            this.Gender,
-            this.Date_Of_Birth,
-            this.Place_Of_Birth,
-            this.Nationality,
-            this.Merital_Status,
-            this.Name_Of_Space,
-            this.Proffessional,
-            this.Code,
-            this.Mobile_Number,
-            this.ID_Card_Number});
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SteelBlue;
@@ -787,16 +693,7 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(457, 524);
             this.bunifuCustomDataGrid1.TabIndex = 119;
-            // 
-            // Mobile_Number
-            // 
-            this.Mobile_Number.HeaderText = "Mobile Number";
-            this.Mobile_Number.Name = "Mobile_Number";
-            // 
-            // ID_Card_Number
-            // 
-            this.ID_Card_Number.HeaderText = "ID Card Number";
-            this.ID_Card_Number.Name = "ID_Card_Number";
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // label12
             // 
@@ -860,6 +757,7 @@
             this.button_delete_deposit.TabIndex = 26;
             this.button_delete_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_delete_deposit.UseVisualStyleBackColor = false;
+            this.button_delete_deposit.Click += new System.EventHandler(this.button_delete_deposit_Click);
             // 
             // groupBox3
             // 
@@ -882,8 +780,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ID Number",
-            "Account Name",
-            "Date"});
+            "First Name"});
             this.comboBox1.Location = new System.Drawing.Point(21, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(409, 26);
@@ -928,7 +825,7 @@
             // 
             this.txt_ApplicantIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_ApplicantIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ApplicantIdentifier.Location = new System.Drawing.Point(626, 30);
+            this.txt_ApplicantIdentifier.Location = new System.Drawing.Point(625, 61);
             this.txt_ApplicantIdentifier.Name = "txt_ApplicantIdentifier";
             this.txt_ApplicantIdentifier.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantIdentifier.TabIndex = 192;
@@ -937,7 +834,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(529, 36);
+            this.label25.Location = new System.Drawing.Point(528, 67);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(72, 18);
             this.label25.TabIndex = 190;
@@ -947,7 +844,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(627, 50);
+            this.panel2.Location = new System.Drawing.Point(626, 81);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 2);
             this.panel2.TabIndex = 191;
@@ -987,6 +884,7 @@
             this.button1.Text = "Browser";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ApplicantDetailsManagement
             // 
@@ -1020,9 +918,7 @@
             this.Controls.Add(this.txt_ApplicantProvince);
             this.Controls.Add(this.txt_ApplicantQuarter);
             this.Controls.Add(this.txt_ApplicantHouseNumber);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.txt_ApplicantIDNumber);
+            this.Controls.Add(this.label_IDNumber);
             this.Controls.Add(this.cb_Applicantcode);
             this.Controls.Add(this.cb_ApplicantMeritalStatus);
             this.Controls.Add(this.cb_ApplicantNationality);
@@ -1065,6 +961,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ApplicantDetailsManagement";
             this.Size = new System.Drawing.Size(1152, 723);
+            this.Load += new System.EventHandler(this.ApplicantDetailsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1098,9 +995,7 @@
         private System.Windows.Forms.TextBox txt_ApplicantProvince;
         private System.Windows.Forms.TextBox txt_ApplicantQuarter;
         private System.Windows.Forms.TextBox txt_ApplicantHouseNumber;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox txt_ApplicantIDNumber;
+        private System.Windows.Forms.Label label_IDNumber;
         private System.Windows.Forms.ComboBox cb_Applicantcode;
         private System.Windows.Forms.ComboBox cb_ApplicantMeritalStatus;
         private System.Windows.Forms.ComboBox cb_ApplicantNationality;
@@ -1118,16 +1013,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Second_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date_Of_Birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nationality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Merital_Status;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_ApplicantConsideration;
@@ -1135,20 +1025,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_ApplicantNameOfSpouse;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name_Of_Space;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Place_Of_Birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txt_ApplicantProffesional;
         private System.Windows.Forms.TextBox txt_ApplicantFirstName;
         private System.Windows.Forms.TextBox txt_ApplicantMobileNumber;
         private System.Windows.Forms.TextBox txt_ApplicantSecondName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proffessional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Card_Number;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_ApplicantPlaceOfBirth;
         private System.Windows.Forms.GroupBox groupBox4;

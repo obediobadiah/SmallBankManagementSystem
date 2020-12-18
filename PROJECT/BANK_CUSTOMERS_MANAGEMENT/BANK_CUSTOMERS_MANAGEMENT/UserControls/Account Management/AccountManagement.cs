@@ -50,96 +50,134 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void AccountNumber()
         {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
-            {
-                label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
-            }
-            conn.Close();
         }
         public void AccountType()
         {
-
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT Bank_Account_Type FROM BANK_ACCOUNT_DETAILS where Identifier = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
+            try
             {
-                label_AccountType.Text = dt1.Rows[0]["Bank_Account_Type"].ToString();
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Bank_Account_Type FROM BANK_ACCOUNT_DETAILS where Identifier = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_AccountType.Text = dt1.Rows[0]["Bank_Account_Type"].ToString();
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void LoanAmount()
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION WHERE Borrower = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
+            try
             {
-                LoanDisplay();
-                LoanCurrencyDisplay();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION WHERE Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
+                    LoanDisplay();
+                    LoanCurrencyDisplay();
+                }
+                else
+                {
+                    label_AccountLoan.Text = "-----";
+                    label_Currency.Text = "";
+                }
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                label_AccountLoan.Text = "-----";
-                label_Currency.Text = "";
+                MessageBox.Show(ex.ToString());
             }
-            conn.Close();
+
 
         }
 
         public void PictureView()
         {
-            conn.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM PERSONAL_DETAILS where First_Name = '" + label_FirstName.Text + "'", conn);
-                SqlDataReader da1 = cmd2.ExecuteReader();
-            da1.Read();
+            try
+            {
+                conn.Open();
+                    SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM PERSONAL_DETAILS where First_Name = '" + label_FirstName.Text + "'", conn);
+                    SqlDataReader da1 = cmd2.ExecuteReader();
+                    da1.Read();
                 
-                if (da1.HasRows)
-                {
-                    byte[] image =(byte [])da1["Picture"];
-                    if (image == null)
+                    if (da1.HasRows)
                     {
-                        pictureBox2.Image = null;
+                        byte[] image =(byte [])da1["Picture"];
+                        if (image == null)
+                        {
+                            pictureBox2.Image = null;
+                        }
+                        else
+                        {
+                        MemoryStream stem = new MemoryStream(image);
+                        pictureBox2.Image = Image.FromStream(stem);
+                        }
+                    conn.Close();
                     }
-                    else
-                    {
-                    MemoryStream stem = new MemoryStream(image);
-                    pictureBox2.Image = Image.FromStream(stem);
-                    }
-                conn.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void AccountBalance()
         {
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
+            try
             {
-                label_AccountBalance.Text = dt1.Rows[0]["AmountSum"].ToString();
-                BalanceCurrencyDisplay();
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_AccountBalance.Text = dt1.Rows[0]["AmountSum"].ToString();
+                    BalanceCurrencyDisplay();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                MessageBox.Show(ex.ToString());
             }
-            conn.Close();
+
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -158,7 +196,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         private void button3_Click(object sender, EventArgs e)
         {
-                try
+            try
                 {
                     SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name = '" + txt_Search.Text + "'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -179,36 +217,60 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void LoanDisplay()
         {
-            SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
+            try
             {
-                label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
+                SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void LoanCurrencyDisplay()
         {
-            SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
+            try
             {
-                label_Currency.Text = dt1.Rows[0]["Currency"].ToString();
+                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_Currency.Text = dt1.Rows[0]["Currency"].ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void BalanceCurrencyDisplay()
         {
-            SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM DEPOSIT_TRANSACTION where Account_Name = '" + label_FirstName.Text + "'", conn);
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            if (dt1.Rows.Count > 0)
+            try
             {
-                label_BalanceCurrency.Text = dt1.Rows[0]["Currency"].ToString();
+                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM DEPOSIT_TRANSACTION where Account_Name = '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    label_BalanceCurrency.Text = dt1.Rows[0]["Currency"].ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
