@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace BANK_CUSTOMERS_MANAGEMENT
 {
@@ -26,6 +30,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
             Form1.instance.pane3.Controls["Home"].BringToFront();
         }
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
         Repports user = new Repports();
         ClientManagementMenu ClientManagementMenu = new ClientManagementMenu();
@@ -224,12 +229,49 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            showPicture();
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             label3.Text = DateTime.Now.ToLongTimeString();
             label4.Text = DateTime.Now.ToLongDateString();
+        }
+
+        public void showPicture()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM ADMINISTRATOR_DETAILS where First_Name = '" + label_AdminName.Text + "'", conn);
+                SqlDataReader da1 = cmd2.ExecuteReader();
+                da1.Read();
+
+                if (da1.HasRows)
+                {
+                    byte[] image = (byte[])da1["Picture"];
+                    if (image == null)
+                    {
+                        roundedPictureViewer1.Image = null;
+                    }
+                    else
+                    {
+                        MemoryStream stem = new MemoryStream(image);
+                        roundedPictureViewer1.Image = Image.FromStream(stem);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void roundedPictureViewer1_Click(object sender, EventArgs e)
+        {
+            AdministratorCreaation obj = new AdministratorCreaation();
+            obj.Show();
         }
     }
 }

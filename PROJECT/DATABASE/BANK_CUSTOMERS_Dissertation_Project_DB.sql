@@ -55,7 +55,6 @@ Picture IMAGE
 
 
 
-
 --BANK_ACCOUNT_DETAILS Table--
 CREATE TABLE BANK_ACCOUNT_DETAILS (
 ID_Number INT PRIMARY KEY IDENTITY(202002300,1),
@@ -80,6 +79,7 @@ Amount_In_Words VARCHAR(100),
 Currency VARCHAR(50),
 Narration VARCHAR(100),
 );
+
 
 
 --WITHDRAWAL_TRANSACTION Table--
@@ -130,6 +130,7 @@ Transaction_Time NVARCHAR(50)
 CREATE TABLE ADMINISTRATOR_DETAILS (
 ID_Number INT PRIMARY KEY IDENTITY(1,1),
 First_Name VARCHAR(50),
+Second_Name VARCHAR(50),
 Fonction VARCHAR(50),
 Gender VARCHAR(15),
 Date_of_Birth NVARCHAR(50),
@@ -137,10 +138,7 @@ Nationality VARCHAR(50),
 E_mail NVARCHAR(50),
 User_Name VARCHAR(50),
 Password NVARCHAR(50),
-Mail NVARCHAR(50),
-UserName VARCHAR(50),
-Pass_Word NVARCHAR(50),
-Email NVARCHAR(50),
+Picture IMAGE
 );
 
 

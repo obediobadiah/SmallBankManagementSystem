@@ -34,9 +34,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_AdminName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -49,11 +48,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.roundedPictureViewer1 = new BANK_CUSTOMERS_MANAGEMENT.RoundedPictureViewer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureViewer1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_rapports
@@ -94,9 +94,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.roundedPictureViewer1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_AdminName);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button5);
@@ -110,38 +110,27 @@
             this.panel1.Size = new System.Drawing.Size(218, 772);
             this.panel1.TabIndex = 6;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(73, 9);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(86, 84);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(69, 116);
+            this.label2.Location = new System.Drawing.Point(69, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Adminitrator";
             // 
-            // label1
+            // label_AdminName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "OBEDI OBADIAH";
+            this.label_AdminName.AutoSize = true;
+            this.label_AdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AdminName.ForeColor = System.Drawing.Color.White;
+            this.label_AdminName.Location = new System.Drawing.Point(25, 105);
+            this.label_AdminName.Name = "label_AdminName";
+            this.label_AdminName.Size = new System.Drawing.Size(174, 25);
+            this.label_AdminName.TabIndex = 2;
+            this.label_AdminName.Text = "******************";
             // 
             // panel4
             // 
@@ -315,6 +304,17 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // roundedPictureViewer1
+            // 
+            this.roundedPictureViewer1.InitialImage = ((System.Drawing.Image)(resources.GetObject("roundedPictureViewer1.InitialImage")));
+            this.roundedPictureViewer1.Location = new System.Drawing.Point(63, 11);
+            this.roundedPictureViewer1.Name = "roundedPictureViewer1";
+            this.roundedPictureViewer1.Size = new System.Drawing.Size(100, 87);
+            this.roundedPictureViewer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureViewer1.TabIndex = 0;
+            this.roundedPictureViewer1.TabStop = false;
+            this.roundedPictureViewer1.Click += new System.EventHandler(this.roundedPictureViewer1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,9 +332,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureViewer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,12 +353,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label label_AdminName;
+        private RoundedPictureViewer roundedPictureViewer1;
     }
 }
 

@@ -34,26 +34,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Date_Of_Creation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Identifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bank_Account_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bank_Account_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Limit_Date_Delay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button_edit_deposit = new System.Windows.Forms.Button();
             this.button_delete_deposit = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txt_BankIdentifier = new System.Windows.Forms.TextBox();
+            this.label_IDNumber = new System.Windows.Forms.Label();
             this.date_DateofCreation = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Date_BankAccountLimitDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.txt_BankAccountNumber = new System.Windows.Forms.TextBox();
             this.cb_BankAccountType = new System.Windows.Forms.ComboBox();
-            this.cb_BankAccountIdentifier = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -84,7 +78,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(358, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 33);
+            this.label1.Size = new System.Drawing.Size(467, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "ACCOUNT DETAILS MANAGEMENT";
             // 
@@ -105,12 +99,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Date_Of_Creation,
-            this.Identifier,
-            this.Bank_Account_Number,
-            this.Bank_Account_Type,
-            this.Limit_Date_Delay});
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SteelBlue;
@@ -120,31 +108,7 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(543, 525);
             this.bunifuCustomDataGrid1.TabIndex = 19;
-            // 
-            // Date_Of_Creation
-            // 
-            this.Date_Of_Creation.HeaderText = "Date Of Creation";
-            this.Date_Of_Creation.Name = "Date_Of_Creation";
-            // 
-            // Identifier
-            // 
-            this.Identifier.HeaderText = "Identifier";
-            this.Identifier.Name = "Identifier";
-            // 
-            // Bank_Account_Number
-            // 
-            this.Bank_Account_Number.HeaderText = "Bank_Account_Number";
-            this.Bank_Account_Number.Name = "Bank_Account_Number";
-            // 
-            // Bank_Account_Type
-            // 
-            this.Bank_Account_Type.HeaderText = "Bank_Account_Type";
-            this.Bank_Account_Type.Name = "Bank_Account_Type";
-            // 
-            // Limit_Date_Delay
-            // 
-            this.Limit_Date_Delay.HeaderText = "Limit_Date ( Delay )";
-            this.Limit_Date_Delay.Name = "Limit_Date_Delay";
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // groupBox4
             // 
@@ -171,6 +135,7 @@
             this.button_edit_deposit.TabIndex = 24;
             this.button_edit_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_edit_deposit.UseVisualStyleBackColor = false;
+            this.button_edit_deposit.Click += new System.EventHandler(this.button_edit_deposit_Click);
             // 
             // button_delete_deposit
             // 
@@ -187,18 +152,18 @@
             this.button_delete_deposit.TabIndex = 26;
             this.button_delete_deposit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_delete_deposit.UseVisualStyleBackColor = false;
+            this.button_delete_deposit.Click += new System.EventHandler(this.button_delete_deposit_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txt_BankIdentifier);
+            this.groupBox5.Controls.Add(this.label_IDNumber);
             this.groupBox5.Controls.Add(this.date_DateofCreation);
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label23);
-            this.groupBox5.Controls.Add(this.txt_BankAccountNumber);
             this.groupBox5.Controls.Add(this.cb_BankAccountType);
-            this.groupBox5.Controls.Add(this.cb_BankAccountIdentifier);
             this.groupBox5.Font = new System.Drawing.Font("Nexa Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox5.Location = new System.Drawing.Point(592, 69);
@@ -208,10 +173,28 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Account Details";
             // 
+            // txt_BankIdentifier
+            // 
+            this.txt_BankIdentifier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_BankIdentifier.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_BankIdentifier.Location = new System.Drawing.Point(93, 249);
+            this.txt_BankIdentifier.Name = "txt_BankIdentifier";
+            this.txt_BankIdentifier.Size = new System.Drawing.Size(350, 26);
+            this.txt_BankIdentifier.TabIndex = 45;
+            // 
+            // label_IDNumber
+            // 
+            this.label_IDNumber.AutoSize = true;
+            this.label_IDNumber.Font = new System.Drawing.Font("Nexa Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_IDNumber.Location = new System.Drawing.Point(96, 36);
+            this.label_IDNumber.Name = "label_IDNumber";
+            this.label_IDNumber.Size = new System.Drawing.Size(0, 36);
+            this.label_IDNumber.TabIndex = 44;
+            // 
             // date_DateofCreation
             // 
             this.date_DateofCreation.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_DateofCreation.Location = new System.Drawing.Point(93, 89);
+            this.date_DateofCreation.Location = new System.Drawing.Point(93, 130);
             this.date_DateofCreation.Name = "date_DateofCreation";
             this.date_DateofCreation.Size = new System.Drawing.Size(350, 26);
             this.date_DateofCreation.TabIndex = 43;
@@ -221,9 +204,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(182, 47);
+            this.label2.Location = new System.Drawing.Point(182, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 18);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 42;
             this.label2.Text = "DATE OF CREATION";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,31 +239,19 @@
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
             this.label5.Location = new System.Drawing.Point(115, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 18);
+            this.label5.Size = new System.Drawing.Size(140, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Limit Date ( Delay )";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label16.Location = new System.Drawing.Point(170, 252);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 18);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "BANK ACCOUNT NUMBER";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label20.Location = new System.Drawing.Point(182, 341);
+            this.label20.Location = new System.Drawing.Point(182, 316);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(178, 18);
+            this.label20.Size = new System.Drawing.Size(179, 20);
             this.label20.TabIndex = 36;
             this.label20.Text = "BANK ACCOUNT TYPES";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -290,21 +261,12 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label23.Location = new System.Drawing.Point(220, 144);
+            this.label23.Location = new System.Drawing.Point(220, 207);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 18);
+            this.label23.Size = new System.Drawing.Size(89, 20);
             this.label23.TabIndex = 37;
-            this.label23.Text = "Identifier";
+            this.label23.Text = "IDENTIFIER";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txt_BankAccountNumber
-            // 
-            this.txt_BankAccountNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_BankAccountNumber.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_BankAccountNumber.Location = new System.Drawing.Point(93, 297);
-            this.txt_BankAccountNumber.Name = "txt_BankAccountNumber";
-            this.txt_BankAccountNumber.Size = new System.Drawing.Size(350, 26);
-            this.txt_BankAccountNumber.TabIndex = 38;
             // 
             // cb_BankAccountType
             // 
@@ -313,22 +275,12 @@
             this.cb_BankAccountType.Items.AddRange(new object[] {
             "Checking Account",
             "Savings Account"});
-            this.cb_BankAccountType.Location = new System.Drawing.Point(91, 393);
+            this.cb_BankAccountType.Location = new System.Drawing.Point(91, 368);
             this.cb_BankAccountType.Name = "cb_BankAccountType";
-            this.cb_BankAccountType.Size = new System.Drawing.Size(352, 26);
+            this.cb_BankAccountType.Size = new System.Drawing.Size(352, 28);
             this.cb_BankAccountType.TabIndex = 39;
             this.cb_BankAccountType.Text = "--Select--";
             this.cb_BankAccountType.SelectedIndexChanged += new System.EventHandler(this.cb_BankAccountType_SelectedIndexChanged);
-            // 
-            // cb_BankAccountIdentifier
-            // 
-            this.cb_BankAccountIdentifier.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_BankAccountIdentifier.FormattingEnabled = true;
-            this.cb_BankAccountIdentifier.Location = new System.Drawing.Point(93, 194);
-            this.cb_BankAccountIdentifier.Name = "cb_BankAccountIdentifier";
-            this.cb_BankAccountIdentifier.Size = new System.Drawing.Size(352, 26);
-            this.cb_BankAccountIdentifier.TabIndex = 40;
-            this.cb_BankAccountIdentifier.Text = "--Select--";
             // 
             // groupBox3
             // 
@@ -351,11 +303,10 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ID Number",
-            "Account Name",
-            "Date"});
+            "Account Name"});
             this.comboBox1.Location = new System.Drawing.Point(21, 23);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(471, 26);
+            this.comboBox1.Size = new System.Drawing.Size(471, 28);
             this.comboBox1.TabIndex = 118;
             this.comboBox1.Text = "By";
             // 
@@ -374,6 +325,7 @@
             this.button3.TabIndex = 38;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel4
             // 
@@ -404,6 +356,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BankAccountDetailsManagement";
             this.Size = new System.Drawing.Size(1152, 723);
+            this.Load += new System.EventHandler(this.BankAccountDetailsManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
@@ -423,11 +376,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date_Of_Creation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Identifier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bank_Account_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bank_Account_Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Limit_Date_Delay;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button_edit_deposit;
         private System.Windows.Forms.Button button_delete_deposit;
@@ -437,16 +385,15 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker Date_BankAccountLimitDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txt_BankAccountNumber;
         private System.Windows.Forms.ComboBox cb_BankAccountType;
-        private System.Windows.Forms.ComboBox cb_BankAccountIdentifier;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;
+        private System.Windows.Forms.Label label_IDNumber;
+        private System.Windows.Forms.TextBox txt_BankIdentifier;
     }
 }

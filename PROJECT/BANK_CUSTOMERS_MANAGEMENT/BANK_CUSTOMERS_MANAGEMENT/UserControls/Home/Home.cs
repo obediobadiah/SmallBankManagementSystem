@@ -30,13 +30,21 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void Personal_Total_Viewer()
         {
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM BANK_ACCOUNT_DETAILS";
-            conn.Open();
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT count (*) AS MyCount FROM BANK_ACCOUNT_DETAILS";
+                conn.Open();
 
-            int ReturnValue = (int)cmd.ExecuteScalar();
-            label2.Text = ReturnValue.ToString();
-            conn.Close();
+                int ReturnValue = (int)cmd.ExecuteScalar();
+                label2.Text = ReturnValue.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void Deposit_Total_Viewer()
         {
@@ -50,16 +58,26 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void Withdrawal_Total_Viewer()
         {
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM WITHDRAWAL_TRANSACTION";
-            conn.Open();
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT count (*) AS MyCount FROM WITHDRAWAL_TRANSACTION";
+                conn.Open();
 
-            int ReturnValue = (int)cmd.ExecuteScalar();
-            label8.Text = ReturnValue.ToString();
-            conn.Close();
+                int ReturnValue = (int)cmd.ExecuteScalar();
+                label8.Text = ReturnValue.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void Loan_Total_Viewer()
         {
+            try
+            {
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT count (*) AS MyCount FROM LOAN_TRANSACTION";
             conn.Open();
@@ -67,26 +85,48 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             int ReturnValue = (int)cmd.ExecuteScalar();
             label10.Text = ReturnValue.ToString();
             conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void Repayment_Total_Viewer()
         {
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM REPAYMENT_TRANSACTION";
-            conn.Open();
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT count (*) AS MyCount FROM REPAYMENT_TRANSACTION";
+                conn.Open();
 
-            int ReturnValue = (int)cmd.ExecuteScalar();
-            label12.Text = ReturnValue.ToString();
-            conn.Close();
+                int ReturnValue = (int)cmd.ExecuteScalar();
+                label12.Text = ReturnValue.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         public void MessageCommunication_Total_Viewer()
         {
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT count (*) AS MyCount FROM MESSAGE_COMMUNICATION";
-            conn.Open();
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT count (*) AS MyCount FROM MESSAGE_COMMUNICATION";
+                conn.Open();
 
-            int ReturnValue = (int)cmd.ExecuteScalar();
-            label14.Text = ReturnValue.ToString();
-            conn.Close();
+                int ReturnValue = (int)cmd.ExecuteScalar();
+                label14.Text = ReturnValue.ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }

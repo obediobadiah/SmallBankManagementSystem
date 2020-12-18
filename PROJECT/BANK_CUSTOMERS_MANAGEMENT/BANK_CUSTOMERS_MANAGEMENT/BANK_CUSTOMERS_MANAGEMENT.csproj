@@ -119,6 +119,9 @@
     <Compile Include="Loan_Viewer.Designer.cs">
       <DependentUpon>Loan_Viewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoundedPictureViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\Transactions\Repayment\RepaymentTransaction.cs">
       <SubType>UserControl</SubType>
     </Compile>
