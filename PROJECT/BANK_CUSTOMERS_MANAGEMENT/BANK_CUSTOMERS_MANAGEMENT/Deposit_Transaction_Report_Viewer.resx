@@ -117,33 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAZ5JREFUSEu9
-        lktKA0EQhhNQdJGN8S4KLqIGF8YDKOLO5BLiQlAIqKjH8LHwECpeRTc+8LET4/f31MgkPd0TdeIHP3RX
-        /V2VITWPShG9Xm8StdAJukS3Jq2P0TKaMPvP4XAdHaFXVIQ8h2jKjg8HBzbQI/opD2jNyoTBVEW76BP9
-        Fp3dQVUr60PyQM6S6FrZfkiso79cySCqtWrlEwhMoydlS0b/c93auEZdF/b5QJtII/ymwACKKddG8uax
-        lzYZR6Gr6TgTsG6gbDOtG5ZWvuOiPprEMRmW3DafRavjYD+P1KCviZAXhWjKoBstxDOasVoO9mo22GTW
-        vCH2ZbpI1kH06xespody5olxJuN1so6S20wxyxVxJfNNso7yjppW/xvFLFeEa3SerIO8oDmr7aGceWKc
-        yhgbBu9K2OcNQ9GVuWGIjXfLajnYx8Z7BYVw4x27YdtWJ9skpa8Z6/gNa6aiR5DesHnTpdhwjyDBpobu
-        Xbhc7lDN2iQQGP1rIoXEtrOUw5aV9SH5P6/yFEyj/TjJwoHRf25l4XAJH5CVyhdbc5uzdWRK8QAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAKtJREFUSEvt
-        lUEKwkAMRbvpAbyPFPFweioR8SIurIKgPUKaP/mKBTeBZNzMg0A6Q/8jpZBORHqtvdZFKxpkIruHCE02
-        O4hG62XTBaOZW4uWKx4KvAuH8dJEbhjfRH4Y30R+GP8HkbLmXRiaOVj0UpQKRHdrU7lBVG0fvTfsAyfB
-        INM2bDXUdoQ6mUPmX/diFT4iDuiCr/7iqbViTTjImuhbVKaq+unO1mYipxkF+HYLyy5S1gAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="Deposit_Transaction_Reports1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
   </metadata>
 </root>

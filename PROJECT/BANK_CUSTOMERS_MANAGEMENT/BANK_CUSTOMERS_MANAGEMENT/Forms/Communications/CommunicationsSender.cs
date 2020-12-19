@@ -30,5 +30,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
 
         }
-}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

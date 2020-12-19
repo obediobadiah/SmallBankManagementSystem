@@ -48,12 +48,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.roundedPictureViewer1 = new BANK_CUSTOMERS_MANAGEMENT.RoundedPictureViewer();
+            this.roundedPicture1 = new BANK_CUSTOMERS_MANAGEMENT.RoundedPicture();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureViewer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPicture1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_rapports
@@ -94,7 +94,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.roundedPictureViewer1);
+            this.panel1.Controls.Add(this.roundedPicture1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label_AdminName);
             this.panel1.Controls.Add(this.panel4);
@@ -128,9 +128,8 @@
             this.label_AdminName.ForeColor = System.Drawing.Color.White;
             this.label_AdminName.Location = new System.Drawing.Point(25, 105);
             this.label_AdminName.Name = "label_AdminName";
-            this.label_AdminName.Size = new System.Drawing.Size(174, 25);
+            this.label_AdminName.Size = new System.Drawing.Size(0, 25);
             this.label_AdminName.TabIndex = 2;
-            this.label_AdminName.Text = "******************";
             // 
             // panel4
             // 
@@ -304,16 +303,15 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // roundedPictureViewer1
+            // roundedPicture1
             // 
-            this.roundedPictureViewer1.InitialImage = ((System.Drawing.Image)(resources.GetObject("roundedPictureViewer1.InitialImage")));
-            this.roundedPictureViewer1.Location = new System.Drawing.Point(63, 11);
-            this.roundedPictureViewer1.Name = "roundedPictureViewer1";
-            this.roundedPictureViewer1.Size = new System.Drawing.Size(100, 87);
-            this.roundedPictureViewer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureViewer1.TabIndex = 0;
-            this.roundedPictureViewer1.TabStop = false;
-            this.roundedPictureViewer1.Click += new System.EventHandler(this.roundedPictureViewer1_Click);
+            this.roundedPicture1.Location = new System.Drawing.Point(58, 8);
+            this.roundedPicture1.Name = "roundedPicture1";
+            this.roundedPicture1.Size = new System.Drawing.Size(108, 94);
+            this.roundedPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPicture1.TabIndex = 3;
+            this.roundedPicture1.TabStop = false;
+            this.roundedPicture1.Click += new System.EventHandler(this.roundedPicture1_Click);
             // 
             // Form1
             // 
@@ -334,7 +332,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureViewer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPicture1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,7 +356,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label label_AdminName;
-        private RoundedPictureViewer roundedPictureViewer1;
+        private RoundedPicture roundedPicture1;
     }
 }
 

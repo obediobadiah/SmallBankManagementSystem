@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BANK_CUSTOMERS_MANAGEMENT
 {
-    class RoundedPictureViewer : PictureBox
+    class RoundedPicture : PictureBox
     {
         protected override void OnPaint(PaintEventArgs pe)
         {
