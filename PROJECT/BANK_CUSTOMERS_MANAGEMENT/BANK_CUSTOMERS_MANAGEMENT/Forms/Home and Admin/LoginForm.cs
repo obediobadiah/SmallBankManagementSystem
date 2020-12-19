@@ -30,92 +30,22 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM ADMINISTRATOR_DETAILS WHERE User_Name= '" + txt_UserName.Text + "' and Password = '" + txt_Password.Text + "'", conn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count >= 1)
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count >= 1)
                 {
-
+                    obj2.Show();
+                    showAdminName();
+                    this.Hide();
                 }
+
                 conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-        }
-
-        public void UserName()
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ADMINISTRATOR_DETAILS WHERE User_Name= '" + txt_UserName.Text + "'", conn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    
-                }
-                else
-                {
-                    MessageBox.Show("The enterd User Name is not correct", "Information", MessageBoxButtons.OK);
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        public void Password()
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ADMINISTRATOR_DETAILS WHERE Password= '" + txt_Password.Text + "'", conn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    
-                }
-                else
-                {
-                    MessageBox.Show("The enterd Password is not correct", "Information", MessageBoxButtons.OK);
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        public void ValidationSide()
-        {
-
-        }
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Do you want to close??", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                this.Hide();
-            }
-            else
-            {
-
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -136,6 +66,23 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close??", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                this.Hide();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

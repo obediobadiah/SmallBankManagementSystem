@@ -83,17 +83,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DEPOSIT_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DEPOSIT_Report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Deposit_Slip.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Deposit_Slip.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Deposit_Transaction_Reports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Deposit_Transaction_Reports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Deposit_Transaction_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deposit_Transaction_Report_Viewer.Designer.cs">
+      <DependentUpon>Deposit_Transaction_Report_Viewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposit_Viewer.cs">
       <SubType>Form</SubType>
@@ -119,7 +125,7 @@
     <Compile Include="Loan_Viewer.Designer.cs">
       <DependentUpon>Loan_Viewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="RoundedPictureViewer.cs">
+    <Compile Include="RoundedPicture.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\Transactions\Repayment\RepaymentTransaction.cs">
@@ -262,13 +268,16 @@
     <Compile Include="Withdrawal_Viewer.Designer.cs">
       <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DEPOSIT_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DEPOSIT_Report.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Deposit_Slip.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Deposit_Slip.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deposit_Transaction_Reports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Deposit_Transaction_Reports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deposit_Transaction_Report_Viewer.resx">
+      <DependentUpon>Deposit_Transaction_Report_Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deposit_Viewer.resx">
       <DependentUpon>Deposit_Viewer.cs</DependentUpon>

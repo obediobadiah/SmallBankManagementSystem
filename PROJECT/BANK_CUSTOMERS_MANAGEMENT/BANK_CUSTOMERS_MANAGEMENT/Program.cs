@@ -16,7 +16,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CommunicationsSender());
+            Application.Run(new LoginForm());
         }
     }
 }

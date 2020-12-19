@@ -242,7 +242,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM ADMINISTRATOR_DETAILS where First_Name = '" + label_AdminName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM ADMINISTRATOR_DETAILS where ID_Number = '" + label_AdminName.Text + "'", conn);
                 SqlDataReader da1 = cmd2.ExecuteReader();
                 da1.Read();
 
@@ -251,15 +251,15 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     byte[] image = (byte[])da1["Picture"];
                     if (image == null)
                     {
-                        roundedPictureViewer1.Image = null;
+                        roundedPicture1.Image = null;
                     }
                     else
                     {
                         MemoryStream stem = new MemoryStream(image);
-                        roundedPictureViewer1.Image = Image.FromStream(stem);
+                        roundedPicture1.Image = Image.FromStream(stem);
                     }
-                    conn.Close();
                 }
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -268,7 +268,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         }
 
-        private void roundedPictureViewer1_Click(object sender, EventArgs e)
+        private void roundedPicture1_Click(object sender, EventArgs e)
         {
             AdministratorCreaation obj = new AdministratorCreaation();
             obj.Show();

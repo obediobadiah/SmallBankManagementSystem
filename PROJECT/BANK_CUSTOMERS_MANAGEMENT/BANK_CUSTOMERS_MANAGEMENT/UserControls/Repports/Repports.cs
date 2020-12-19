@@ -16,5 +16,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Deposit_Transaction_Report_Viewer DepositTransactionViewer = new Deposit_Transaction_Report_Viewer();
+            DepositTransactionViewer.Show();
+        }
     }
 }

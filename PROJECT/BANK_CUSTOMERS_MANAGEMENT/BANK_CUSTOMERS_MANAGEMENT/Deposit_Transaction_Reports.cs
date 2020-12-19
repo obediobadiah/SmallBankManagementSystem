@@ -16,14 +16,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class DEPOSIT_Report : ReportClass {
+    public class Deposit_Transaction_Reports : ReportClass {
         
-        public DEPOSIT_Report() {
+        public Deposit_Transaction_Reports() {
         }
         
         public override string ResourceName {
             get {
-                return "DEPOSIT_Report.rpt";
+                return "Deposit_Transaction_Reports.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         
         public override string FullResourceName {
             get {
-                return "BANK_CUSTOMERS_MANAGEMENT.DEPOSIT_Report.rpt";
+                return "BANK_CUSTOMERS_MANAGEMENT.Deposit_Transaction_Reports.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDEPOSIT_Report : Component, ICachedReport {
+    public class CachedDeposit_Transaction_Reports : Component, ICachedReport {
         
-        public CachedDEPOSIT_Report() {
+        public CachedDeposit_Transaction_Reports() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DEPOSIT_Report rpt = new DEPOSIT_Report();
+            Deposit_Transaction_Reports rpt = new Deposit_Transaction_Reports();
             rpt.Site = this.Site;
             return rpt;
         }
