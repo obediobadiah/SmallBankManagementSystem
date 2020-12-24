@@ -30,6 +30,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
             Form1.instance.pane3.Controls["Home"].BringToFront();
         }
+
+        
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
         Repports user = new Repports();
@@ -242,7 +244,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM ADMINISTRATOR_DETAILS where ID_Number = '" + label_AdminName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Picture FROM ADMINISTRATOR_DETAILS where First_Name = '" + label1.Text + "'", conn);
                 SqlDataReader da1 = cmd2.ExecuteReader();
                 da1.Read();
 
@@ -267,8 +269,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
 
         }
+        private void roundedPicture1_Click_1(object sender, EventArgs e)
+        {
+            showPicture();
+        }
 
-        private void roundedPicture1_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             AdministratorCreaation obj = new AdministratorCreaation();
             obj.Show();

@@ -41,14 +41,14 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.Repayment_Slip1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(872, 497);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(938, 452);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Repayment_Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 497);
+            this.ClientSize = new System.Drawing.Size(938, 452);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Repayment_Viewer";
             this.Text = "Repayment_Viewer";

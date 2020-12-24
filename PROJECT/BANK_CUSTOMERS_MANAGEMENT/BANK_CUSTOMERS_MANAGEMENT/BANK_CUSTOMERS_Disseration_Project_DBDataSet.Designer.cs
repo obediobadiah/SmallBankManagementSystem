@@ -2073,7 +2073,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DEPOSIT_TRANSACTIONRow AddDEPOSIT_TRANSACTIONRow(string Account_Name, int Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, int Amount, string Amount_In_Words, string Currency, string Narration) {
+            public DEPOSIT_TRANSACTIONRow AddDEPOSIT_TRANSACTIONRow(string Account_Name, int Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, double Amount, string Amount_In_Words, string Currency, string Narration) {
                 DEPOSIT_TRANSACTIONRow rowDEPOSIT_TRANSACTIONRow = ((DEPOSIT_TRANSACTIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2142,7 +2142,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 base.Columns.Add(this.columnTransaction_Date);
                 this.columnTransaction_Time = new global::System.Data.DataColumn("Transaction_Time", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransaction_Time);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnAmount_In_Words = new global::System.Data.DataColumn("Amount_In_Words", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount_In_Words);
@@ -2478,7 +2478,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LOAN_TRANSACTIONRow AddLOAN_TRANSACTIONRow(string Loan_Date, string Borrower, int Account_Number, int Amount, string Amount_In_Words, string Currency, string Purpose, string Schedule, string Limit_Date, string Transaction_Time) {
+            public LOAN_TRANSACTIONRow AddLOAN_TRANSACTIONRow(string Loan_Date, string Borrower, int Account_Number, double Amount, string Amount_In_Words, string Currency, string Purpose, string Schedule, string Limit_Date, string Transaction_Time) {
                 LOAN_TRANSACTIONRow rowLOAN_TRANSACTIONRow = ((LOAN_TRANSACTIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2545,7 +2545,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 base.Columns.Add(this.columnBorrower);
                 this.columnAccount_Number = new global::System.Data.DataColumn("Account_Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccount_Number);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnAmount_In_Words = new global::System.Data.DataColumn("Amount_In_Words", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount_In_Words);
@@ -3759,7 +3759,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public REPAYMENT_TRANSACTIONRow AddREPAYMENT_TRANSACTIONRow(string Loan_Date, string Borrower, int Account_Number, int Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time) {
+            public REPAYMENT_TRANSACTIONRow AddREPAYMENT_TRANSACTIONRow(string Loan_Date, string Borrower, int Account_Number, double Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time) {
                 REPAYMENT_TRANSACTIONRow rowREPAYMENT_TRANSACTIONRow = ((REPAYMENT_TRANSACTIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3820,7 +3820,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 base.Columns.Add(this.columnBorrower);
                 this.columnAccount_Number = new global::System.Data.DataColumn("Account_Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccount_Number);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnAmount_In_Words = new global::System.Data.DataColumn("Amount_In_Words", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount_In_Words);
@@ -4144,7 +4144,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WITHDRAWAL_TRANSACTIONRow AddWITHDRAWAL_TRANSACTIONRow(string Account_Name, int Account_Number, string Withdrawal_by, string Transaction_Date, string Transaction_Time, int Amount, string Amount_In_Words, string Currency, string Narration) {
+            public WITHDRAWAL_TRANSACTIONRow AddWITHDRAWAL_TRANSACTIONRow(string Account_Name, int Account_Number, string Withdrawal_by, string Transaction_Date, string Transaction_Time, double Amount, string Amount_In_Words, string Currency, string Narration) {
                 WITHDRAWAL_TRANSACTIONRow rowWITHDRAWAL_TRANSACTIONRow = ((WITHDRAWAL_TRANSACTIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4213,7 +4213,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 base.Columns.Add(this.columnTransaction_Date);
                 this.columnTransaction_Time = new global::System.Data.DataColumn("Transaction_Time", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransaction_Time);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnAmount_In_Words = new global::System.Data.DataColumn("Amount_In_Words", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount_In_Words);
@@ -5560,10 +5560,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amount {
+            public double Amount {
                 get {
                     try {
-                        return ((int)(this[this.tableDEPOSIT_TRANSACTION.AmountColumn]));
+                        return ((double)(this[this.tableDEPOSIT_TRANSACTION.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'DEPOSIT_TRANSACTION\' is DBNull.", e);
@@ -5806,10 +5806,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amount {
+            public double Amount {
                 get {
                     try {
-                        return ((int)(this[this.tableLOAN_TRANSACTION.AmountColumn]));
+                        return ((double)(this[this.tableLOAN_TRANSACTION.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'LOAN_TRANSACTION\' is DBNull.", e);
@@ -6838,10 +6838,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amount {
+            public double Amount {
                 get {
                     try {
-                        return ((int)(this[this.tableREPAYMENT_TRANSACTION.AmountColumn]));
+                        return ((double)(this[this.tableREPAYMENT_TRANSACTION.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'REPAYMENT_TRANSACTION\' is DBNull.", e);
@@ -7099,10 +7099,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amount {
+            public double Amount {
                 get {
                     try {
-                        return ((int)(this[this.tableWITHDRAWAL_TRANSACTION.AmountColumn]));
+                        return ((double)(this[this.tableWITHDRAWAL_TRANSACTION.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'WITHDRAWAL_TRANSACTION\' is DBNull.", e);
@@ -10051,7 +10051,7 @@ SELECT ID_Number, Date_of_creation, Identifier, Bank_Account_Type, Limit_Date FR
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10068,7 +10068,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10099,7 +10099,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deposer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deposer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10115,7 +10115,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10201,7 +10201,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Number, string Original_Account_Name, global::System.Nullable<int> Original_Account_Number, string Original_Deposer_Name, string Original_Transaction_Date, string Original_Transaction_Time, global::System.Nullable<int> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Narration) {
+        public virtual int Delete(int Original_ID_Number, string Original_Account_Name, global::System.Nullable<int> Original_Account_Number, string Original_Deposer_Name, string Original_Transaction_Date, string Original_Transaction_Time, global::System.Nullable<double> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Narration) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Number));
             if ((Original_Account_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -10245,7 +10245,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Amount.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
@@ -10295,7 +10295,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Account_Name, global::System.Nullable<int> Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, global::System.Nullable<int> Amount, string Amount_In_Words, string Currency, string Narration) {
+        public virtual int Insert(string Account_Name, global::System.Nullable<int> Account_Number, string Deposer_Name, string Transaction_Date, string Transaction_Time, global::System.Nullable<double> Amount, string Amount_In_Words, string Currency, string Narration) {
             if ((Account_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -10327,7 +10327,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Transaction_Time));
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Amount.Value));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -10376,7 +10376,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                     string Deposer_Name, 
                     string Transaction_Date, 
                     string Transaction_Time, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Narration, 
@@ -10386,7 +10386,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                     string Original_Deposer_Name, 
                     string Original_Transaction_Date, 
                     string Original_Transaction_Time, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Narration, 
@@ -10422,7 +10422,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Transaction_Time));
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -10488,7 +10488,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
@@ -10545,7 +10545,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                     string Deposer_Name, 
                     string Transaction_Date, 
                     string Transaction_Time, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Narration, 
@@ -10555,7 +10555,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
                     string Original_Deposer_Name, 
                     string Original_Transaction_Date, 
                     string Original_Transaction_Time, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Narration) {
@@ -10708,7 +10708,7 @@ SELECT ID_Number, Account_Name, Account_Number, Deposer_Name, Transaction_Date, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10729,7 +10729,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Purpose", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Purpose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10762,7 +10762,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Purpose", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Purpose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10777,7 +10777,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10869,7 +10869,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<int> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Purpose, string Original_Schedule, string Original_Limit_Date, string Original_Transaction_Time) {
+        public virtual int Delete(int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<double> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Purpose, string Original_Schedule, string Original_Limit_Date, string Original_Transaction_Time) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Number));
             if ((Original_Loan_Date == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -10897,7 +10897,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Amount.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -10971,7 +10971,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<int> Amount, string Amount_In_Words, string Currency, string Purpose, string Schedule, string Limit_Date, string Transaction_Time) {
+        public virtual int Insert(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<double> Amount, string Amount_In_Words, string Currency, string Purpose, string Schedule, string Limit_Date, string Transaction_Time) {
             if ((Loan_Date == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -10991,7 +10991,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Amount.Value));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -11056,7 +11056,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Loan_Date, 
                     string Borrower, 
                     global::System.Nullable<int> Account_Number, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Purpose, 
@@ -11067,7 +11067,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Original_Loan_Date, 
                     string Original_Borrower, 
                     global::System.Nullable<int> Original_Account_Number, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Purpose, 
@@ -11094,7 +11094,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -11162,7 +11162,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
@@ -11241,7 +11241,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Loan_Date, 
                     string Borrower, 
                     global::System.Nullable<int> Account_Number, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Purpose, 
@@ -11252,7 +11252,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Original_Loan_Date, 
                     string Original_Borrower, 
                     global::System.Nullable<int> Original_Account_Number, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Purpose, 
@@ -12980,7 +12980,7 @@ SELECT ID_Number, First_Name, Second_Name, Gender, Date_of_Birth, Place_of_Birth
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remaining_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -12995,7 +12995,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remaining_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13007,7 +13007,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Loan_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Loan_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Borrower", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Borrower", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Remaining_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13019,7 +13019,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Remaining_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Remaining_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -13104,7 +13104,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<int> Original_Amount, string Original_Amount_In_Words, string Original_Remaining_Time, string Original_Transaction_Time) {
+        public virtual int Delete(int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<double> Original_Amount, string Original_Amount_In_Words, string Original_Remaining_Time, string Original_Transaction_Time) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Number));
             if ((Original_Loan_Date == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -13132,7 +13132,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Amount.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -13182,7 +13182,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<int> Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time) {
+        public virtual int Insert(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<double> Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time) {
             if ((Loan_Date == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -13202,7 +13202,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Amount.Value));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -13249,7 +13249,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Loan_Date, 
                     string Borrower, 
                     global::System.Nullable<int> Account_Number, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Remaining_Time, 
                     string Transaction_Time, 
@@ -13257,7 +13257,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                     string Original_Loan_Date, 
                     string Original_Borrower, 
                     global::System.Nullable<int> Original_Account_Number, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Remaining_Time, 
                     string Original_Transaction_Time, 
@@ -13281,7 +13281,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -13331,7 +13331,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
@@ -13382,7 +13382,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<int> Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time, int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<int> Original_Amount, string Original_Amount_In_Words, string Original_Remaining_Time, string Original_Transaction_Time) {
+        public virtual int Update(string Loan_Date, string Borrower, global::System.Nullable<int> Account_Number, global::System.Nullable<double> Amount, string Amount_In_Words, string Remaining_Time, string Transaction_Time, int Original_ID_Number, string Original_Loan_Date, string Original_Borrower, global::System.Nullable<int> Original_Account_Number, global::System.Nullable<double> Original_Amount, string Original_Amount_In_Words, string Original_Remaining_Time, string Original_Transaction_Time) {
             return this.Update(Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, Remaining_Time, Transaction_Time, Original_ID_Number, Original_Loan_Date, Original_Borrower, Original_Account_Number, Original_Amount, Original_Amount_In_Words, Original_Remaining_Time, Original_Transaction_Time, Original_ID_Number);
         }
     }
@@ -13535,7 +13535,7 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -13552,7 +13552,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Withdrawal_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Withdrawal_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13584,7 +13584,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Withdrawal_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Withdrawal_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Currency", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Narration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Narration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -13600,7 +13600,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Time", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount_In_Words", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount_In_Words", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount_In_Words", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Currency", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Currency", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -13686,7 +13686,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Number, string Original_Account_Name, global::System.Nullable<int> Original_Account_Number, string Original_Withdrawal_by, string Original_Transaction_Date, string Original_Transaction_Time, global::System.Nullable<int> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Narration) {
+        public virtual int Delete(int Original_ID_Number, string Original_Account_Name, global::System.Nullable<int> Original_Account_Number, string Original_Withdrawal_by, string Original_Transaction_Date, string Original_Transaction_Time, global::System.Nullable<double> Original_Amount, string Original_Amount_In_Words, string Original_Currency, string Original_Narration) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Number));
             if ((Original_Account_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -13730,7 +13730,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Amount.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
@@ -13780,7 +13780,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Account_Name, global::System.Nullable<int> Account_Number, string Withdrawal_by, string Transaction_Date, string Transaction_Time, global::System.Nullable<int> Amount, string Amount_In_Words, string Currency, string Narration) {
+        public virtual int Insert(string Account_Name, global::System.Nullable<int> Account_Number, string Withdrawal_by, string Transaction_Date, string Transaction_Time, global::System.Nullable<double> Amount, string Amount_In_Words, string Currency, string Narration) {
             if ((Account_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -13812,7 +13812,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Transaction_Time));
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Amount.Value));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -13861,7 +13861,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     string Withdrawal_by, 
                     string Transaction_Date, 
                     string Transaction_Time, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Narration, 
@@ -13871,7 +13871,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     string Original_Withdrawal_by, 
                     string Original_Transaction_Date, 
                     string Original_Transaction_Time, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Narration, 
@@ -13907,7 +13907,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Transaction_Time));
             }
             if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -13973,7 +13973,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
             }
             if ((Original_Amount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
@@ -14030,7 +14030,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     string Withdrawal_by, 
                     string Transaction_Date, 
                     string Transaction_Time, 
-                    global::System.Nullable<int> Amount, 
+                    global::System.Nullable<double> Amount, 
                     string Amount_In_Words, 
                     string Currency, 
                     string Narration, 
@@ -14040,7 +14040,7 @@ SELECT ID_Number, Account_Name, Account_Number, Withdrawal_by, Transaction_Date,
                     string Original_Withdrawal_by, 
                     string Original_Transaction_Date, 
                     string Original_Transaction_Time, 
-                    global::System.Nullable<int> Original_Amount, 
+                    global::System.Nullable<double> Original_Amount, 
                     string Original_Amount_In_Words, 
                     string Original_Currency, 
                     string Original_Narration) {

@@ -43,7 +43,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Borrower", txt_RepaymentBorrower.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Amount", txt_RepaymentAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount",txt_RepaymentAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RepaymentAmountInWords.Text);
                         cmd1.Parameters.AddWithValue("@Remaining_Time", label_RemainingAmount.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_RepaymentTime.Text);
@@ -152,11 +152,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     try
                     {
-                        int LoanAmount;
-                        int RepaymentAmount;
-                        int RemainingAmount;
-                        LoanAmount = Convert.ToInt32(label_LoanAmount.Text);
-                        RepaymentAmount = Convert.ToInt32(txt_RepaymentAmount.Text);
+                        double LoanAmount;
+                        double RepaymentAmount;
+                        double RemainingAmount;
+                        LoanAmount = Convert.ToDouble(label_LoanAmount.Text);
+                        RepaymentAmount = Convert.ToDouble(txt_RepaymentAmount.Text);
                         RemainingAmount = LoanAmount - RepaymentAmount;
                         label_RemainingAmount.Text = RemainingAmount.ToString();
 
@@ -179,6 +179,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_RepaymentAccountNumber.Text + "' AND Identifier = '" + txt_RepaymentBorrower.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
                         SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_RepaymentAccountNumber.Text + "'", conn);
                         SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                         DataTable dt1 = new DataTable();
@@ -191,12 +197,18 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         {
                             MessageBox.Show("The Account Number that you make doesn't Exists in the Loan Storage");
                         }
+                }
+                else
+                {
+                    MessageBox.Show("The entered Borrower and the Account Number doesn't match", "Information",MessageBoxButtons.OK);
+                }
                 conn.Close();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+
             }
+
 
         }
         public void LoanAmountEditor()
@@ -207,7 +219,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 SqlCommand cmd1 = new SqlCommand("UPDATE LOAN_TRANSACTION SET  Amount = @Amount,Amount_In_Words = @Amount_In_Words WHERE Account_Number = @Account_Number", conn);
 
                 cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
-                cmd1.Parameters.AddWithValue("@Amount", label_RemainingAmount.Text);
+                cmd1.Parameters.AddWithValue("@Amount",label_RemainingAmount.Text);
                 cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RemainingAmounInWord.Text);
                 int i;
                 i = cmd1.ExecuteNonQuery();

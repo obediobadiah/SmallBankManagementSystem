@@ -88,6 +88,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(933, 41);
             this.panel6.TabIndex = 105;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // pictureBox4
             // 
@@ -385,6 +386,7 @@
             this.txt_AdminPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_AdminPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AdminPassword.Location = new System.Drawing.Point(566, 116);
+            this.txt_AdminPassword.MaxLength = 15;
             this.txt_AdminPassword.Name = "txt_AdminPassword";
             this.txt_AdminPassword.Size = new System.Drawing.Size(306, 19);
             this.txt_AdminPassword.TabIndex = 207;

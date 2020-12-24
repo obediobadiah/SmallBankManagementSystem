@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
@@ -78,10 +97,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account_Informations_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account_Informations_Report_Viewer.Designer.cs">
+      <DependentUpon>Account_Informations_Report_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account_Information_Reports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account_Information_Reports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BANK_CUSTOMERS_Disseration_Project_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BANK_CUSTOMERS_Disseration_Project_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Communications_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Communications_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Communications_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communications_Report_Viewer.Designer.cs">
+      <DependentUpon>Communications_Report_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers_List_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Customers_List_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customer_List_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_List_Report_Viewer.Designer.cs">
+      <DependentUpon>Customer_List_Report_Viewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposit_Slip.cs">
       <AutoGen>True</AutoGen>
@@ -119,11 +174,41 @@
       <DependentUpon>Loan_Slip.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Loan_Transaction_Reports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loan_Transaction_Reports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Loan_Transaction_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loan_Transaction_Report_Viewer.Designer.cs">
+      <DependentUpon>Loan_Transaction_Report_Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loan_Viewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loan_Viewer.Designer.cs">
       <DependentUpon>Loan_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repayment_Transaction_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repayment_Transaction_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repayment_Transaction_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repayment_Transaction_Report_Viewer.Designer.cs">
+      <DependentUpon>Repayment_Transaction_Report_Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repayment_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repayment_Viewer.Designer.cs">
+      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
     </Compile>
     <Compile Include="RoundedPicture.cs">
       <SubType>Component</SubType>
@@ -139,12 +224,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Repayment_Slip.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Repayment_Viewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Repayment_Viewer.Designer.cs">
-      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Communications\Communications.cs">
       <SubType>UserControl</SubType>
@@ -262,12 +341,45 @@
       <DependentUpon>Withdrawal_Slip.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Withdrawal_Transaction_Reports.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Withdrawal_Transaction_Reports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Withdrawal_Transaction_Report_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Withdrawal_Transaction_Report_Viewer.Designer.cs">
+      <DependentUpon>Withdrawal_Transaction_Report_Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Withdrawal_Viewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Withdrawal_Viewer.Designer.cs">
       <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Account_Informations_Report_Viewer.resx">
+      <DependentUpon>Account_Informations_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account_Information_Reports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Account_Information_Reports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communications_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Communications_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communications_Report_Viewer.resx">
+      <DependentUpon>Communications_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers_List_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Customers_List_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_List_Report_Viewer.resx">
+      <DependentUpon>Customer_List_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deposit_Slip.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Deposit_Slip.cs</LastGenOutput>
@@ -289,19 +401,33 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Loan_Slip.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Loan_Transaction_Reports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Loan_Transaction_Reports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loan_Transaction_Report_Viewer.resx">
+      <DependentUpon>Loan_Transaction_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loan_Viewer.resx">
       <DependentUpon>Loan_Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Repayment_Transaction_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Repayment_Transaction_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repayment_Transaction_Report_Viewer.resx">
+      <DependentUpon>Repayment_Transaction_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repayment_Viewer.resx">
+      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Transactions\Repayment\RepaymentTransaction.resx">
       <DependentUpon>RepaymentTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repayment_Slip.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Repayment_Slip.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Repayment_Viewer.resx">
-      <DependentUpon>Repayment_Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Communications\Communications.resx">
       <DependentUpon>Communications.cs</DependentUpon>
@@ -371,6 +497,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Withdrawal_Slip.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Withdrawal_Transaction_Reports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Withdrawal_Transaction_Reports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Withdrawal_Transaction_Report_Viewer.resx">
+      <DependentUpon>Withdrawal_Transaction_Report_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Withdrawal_Viewer.resx">
       <DependentUpon>Withdrawal_Viewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +539,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
