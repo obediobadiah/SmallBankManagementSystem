@@ -34,8 +34,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label_AdminName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -94,9 +95,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.roundedPicture1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label_AdminName);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button5);
@@ -110,6 +112,34 @@
             this.panel1.Size = new System.Drawing.Size(218, 772);
             this.panel1.TabIndex = 6;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(127, 735);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(86, 31);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Admin";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "*******************";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -120,16 +150,6 @@
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Adminitrator";
-            // 
-            // label_AdminName
-            // 
-            this.label_AdminName.AutoSize = true;
-            this.label_AdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AdminName.ForeColor = System.Drawing.Color.White;
-            this.label_AdminName.Location = new System.Drawing.Point(25, 105);
-            this.label_AdminName.Name = "label_AdminName";
-            this.label_AdminName.Size = new System.Drawing.Size(0, 25);
-            this.label_AdminName.TabIndex = 2;
             // 
             // panel4
             // 
@@ -305,13 +325,13 @@
             // 
             // roundedPicture1
             // 
-            this.roundedPicture1.Location = new System.Drawing.Point(58, 8);
+            this.roundedPicture1.Location = new System.Drawing.Point(67, 7);
             this.roundedPicture1.Name = "roundedPicture1";
-            this.roundedPicture1.Size = new System.Drawing.Size(108, 94);
+            this.roundedPicture1.Size = new System.Drawing.Size(95, 88);
             this.roundedPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPicture1.TabIndex = 3;
+            this.roundedPicture1.TabIndex = 5;
             this.roundedPicture1.TabStop = false;
-            this.roundedPicture1.Click += new System.EventHandler(this.roundedPicture1_Click);
+            this.roundedPicture1.Click += new System.EventHandler(this.roundedPicture1_Click_1);
             // 
             // Form1
             // 
@@ -355,8 +375,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        public System.Windows.Forms.Label label_AdminName;
         private RoundedPicture roundedPicture1;
+        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
     }
 }
 

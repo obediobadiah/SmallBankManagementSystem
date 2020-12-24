@@ -39,25 +39,36 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     else
                     {
-                        SqlCommand cmd1 = new SqlCommand("INSERT into WITHDRAWAL_TRANSACTION values (@Account_Name,@Account_Number,@Withdrawal_by,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
-
-                        cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
-                        cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
-                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
-                        cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
-                        cmd1.Parameters.AddWithValue("@Currency", cb_WithdrawalCurrency.SelectedItem);
-                        cmd1.Parameters.AddWithValue("@Narration", txt_WithdrwalNarration.Text);
-
-                        int i;
-                        i = cmd1.ExecuteNonQuery();
-                        if (i > 0)
+                        SqlCommand cmd2 = new SqlCommand("SELECT Account_Number FROM DEPOSIT_TRANSACTION WHERE Account_Number = '" + txt_WithdrawalAccountNumber.Text + "'", conn);
+                        SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                        DataTable dt2 = new DataTable();
+                        da2.Fill(dt2);
+                        if (dt2.Rows.Count > 0)
                         {
-                            MessageBox.Show("Withdrawal transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SqlCommand cmd1 = new SqlCommand("INSERT into WITHDRAWAL_TRANSACTION values (@Account_Name,@Account_Number,@Withdrawal_by,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
+
+                            cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
+                            cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
+                            cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
+                            cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
+                            cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
+                            cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
+                            cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
+                            cmd1.Parameters.AddWithValue("@Currency", cb_WithdrawalCurrency.SelectedItem);
+                            cmd1.Parameters.AddWithValue("@Narration", txt_WithdrwalNarration.Text);
+
+                            int i;
+                            i = cmd1.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                MessageBox.Show("Withdrawal transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            Display();
                         }
-                        Display();
+                        else
+                        {
+                            MessageBox.Show("This account is not yet eligible to withdrawal", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
 
                 }

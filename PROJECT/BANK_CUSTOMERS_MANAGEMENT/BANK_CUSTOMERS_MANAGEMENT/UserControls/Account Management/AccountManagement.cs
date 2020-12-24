@@ -19,6 +19,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         public AccountManagement()
         {
             InitializeComponent();
+
+            label9.Visible = false;
+            label10.Visible = false;
         }
 
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
@@ -46,7 +49,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             AccountNumber();
             AccountType();
             LoanAmount();
-            AccountBalance();
+            DepositBalance();
+            WithdrawalBalance();
+            BalanceCalculation();
         }
         public void AccountNumber()
         {
@@ -119,8 +124,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
         }
 
         public void PictureView()
@@ -153,23 +156,51 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
 
         }
-        public void AccountBalance()
+        public void DepositBalance()
         {
             try
             {
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-                DataTable dt1 = new DataTable();
-                da1.Fill(dt1);
-                if (dt1.Rows.Count > 0)
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
                 {
-                    label_AccountBalance.Text = dt1.Rows[0]["AmountSum"].ToString();
+                    label10.Text = dt.Rows[0]["AmountSum"].ToString();
                     BalanceCurrencyDisplay();
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    label10.Text = "";
+                    label_BalanceCurrency.Text = "";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+        public void WithdrawalBalance()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM WITHDRAWAL_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    label9.Text = dt.Rows[0]["AmountSum"].ToString();
+                    BalanceCurrencyDisplay();
+                }
+                else
+                {
+                    label9.Text = "";
+                    label_BalanceCurrency.Text = "";
                 }
                 conn.Close();
             }
@@ -180,6 +211,27 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         }
 
+        public void BalanceCalculation()
+        {
+
+            if (label10.Text == "")
+            {
+                label_AccountBalance.Text = "----";
+                label_BalanceCurrency.Text = "";
+            }
+            else
+            {
+                double DepTrans;
+                double WithTrans;
+                double result;
+                DepTrans = Convert.ToDouble(label10.Text);
+                WithTrans = Convert.ToDouble(label9.Text);
+
+                result = DepTrans - WithTrans;
+                label_AccountBalance.Text = result.ToString();
+            }
+
+        }
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -205,7 +257,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     bunifuCustomDataGrid1.DataSource = dt;
                 }
                 catch (Exception ex)
-
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -226,6 +277,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 if (dt1.Rows.Count > 0)
                 {
                     label_AccountLoan.Text = dt1.Rows[0]["Amount"].ToString();
+                }
+                else
+                {
+                    label_AccountLoan.Text = "----";
                 }
             }
             catch (Exception ex)

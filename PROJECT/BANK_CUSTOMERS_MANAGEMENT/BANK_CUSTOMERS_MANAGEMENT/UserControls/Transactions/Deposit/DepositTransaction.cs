@@ -33,6 +33,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
+                double Amount;
+                Amount = Convert.ToDouble(txt_DepositAmount.Text);
+
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -53,7 +56,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                        cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount",txt_DepositAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
                         cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
@@ -148,7 +151,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                        cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount",txt_DepositAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
                         cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);

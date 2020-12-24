@@ -38,45 +38,56 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 da.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_LoanAccountNumber.Text + "'", conn);
-                    SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
-                    DataTable dt1 = new DataTable();
-                    da1.Fill(dt1);
-                    if (dt1.Rows.Count == 1)
+
+                    SqlCommand cmd3 = new SqlCommand("SELECT * FROM DEPOSIT_TRANSACTION WHERE Account_Number = '" + txt_LoanAccountNumber.Text + "'", conn);
+                    SqlDataAdapter da2 = new SqlDataAdapter(cmd3);
+                    DataTable dt2 = new DataTable();
+                    da2.Fill(dt2);
+                    if (dt2.Rows.Count >= 1)
                     {
-                        MessageBox.Show("The Account Already Exists in the Loan storage");
-                    }
-                    else
-                    {
-                        if (txt_LoanBorrower.Text == "" || txt_LoanAccountNumber.Text == " " || txt_LoanAmount.Text == "" || txt_LoanAmountInWords.Text == "" || txt_LoanPurpose.Text == "")
+                        SqlCommand cmd2 = new SqlCommand("SELECT Account_Number FROM LOAN_TRANSACTION WHERE Account_Number = '" + txt_LoanAccountNumber.Text + "'", conn);
+                        SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                        DataTable dt1 = new DataTable();
+                        da1.Fill(dt1);
+                        if (dt1.Rows.Count == 1)
                         {
-                            MessageBox.Show("Make sure you complete all required fields");
+                            MessageBox.Show("The Account Already Exists in the Loan storage");
                         }
                         else
                         {
-                            SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
-
-                            cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
-                            cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
-                            cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
-                            cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
-                            cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
-                            cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
-                            cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);
-                            cmd1.Parameters.AddWithValue("@Schedule", cb_LoanScheduler.SelectedItem);
-                            cmd1.Parameters.AddWithValue("@Limit_Date", date_LoanLimitDate.Value.Date.ToShortDateString());
-                            cmd1.Parameters.AddWithValue("@Transaction_Time", label_LoanTime.Text);
-
-                            int i;
-                            i = cmd1.ExecuteNonQuery();
-                            if (i > 0)
+                            if (txt_LoanBorrower.Text == "" || txt_LoanAccountNumber.Text == " " || txt_LoanAmount.Text == "" || txt_LoanAmountInWords.Text == "" || txt_LoanPurpose.Text == "")
                             {
-                                MessageBox.Show("Loan transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Make sure you complete all required fields");
                             }
-                            Display();
+                            else
+                            {
+                                SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
+
+                                cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
+                                cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
+                                cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
+                                cmd1.Parameters.AddWithValue("@Amount",txt_LoanAmount.Text);
+                                cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
+                                cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
+                                cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);
+                                cmd1.Parameters.AddWithValue("@Schedule", cb_LoanScheduler.SelectedItem);
+                                cmd1.Parameters.AddWithValue("@Limit_Date", date_LoanLimitDate.Value.Date.ToShortDateString());
+                                cmd1.Parameters.AddWithValue("@Transaction_Time", label_LoanTime.Text);
+
+                                int i;
+                                i = cmd1.ExecuteNonQuery();
+                                if (i > 0)
+                                {
+                                    MessageBox.Show("Loan transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                Display();
+                            }
                         }
                     }
-
+                    else
+                    {
+                        MessageBox.Show("This account is not yet eligible to withdrawal", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -175,7 +186,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount",txt_LoanAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
                         cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);

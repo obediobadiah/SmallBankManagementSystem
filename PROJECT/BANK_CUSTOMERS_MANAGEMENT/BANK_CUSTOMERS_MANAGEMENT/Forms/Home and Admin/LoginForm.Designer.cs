@@ -70,6 +70,7 @@
             this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Password.Font = new System.Drawing.Font("Nexa Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.Location = new System.Drawing.Point(394, 304);
+            this.txt_Password.MaxLength = 15;
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(304, 27);
             this.txt_Password.TabIndex = 2;

@@ -120,4 +120,23 @@
   <metadata name="Deposit_Transaction_Reports1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="Deposit_Transaction_Reports1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAiBJREFUSEut
+        lU1LFVEch4dKCrEgKG2lC5FerNbRKpAwl0q4cp1QVBZq2/oobZKk8gu0qSQEEemNwA8hWrYotNPzO/O7
+        Ic6dmXNlHni4c/4v59w7c+bcrIwQwiA+wSX8aHU9j4MuOzxMchHf4F8sQ7nXeMFtnUHjJP5C8QVncBjP
+        2Mv4CL+h2MHbbk9DDahv+hvv4VGnCiiHD/APqmfCqWooPI/6dlrkpsO1UDvqnp845HA5FOmZiGmHkqHn
+        bt4aXjnUHgqG8rr4TI44nAw9uo16ZrqF5buRpLawuO/x6ZjoAHq0acSsQ0VIvsxrwiWPn2FHv4z6K5oA
+        FhwqQvJDXhNOeryMwzGZCPWnNAG8d6gISU0sejzewKcxmQj1SQst5jX/b91b3MK+WJAAtXqRReWt05su
+        Hnt8Jx+Gd3giFtVA3VzsCOGhQ0VItra3tqi2aheuKwArWHmAkj+G37F6ewsKWi/sjMf9+DlG8jf/Oeoc
+        vIYDsckwnkVR/cIKilpHkM6uUcf0y6ZQp/Qq6i9Ct7k7NgHXt3AXdRDXH0GCwsMcqlpE6Ky7jlexy2Xl
+        UDSO2yhS/iZ+4GZ+Gfb8uYa9nrIcigZwAfXrylDuBepZ3vB4P1+xfjFBYdJfOdfaIO3QYsnvYi1Mdhw/
+        aeY2NL7YOWw9t4Mo3uhifZ60HYsuawYm1GK6XQdZcUlzMGkv7l9Mh8CY083CxGdR218H80iWZdk/yXTH
+        jQX/XbsAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
