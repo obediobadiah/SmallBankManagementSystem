@@ -222,6 +222,6 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cb_BankAccountType;
         public System.Windows.Forms.DateTimePicker date_DateofCreation;
-        private System.Windows.Forms.TextBox txt_BankAcccountIdentifier;
+        public System.Windows.Forms.TextBox txt_BankAcccountIdentifier;
     }
 }

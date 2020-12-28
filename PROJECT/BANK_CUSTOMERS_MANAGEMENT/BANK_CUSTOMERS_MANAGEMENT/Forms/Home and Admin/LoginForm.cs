@@ -100,7 +100,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 MessageBox.Show(ex.ToString());
             }
         }
-        public void showAdminName()
+        public void showAdminName() 
         {
             try
             {
@@ -135,6 +135,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

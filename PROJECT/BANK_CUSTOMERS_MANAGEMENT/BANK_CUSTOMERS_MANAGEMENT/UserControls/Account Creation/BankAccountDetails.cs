@@ -20,6 +20,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             Date_BankAccountLimitDate.Visible = false;
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+
+        CommunicationsSender obj = new CommunicationsSender();
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cb_BankAccountType.SelectedItem == "Savings Account")
@@ -58,14 +61,16 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     if (dt1.Rows.Count >= 1)
                     {
                         Save();
+                        CommunicationAccountNumber();
+                        message();
+                        obj.Show();
                     }
                     else
                     {
-                        //MessageBox.Show("Account name not found");
                         MessageBox.Show("The Name  " + txt_BankAcccountIdentifier.Text + " Doesn't exit in the personal details");
-                        //clear();  
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -134,7 +139,35 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
 
         }
-            //CommunicationsSender CommSend = new CommunicationsSender();
-            //CommSend.ShowDialog();
+
+        public void CommunicationAccountNumber()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_BankAcccountIdentifier.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    obj.label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void message()
+        {
+            obj.txt_Message.Text = "You have created on IMARA Cooperative of Savings and Credtis an " + cb_BankAccountType.SelectedItem.ToString() + " Number " + obj.label_AccountNumber.Text + " named " + txt_BankAcccountIdentifier.Text + " on " + date_DateofCreation.Value.Date.ToShortDateString();
+        }
     }
 }
