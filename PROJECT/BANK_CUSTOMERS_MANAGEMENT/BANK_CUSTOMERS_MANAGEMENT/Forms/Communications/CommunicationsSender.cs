@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
@@ -22,6 +23,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             InitializeComponent();
         }
 
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -33,6 +35,20 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            if(txt_PhoneNumber.Text == "" || txt_Message.Text =="")
+            {
+                MessageBox.Show("Make sure all required informations are filled");
+            }
+            else
+            {
+                MessageSender();
+                Save();
+            }
+
+        }
+
+        public void MessageSender()
         {
             try
             {
@@ -50,10 +66,37 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 var message = MessageResource.Create(messageOptions);
                 MessageBox.Show(message.Body);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void Save()
+        {
+            try
+            { 
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand("INSERT into MESSAGE_COMMUNICATION (Account_Number,Mobile_Number,Message) values (@Account_Number,@Mobile_Number,@Message)", conn);
+
+
+                cmd1.Parameters.AddWithValue("@Account_Number", label_AccountNumber.Text);
+                cmd1.Parameters.AddWithValue("@Mobile_Number", txt_PhoneNumber.Text);
+                cmd1.Parameters.AddWithValue("@Message", txt_Message.Text);
+
+                int i;
+                i = cmd1.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Data communications saved successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                conn.Close();
+
+            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
         }
     }
 }

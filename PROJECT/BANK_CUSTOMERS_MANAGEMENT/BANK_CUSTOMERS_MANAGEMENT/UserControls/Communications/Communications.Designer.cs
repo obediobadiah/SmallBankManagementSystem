@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Communications));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -39,18 +39,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Second_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Of_Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Place_Of_Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Merital_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_Of_Space = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proffessional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mobile_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Card_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
@@ -85,7 +73,7 @@
             this.groupBox3.Controls.Add(this.txt_Search);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox3.Location = new System.Drawing.Point(341, 54);
+            this.groupBox3.Location = new System.Drawing.Point(329, 58);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(470, 109);
             this.groupBox3.TabIndex = 120;
@@ -96,6 +84,9 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Account Number",
+            "Mobile Number"});
             this.comboBox1.Location = new System.Drawing.Point(21, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(409, 26);
@@ -117,6 +108,7 @@
             this.button3.TabIndex = 38;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel4
             // 
@@ -137,102 +129,29 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.First_Name,
-            this.Second_Name,
-            this.Gender,
-            this.Date_Of_Birth,
-            this.Place_Of_Birth,
-            this.Nationality,
-            this.Merital_Status,
-            this.Name_Of_Space,
-            this.Proffessional,
-            this.Code,
-            this.Mobile_Number,
-            this.ID_Card_Number});
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SteelBlue;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(19, 191);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(195, 191);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1109, 517);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(719, 517);
             this.bunifuCustomDataGrid1.TabIndex = 121;
-            // 
-            // First_Name
-            // 
-            this.First_Name.HeaderText = "First Name";
-            this.First_Name.Name = "First_Name";
-            // 
-            // Second_Name
-            // 
-            this.Second_Name.HeaderText = "Second Name";
-            this.Second_Name.Name = "Second_Name";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // Date_Of_Birth
-            // 
-            this.Date_Of_Birth.HeaderText = "Date Of Birth";
-            this.Date_Of_Birth.Name = "Date_Of_Birth";
-            // 
-            // Place_Of_Birth
-            // 
-            this.Place_Of_Birth.HeaderText = "Place Of Birth";
-            this.Place_Of_Birth.Name = "Place_Of_Birth";
-            // 
-            // Nationality
-            // 
-            this.Nationality.HeaderText = "Nationality";
-            this.Nationality.Name = "Nationality";
-            // 
-            // Merital_Status
-            // 
-            this.Merital_Status.HeaderText = "Merital Status";
-            this.Merital_Status.Name = "Merital_Status";
-            // 
-            // Name_Of_Space
-            // 
-            this.Name_Of_Space.HeaderText = "Name Of Space";
-            this.Name_Of_Space.Name = "Name_Of_Space";
-            // 
-            // Proffessional
-            // 
-            this.Proffessional.HeaderText = "Proffessional";
-            this.Proffessional.Name = "Proffessional";
-            // 
-            // Code
-            // 
-            this.Code.HeaderText = "Code";
-            this.Code.Name = "Code";
-            // 
-            // Mobile_Number
-            // 
-            this.Mobile_Number.HeaderText = "Mobile Number";
-            this.Mobile_Number.Name = "Mobile_Number";
-            // 
-            // ID_Card_Number
-            // 
-            this.ID_Card_Number.HeaderText = "ID Card Number";
-            this.ID_Card_Number.Name = "ID_Card_Number";
             // 
             // Communications
             // 
@@ -243,6 +162,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Communications";
             this.Size = new System.Drawing.Size(1152, 723);
+            this.Load += new System.EventHandler(this.Communications_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -262,17 +182,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Second_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date_Of_Birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Place_Of_Birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nationality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Merital_Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name_Of_Space;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proffessional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Card_Number;
     }
 }

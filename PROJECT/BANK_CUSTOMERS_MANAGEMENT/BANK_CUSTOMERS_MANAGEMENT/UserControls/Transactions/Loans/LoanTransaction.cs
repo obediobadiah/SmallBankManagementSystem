@@ -21,6 +21,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
+        CommunicationsSender obj = new CommunicationsSender();
         private void LoanTransaction_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -31,7 +32,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                conn.Open();
+                
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_LoanAccountNumber.Text + "' AND Identifier = '" + txt_LoanBorrower.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -61,6 +62,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             }
                             else
                             {
+                                conn.Open();
                                 SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
 
                                 cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
@@ -81,6 +83,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                                     MessageBox.Show("Loan transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 Display();
+                                conn.Close();
+
+                                CommunicationAccountNumber();
+                                CommunicationMobileNumber();
+                                message();
+                                obj.ShowDialog();
                             }
                         }
                     }
@@ -93,7 +101,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     MessageBox.Show("The entered Borrower name and Account Number doesn't match", "Information");
                 }
-                conn.Close();
+               
             }
             catch (Exception ex)
             {
@@ -131,7 +139,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION where Account_Number LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -146,7 +154,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION where Borrower = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION where Borrower LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -167,7 +175,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                conn.Open();
+                
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_LoanAccountNumber.Text + "' AND Identifier = '" + txt_LoanBorrower.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -180,6 +188,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     else
                     {
+                        conn.Open();
                         SqlCommand cmd1 = new SqlCommand("UPDATE LOAN_TRANSACTION SET  Loan_Date = @Loan_Date,Borrower = @Borrower,Account_Number = @Account_Number,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Purpose = @Purpose,Schedule = @Schedule,Limit_Date = @Limit_Date,Transaction_Time = @Transaction_Time WHERE ID_Number = @ID_Number", conn);
 
                         cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
@@ -200,6 +209,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             MessageBox.Show("Loan transaction details updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         Display();
+                        conn.Close();
+
+                        CommunicationAccountNumber();
+                        CommunicationMobileNumber();
+                        message();
+                        obj.ShowDialog();
                     }
 
                 }
@@ -207,7 +222,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -319,6 +333,73 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text9.Text = label_LoanTime.Text;
             DepositViewer.crystalReportViewer1.ReportSource = cr;
             DepositViewer.Show();
+        }
+
+        public void CommunicationAccountNumber()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_LoanBorrower.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    obj.label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void message()
+        {
+            obj.txt_Message.Text = "The account named " + txt_LoanBorrower.Text + " and Number " + obj.label_AccountNumber.Text + " on IMARA Cooperative of Savings and Credit have maked the loan transaction of " + txt_LoanAmount.Text + " " + cb_LoanCurrency.SelectedItem.ToString()+" With a schedule of "+ cb_LoanScheduler.SelectedItem.ToString() +" ending on "+ date_LoanLimitDate.Value.Date.ToShortDateString();
+        }
+
+        public void CommunicationMobileNumber()
+        {
+            try
+            {
+                string Code;
+                string Number;
+
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Mobile_Number_Code,Mobile_Number FROM PERSONAL_DETAILS where First_Name = '" + txt_LoanBorrower.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    Code = dt1.Rows[0]["Mobile_Number_Code"].ToString();
+                    Number = dt1.Rows[0]["Mobile_Number"].ToString();
+
+                    obj.txt_PhoneNumber.Text = Code + Number;
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

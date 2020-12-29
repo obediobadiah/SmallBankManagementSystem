@@ -45,7 +45,7 @@
             // txt_PhoneNumber
             // 
             this.txt_PhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PhoneNumber.Location = new System.Drawing.Point(54, 115);
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(54, 163);
             this.txt_PhoneNumber.Name = "txt_PhoneNumber";
             this.txt_PhoneNumber.Size = new System.Drawing.Size(397, 27);
             this.txt_PhoneNumber.TabIndex = 0;
@@ -114,7 +114,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(52, 88);
+            this.label2.Location = new System.Drawing.Point(52, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 21);
             this.label2.TabIndex = 162;
@@ -125,7 +125,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(50, 212);
+            this.label3.Location = new System.Drawing.Point(50, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 162;
@@ -136,7 +136,7 @@
             this.label_AccountNumber.AutoSize = true;
             this.label_AccountNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountNumber.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label_AccountNumber.Location = new System.Drawing.Point(49, 166);
+            this.label_AccountNumber.Location = new System.Drawing.Point(49, 73);
             this.label_AccountNumber.Name = "label_AccountNumber";
             this.label_AccountNumber.Size = new System.Drawing.Size(140, 21);
             this.label_AccountNumber.TabIndex = 162;
@@ -168,7 +168,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txt_PhoneNumber;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -177,5 +176,6 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label_AccountNumber;
         public System.Windows.Forms.TextBox txt_Message;
+        public System.Windows.Forms.TextBox txt_PhoneNumber;
     }
 }

@@ -20,12 +20,13 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             InitializeComponent();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
+
+        CommunicationsSender obj = new CommunicationsSender();
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
             LoanAmountEditor ();
             try
             {
-                conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_RepaymentAccountNumber.Text + "' AND Identifier = '" + txt_RepaymentBorrower.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -38,6 +39,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     else
                     {
+                        conn.Open();
                         SqlCommand cmd1 = new SqlCommand("INSERT into REPAYMENT_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Remaining_Time,@Transaction_Time)", conn);
 
                         cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
@@ -55,6 +57,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             MessageBox.Show("Repayment transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         Display();
+                        conn.Close();
+
+                        CommunicationAccountNumber();
+                        CommunicationMobileNumber();
+                        message();
+                        obj.ShowDialog();
                     }
 
                 }
@@ -62,7 +70,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     MessageBox.Show("The entered Borrower name and Account Number doesn't match", "Information");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -309,7 +316,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Account_Number LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -324,7 +331,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Borrower = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM REPAYMENT_TRANSACTION where Borrower LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -374,6 +381,67 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text7.Text = label_RepaymentTime.Text;
             RepaymentViewer.crystalReportViewer1.ReportSource = cr;
             RepaymentViewer.Show();
+        }
+
+        public void CommunicationAccountNumber()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_RepaymentBorrower.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    obj.label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void message()
+        {
+            obj.txt_Message.Text = "The account named " + txt_RepaymentBorrower.Text + " and Number " + obj.label_AccountNumber.Text + " on IMARA Cooperative of Savings and Credit have maked the repayment transaction of " + txt_RepaymentAmount.Text + " ; The remaining loan amount is " + label_RemainingAmount.Text;
+        }
+
+        public void CommunicationMobileNumber()
+        {
+            try
+            {
+                string Code;
+                string Number;
+
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Mobile_Number_Code,Mobile_Number FROM PERSONAL_DETAILS where First_Name = '" + txt_RepaymentBorrower.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    Code = dt1.Rows[0]["Mobile_Number_Code"].ToString();
+                    Number = dt1.Rows[0]["Mobile_Number"].ToString();
+
+                    obj.txt_PhoneNumber.Text = Code + Number;
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -22,11 +22,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-454MBGL;Initial Catalog=BANK_CUSTOMERS_Disseration_Project_DB;Integrated Security=True");
 
+        CommunicationsSender obj = new CommunicationsSender();
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
             try
             {
-                conn.Open();
+                
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_WithdrawalAccountNumber.Text + "' AND Identifier = '" + txt_WithdrawalAccountName.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -45,6 +46,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         da2.Fill(dt2);
                         if (dt2.Rows.Count > 0)
                         {
+                            conn.Open();
                             SqlCommand cmd1 = new SqlCommand("INSERT into WITHDRAWAL_TRANSACTION values (@Account_Name,@Account_Number,@Withdrawal_by,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
 
                             cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
@@ -64,6 +66,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                                 MessageBox.Show("Withdrawal transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             Display();
+                            conn.Close();
+
+                            CommunicationAccountNumber();
+                            CommunicationMobileNumber();
+                            message();
+                            obj.ShowDialog();
                         }
                         else
                         {
@@ -76,16 +84,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
                 }
-                conn.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
-            //CommunicationsSender CommSend = new CommunicationsSender();
-            //CommSend.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -119,7 +123,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_WithdrawalAccountNumber.Text + "' AND Identifier = '" + txt_WithdrawalAccountName.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -132,6 +135,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     else
                     {
+                        conn.Open();
                         SqlCommand cmd1 = new SqlCommand("UPDATE WITHDRAWAL_TRANSACTION SET Account_Name = @Account_Name,Account_Number = @Account_Number,Withdrawal_by = @Withdrawal_by,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
 
                         cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
@@ -152,13 +156,18 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             MessageBox.Show("Withdrawal transaction details updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         Display();
+                        conn.Close();
+
+                        CommunicationAccountNumber();
+                        CommunicationMobileNumber();
+                        message();
+                        obj.ShowDialog();
                     }
                 }
                 else
                 {
                     MessageBox.Show("The entered Account name and Account Number doesn't match", "Information");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -232,7 +241,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Number = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Number LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -247,7 +256,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Name = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM WITHDRAWAL_TRANSACTION where Account_Name LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -299,6 +308,71 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text8.Text = txt_WithdrwalNarration.Text;
             WithdrawalViewer.crystalReportViewer1.ReportSource = cr;
             WithdrawalViewer.Show();
+        }
+
+        public void CommunicationAccountNumber()
+        {
+            try
+            {
+                conn.Open();   
+                SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_WithdrawalAccountName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    obj.label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void message()
+        {
+            obj.txt_Message.Text = "The account named " + txt_WithdrawalAccountName.Text + " and Number " + obj.label_AccountNumber.Text + " on IMARA Cooperative of Savings and Credit have maked the Withdrawal transaction of " + txt_WithdrawalAmount.Text + " " + cb_WithdrawalCurrency.SelectedItem.ToString();
+        }
+
+        public void CommunicationMobileNumber()
+        {
+            try
+            {
+                string Code;
+                string Number;
+
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("SELECT Mobile_Number_Code,Mobile_Number FROM PERSONAL_DETAILS where First_Name = '" + txt_WithdrawalAccountName.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    Code = dt1.Rows[0]["Mobile_Number_Code"].ToString();
+                    Number = dt1.Rows[0]["Mobile_Number"].ToString();
+
+                    obj.txt_PhoneNumber.Text = Code + Number;
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

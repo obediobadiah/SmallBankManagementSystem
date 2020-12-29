@@ -62,15 +62,15 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     {
                         Save();
                         CommunicationAccountNumber();
+                        CommunicationMobileNumber();
                         message();
-                        obj.Show();
+                        obj.ShowDialog();
                     }
                     else
                     {
                         MessageBox.Show("The Name  " + txt_BankAcccountIdentifier.Text + " Doesn't exit in the personal details");
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -144,7 +144,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                conn.Open();
+                
                 SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_BankAcccountIdentifier.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
@@ -157,7 +157,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
                 }
-                conn.Close();
+               
             }
             catch (Exception ex)
             {
@@ -168,6 +168,36 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         public void message()
         {
             obj.txt_Message.Text = "You have created on IMARA Cooperative of Savings and Credtis an " + cb_BankAccountType.SelectedItem.ToString() + " Number " + obj.label_AccountNumber.Text + " named " + txt_BankAcccountIdentifier.Text + " on " + date_DateofCreation.Value.Date.ToShortDateString();
+        }
+
+        public void CommunicationMobileNumber()
+        {
+            try
+            {
+                string Code;
+                string Number;
+                
+                SqlCommand cmd2 = new SqlCommand("SELECT Mobile_Number_Code,Mobile_Number FROM PERSONAL_DETAILS where First_Name = '" + txt_BankAcccountIdentifier.Text + "'", conn);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                if (dt1.Rows.Count > 0)
+                {
+                    Code = dt1.Rows[0]["Mobile_Number_Code"].ToString();
+                    Number = dt1.Rows[0]["Mobile_Number"].ToString();
+
+                    obj.txt_PhoneNumber.Text = Code + Number;
+                }
+                else
+                {
+                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

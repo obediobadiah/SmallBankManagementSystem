@@ -219,6 +219,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 label_AccountBalance.Text = "----";
                 label_BalanceCurrency.Text = "";
             }
+            else if(label9.Text == "")
+            {
+                label_AccountBalance.Text = label10.Text;
+            }
             else
             {
                 double DepTrans;
@@ -250,7 +254,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
