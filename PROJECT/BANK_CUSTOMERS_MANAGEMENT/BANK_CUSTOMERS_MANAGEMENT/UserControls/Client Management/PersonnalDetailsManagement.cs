@@ -209,7 +209,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where  ID_Number = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where  ID_Number LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -224,7 +224,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name = '" + txt_Search.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PERSONAL_DETAILS where First_Name LIKE '%" + txt_Search.Text + "%'", conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);

@@ -150,6 +150,7 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(1104, 296);
             this.bunifuCards1.TabIndex = 12;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
             // 
             // ID_NumberLabel
             // 

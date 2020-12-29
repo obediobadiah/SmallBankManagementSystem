@@ -2710,11 +2710,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             private global::System.Data.DataColumn columnID_Number;
             
-            private global::System.Data.DataColumn columnPort;
+            private global::System.Data.DataColumn columnAccount_Number;
             
-            private global::System.Data.DataColumn columnMobile_Number_Code;
-            
-            private global::System.Data.DataColumn columnDomain;
+            private global::System.Data.DataColumn columnMobile_Number;
             
             private global::System.Data.DataColumn columnMessage;
             
@@ -2761,25 +2759,17 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PortColumn {
+            public global::System.Data.DataColumn Account_NumberColumn {
                 get {
-                    return this.columnPort;
+                    return this.columnAccount_Number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Mobile_Number_CodeColumn {
+            public global::System.Data.DataColumn Mobile_NumberColumn {
                 get {
-                    return this.columnMobile_Number_Code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DomainColumn {
-                get {
-                    return this.columnDomain;
+                    return this.columnMobile_Number;
                 }
             }
             
@@ -2828,13 +2818,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MESSAGE_COMMUNICATIONRow AddMESSAGE_COMMUNICATIONRow(string Port, string Mobile_Number_Code, string Domain, string Message) {
+            public MESSAGE_COMMUNICATIONRow AddMESSAGE_COMMUNICATIONRow(int Account_Number, string Mobile_Number, string Message) {
                 MESSAGE_COMMUNICATIONRow rowMESSAGE_COMMUNICATIONRow = ((MESSAGE_COMMUNICATIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Port,
-                        Mobile_Number_Code,
-                        Domain,
+                        Account_Number,
+                        Mobile_Number,
                         Message};
                 rowMESSAGE_COMMUNICATIONRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMESSAGE_COMMUNICATIONRow);
@@ -2866,9 +2855,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID_Number = base.Columns["ID_Number"];
-                this.columnPort = base.Columns["Port"];
-                this.columnMobile_Number_Code = base.Columns["Mobile_Number_Code"];
-                this.columnDomain = base.Columns["Domain"];
+                this.columnAccount_Number = base.Columns["Account_Number"];
+                this.columnMobile_Number = base.Columns["Mobile_Number"];
                 this.columnMessage = base.Columns["Message"];
             }
             
@@ -2877,12 +2865,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             private void InitClass() {
                 this.columnID_Number = new global::System.Data.DataColumn("ID_Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Number);
-                this.columnPort = new global::System.Data.DataColumn("Port", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPort);
-                this.columnMobile_Number_Code = new global::System.Data.DataColumn("Mobile_Number_Code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMobile_Number_Code);
-                this.columnDomain = new global::System.Data.DataColumn("Domain", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDomain);
+                this.columnAccount_Number = new global::System.Data.DataColumn("Account_Number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccount_Number);
+                this.columnMobile_Number = new global::System.Data.DataColumn("Mobile_Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMobile_Number);
                 this.columnMessage = new global::System.Data.DataColumn("Message", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMessage);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2893,10 +2879,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
                 this.columnID_Number.AllowDBNull = false;
                 this.columnID_Number.ReadOnly = true;
                 this.columnID_Number.Unique = true;
-                this.columnPort.MaxLength = 50;
-                this.columnMobile_Number_Code.MaxLength = 50;
-                this.columnDomain.MaxLength = 15;
-                this.columnMessage.MaxLength = 50;
+                this.columnMobile_Number.MaxLength = 50;
+                this.columnMessage.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6064,50 +6048,34 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Port {
+            public int Account_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableMESSAGE_COMMUNICATION.PortColumn]));
+                        return ((int)(this[this.tableMESSAGE_COMMUNICATION.Account_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Port\' in table \'MESSAGE_COMMUNICATION\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Account_Number\' in table \'MESSAGE_COMMUNICATION\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableMESSAGE_COMMUNICATION.PortColumn] = value;
+                    this[this.tableMESSAGE_COMMUNICATION.Account_NumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Mobile_Number_Code {
+            public string Mobile_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableMESSAGE_COMMUNICATION.Mobile_Number_CodeColumn]));
+                        return ((string)(this[this.tableMESSAGE_COMMUNICATION.Mobile_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Mobile_Number_Code\' in table \'MESSAGE_COMMUNICATION\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mobile_Number\' in table \'MESSAGE_COMMUNICATION\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMESSAGE_COMMUNICATION.Mobile_Number_CodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Domain {
-                get {
-                    try {
-                        return ((string)(this[this.tableMESSAGE_COMMUNICATION.DomainColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Domain\' in table \'MESSAGE_COMMUNICATION\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMESSAGE_COMMUNICATION.DomainColumn] = value;
+                    this[this.tableMESSAGE_COMMUNICATION.Mobile_NumberColumn] = value;
                 }
             }
             
@@ -6129,38 +6097,26 @@ namespace BANK_CUSTOMERS_MANAGEMENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPortNull() {
-                return this.IsNull(this.tableMESSAGE_COMMUNICATION.PortColumn);
+            public bool IsAccount_NumberNull() {
+                return this.IsNull(this.tableMESSAGE_COMMUNICATION.Account_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPortNull() {
-                this[this.tableMESSAGE_COMMUNICATION.PortColumn] = global::System.Convert.DBNull;
+            public void SetAccount_NumberNull() {
+                this[this.tableMESSAGE_COMMUNICATION.Account_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMobile_Number_CodeNull() {
-                return this.IsNull(this.tableMESSAGE_COMMUNICATION.Mobile_Number_CodeColumn);
+            public bool IsMobile_NumberNull() {
+                return this.IsNull(this.tableMESSAGE_COMMUNICATION.Mobile_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMobile_Number_CodeNull() {
-                this[this.tableMESSAGE_COMMUNICATION.Mobile_Number_CodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDomainNull() {
-                return this.IsNull(this.tableMESSAGE_COMMUNICATION.DomainColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDomainNull() {
-                this[this.tableMESSAGE_COMMUNICATION.DomainColumn] = global::System.Convert.DBNull;
+            public void SetMobile_NumberNull() {
+                this[this.tableMESSAGE_COMMUNICATION.Mobile_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11385,49 +11341,42 @@ SELECT ID_Number, Loan_Date, Borrower, Account_Number, Amount, Amount_In_Words, 
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "MESSAGE_COMMUNICATION";
             tableMapping.ColumnMappings.Add("ID_Number", "ID_Number");
-            tableMapping.ColumnMappings.Add("Port", "Port");
-            tableMapping.ColumnMappings.Add("Mobile_Number_Code", "Mobile_Number_Code");
-            tableMapping.ColumnMappings.Add("Domain", "Domain");
+            tableMapping.ColumnMappings.Add("Account_Number", "Account_Number");
+            tableMapping.ColumnMappings.Add("Mobile_Number", "Mobile_Number");
             tableMapping.ColumnMappings.Add("Message", "Message");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MESSAGE_COMMUNICATION] WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Port = 1 AND [Port] IS NULL) OR ([Port] = @Original_Port)) AND ((@IsNull_Mobile_Number_Code = 1 AND [Mobile_Number_Code] IS NULL) OR ([Mobile_Number_Code] = @Original_Mobile_Number_Code)) AND ((@IsNull_Domain = 1 AND [Domain] IS NULL) OR ([Domain] = @Original_Domain)) AND ((@IsNull_Message = 1 AND [Message] IS NULL) OR ([Message] = @Original_Message)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MESSAGE_COMMUNICATION] WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @Original_Account_Number)) AND ((@IsNull_Mobile_Number = 1 AND [Mobile_Number] IS NULL) OR ([Mobile_Number] = @Original_Mobile_Number)) AND ((@IsNull_Message = 1 AND [Message] IS NULL) OR ([Message] = @Original_Message)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Port", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Port", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mobile_Number_Code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mobile_Number_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Domain", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Domain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mobile_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mobile_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Message", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MESSAGE_COMMUNICATION] ([Port], [Mobile_Number_Code], [Domain], [Message]) VALUES (@Port, @Mobile_Number_Code, @Domain, @Message);
-SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNICATION WHERE (ID_Number = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MESSAGE_COMMUNICATION] ([Account_Number], [Mobile_Number], [Message]) VALUES (@Account_Number, @Mobile_Number, @Message);
+SELECT ID_Number, Account_Number, Mobile_Number, Message FROM MESSAGE_COMMUNICATION WHERE (ID_Number = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Port", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mobile_Number_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Domain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mobile_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MESSAGE_COMMUNICATION] SET [Port] = @Port, [Mobile_Number_Code] = @Mobile_Number_Code, [Domain] = @Domain, [Message] = @Message WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Port = 1 AND [Port] IS NULL) OR ([Port] = @Original_Port)) AND ((@IsNull_Mobile_Number_Code = 1 AND [Mobile_Number_Code] IS NULL) OR ([Mobile_Number_Code] = @Original_Mobile_Number_Code)) AND ((@IsNull_Domain = 1 AND [Domain] IS NULL) OR ([Domain] = @Original_Domain)) AND ((@IsNull_Message = 1 AND [Message] IS NULL) OR ([Message] = @Original_Message)));
-SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNICATION WHERE (ID_Number = @ID_Number)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MESSAGE_COMMUNICATION] SET [Account_Number] = @Account_Number, [Mobile_Number] = @Mobile_Number, [Message] = @Message WHERE (([ID_Number] = @Original_ID_Number) AND ((@IsNull_Account_Number = 1 AND [Account_Number] IS NULL) OR ([Account_Number] = @Original_Account_Number)) AND ((@IsNull_Mobile_Number = 1 AND [Mobile_Number] IS NULL) OR ([Mobile_Number] = @Original_Mobile_Number)) AND ((@IsNull_Message = 1 AND [Message] IS NULL) OR ([Message] = @Original_Message)));
+SELECT ID_Number, Account_Number, Mobile_Number, Message FROM MESSAGE_COMMUNICATION WHERE (ID_Number = @ID_Number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Port", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mobile_Number_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Domain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mobile_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Port", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Port", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Port", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mobile_Number_Code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mobile_Number_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number_Code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Domain", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Domain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domain", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Account_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Mobile_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mobile_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mobile_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Message", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11446,8 +11395,8 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM dbo.MESSAGE_COMM" +
-                "UNICATION";
+            this._commandCollection[0].CommandText = "SELECT ID_Number, Account_Number, Mobile_Number, Message FROM dbo.MESSAGE_COMMUNI" +
+                "CATION";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11508,39 +11457,31 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Number, string Original_Port, string Original_Mobile_Number_Code, string Original_Domain, string Original_Message) {
+        public virtual int Delete(int Original_ID_Number, global::System.Nullable<int> Original_Account_Number, string Original_Mobile_Number, string Original_Message) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Number));
-            if ((Original_Port == null)) {
+            if ((Original_Account_Number.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Account_Number.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Port));
-            }
-            if ((Original_Mobile_Number_Code == null)) {
+            if ((Original_Mobile_Number == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Mobile_Number_Code));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Mobile_Number));
             }
-            if ((Original_Domain == null)) {
+            if ((Original_Message == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Domain));
-            }
-            if ((Original_Message == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Message));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Message));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11562,30 +11503,24 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Port, string Mobile_Number_Code, string Domain, string Message) {
-            if ((Port == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> Account_Number, string Mobile_Number, string Message) {
+            if ((Account_Number.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Account_Number.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Port));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Mobile_Number_Code == null)) {
+            if ((Mobile_Number == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Mobile_Number_Code));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Mobile_Number));
             }
-            if ((Domain == null)) {
+            if ((Message == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Domain));
-            }
-            if ((Message == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Message));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Message));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11607,65 +11542,51 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Port, string Mobile_Number_Code, string Domain, string Message, int Original_ID_Number, string Original_Port, string Original_Mobile_Number_Code, string Original_Domain, string Original_Message, int ID_Number) {
-            if ((Port == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(global::System.Nullable<int> Account_Number, string Mobile_Number, string Message, int Original_ID_Number, global::System.Nullable<int> Original_Account_Number, string Original_Mobile_Number, string Original_Message, int ID_Number) {
+            if ((Account_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Account_Number.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Port));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((Mobile_Number_Code == null)) {
+            if ((Mobile_Number == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Mobile_Number_Code));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Mobile_Number));
             }
-            if ((Domain == null)) {
+            if ((Message == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Domain));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Message));
             }
-            if ((Message == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Message));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Number));
-            if ((Original_Port == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_Number));
+            if ((Original_Account_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Account_Number.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Port));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_Mobile_Number_Code == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Mobile_Number_Code));
-            }
-            if ((Original_Domain == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((Original_Mobile_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Domain));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Mobile_Number));
             }
             if ((Original_Message == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Message));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Message));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_Number));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID_Number));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11686,8 +11607,8 @@ SELECT ID_Number, Port, Mobile_Number_Code, Domain, Message FROM MESSAGE_COMMUNI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Port, string Mobile_Number_Code, string Domain, string Message, int Original_ID_Number, string Original_Port, string Original_Mobile_Number_Code, string Original_Domain, string Original_Message) {
-            return this.Update(Port, Mobile_Number_Code, Domain, Message, Original_ID_Number, Original_Port, Original_Mobile_Number_Code, Original_Domain, Original_Message, Original_ID_Number);
+        public virtual int Update(global::System.Nullable<int> Account_Number, string Mobile_Number, string Message, int Original_ID_Number, global::System.Nullable<int> Original_Account_Number, string Original_Mobile_Number, string Original_Message) {
+            return this.Update(Account_Number, Mobile_Number, Message, Original_ID_Number, Original_Account_Number, Original_Mobile_Number, Original_Message, Original_ID_Number);
         }
     }
     
