@@ -27,58 +27,71 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                
+
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_WithdrawalAccountNumber.Text + "' AND Identifier = '" + txt_WithdrawalAccountName.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    if (txt_WithdrawalAccountName.Text == "" || txt_WithdrawalAccountNumber.Text == " " || txt_WithdrawalAmount.Text == "" || txt_WithdrawalAmountInWord.Text == "" || txt_WithdrawalName.Text == "" || txt_WithdrwalNarration.Text == "" || cb_WithdrawalCurrency.Text == "" || label_WithdrawalTime.Text == "")
-                    {
-                        MessageBox.Show("Make sure you complete all required fields");
-                    }
-                    else
-                    {
-                        SqlCommand cmd2 = new SqlCommand("SELECT Account_Number FROM DEPOSIT_TRANSACTION WHERE Account_Number = '" + txt_WithdrawalAccountNumber.Text + "'", conn);
-                        SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-                        DataTable dt2 = new DataTable();
-                        da2.Fill(dt2);
-                        if (dt2.Rows.Count > 0)
+
+                        if (txt_WithdrawalAccountName.Text == "" || txt_WithdrawalAccountNumber.Text == " " || txt_WithdrawalAmount.Text == "" || txt_WithdrawalAmountInWord.Text == "" || txt_WithdrawalName.Text == "" || txt_WithdrwalNarration.Text == "" || cb_WithdrawalCurrency.Text == "" || label_WithdrawalTime.Text == "")
                         {
-                            conn.Open();
-                            SqlCommand cmd1 = new SqlCommand("INSERT into WITHDRAWAL_TRANSACTION values (@Account_Name,@Account_Number,@Withdrawal_by,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
-
-                            cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
-                            cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
-                            cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
-                            cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
-                            cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
-                            cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
-                            cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
-                            cmd1.Parameters.AddWithValue("@Currency", cb_WithdrawalCurrency.SelectedItem);
-                            cmd1.Parameters.AddWithValue("@Narration", txt_WithdrwalNarration.Text);
-
-                            int i;
-                            i = cmd1.ExecuteNonQuery();
-                            if (i > 0)
-                            {
-                                MessageBox.Show("Withdrawal transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            Display();
-                            conn.Close();
-
-                            CommunicationAccountNumber();
-                            CommunicationMobileNumber();
-                            message();
-                            obj.ShowDialog();
+                            MessageBox.Show("Make sure you complete all required fields");
                         }
                         else
                         {
-                            MessageBox.Show("This account is not yet eligible to withdrawal", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
+                            if(Convert.ToInt32(txt_WithdrawalAmount.Text) == 0)
+                            {
+                                MessageBox.Show("Wrong entered Withdrawal Amount, You cannot make a Withdrawal of 000");
+                            } 
+                            else
+                            {
+                                DepositBalance();
+                                WithdrawalBalance();
 
+
+                                if (label_Withdrawal.Text == "")
+                                {
+                                    double DepTrans;
+                                    double withdrawalAmount;
+                                    DepTrans = Convert.ToDouble(label_deposit.Text);
+                                    withdrawalAmount = Convert.ToDouble(txt_WithdrawalAmount.Text);
+
+                                    if (DepTrans < withdrawalAmount)
+                                    {
+                                        MessageBox.Show("Insufficient balance, The Withdrawal Amount is bigger than the account balance", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        Save();
+                                    }
+                                }
+                                else
+                                {
+                                    double DepTrans;
+                                    double WithTrans;
+                                    double result;
+                                    double withdrawalAmount;
+                                    DepTrans = Convert.ToDouble(label_deposit.Text);
+                                    WithTrans = Convert.ToDouble(label_Withdrawal.Text);
+                                    withdrawalAmount = Convert.ToDouble(txt_WithdrawalAmount.Text);
+
+                                    result = DepTrans - WithTrans;
+                                    label_AccountBalance.Text = result.ToString();
+
+                                    if (result < withdrawalAmount)
+                                    {
+                                        MessageBox.Show("Insufficient balance, The Withdrawal Amount is bigger than the account balance", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        Save();
+                                    }
+                                }
+
+                            }
+                    }
                 }
                 else
                 {
@@ -92,6 +105,54 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
         }
 
+        public void Save()
+        {
+            try
+            {
+                SqlCommand cmd2 = new SqlCommand("SELECT Account_Number FROM DEPOSIT_TRANSACTION WHERE Account_Number = '" + txt_WithdrawalAccountNumber.Text + "'", conn);
+                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                DataTable dt2 = new DataTable();
+                da2.Fill(dt2);
+                if (dt2.Rows.Count > 0)
+                {
+                    conn.Open();
+                    SqlCommand cmd1 = new SqlCommand("INSERT into WITHDRAWAL_TRANSACTION values (@Account_Name,@Account_Number,@Withdrawal_by,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
+
+                    cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
+                    cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
+                    cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
+                    cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
+                    cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
+                    cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
+                    cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
+                    cmd1.Parameters.AddWithValue("@Currency", cb_WithdrawalCurrency.SelectedItem);
+                    cmd1.Parameters.AddWithValue("@Narration", txt_WithdrwalNarration.Text);
+
+                    int i;
+                    i = cmd1.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Withdrawal transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Display();
+                    conn.Close();
+
+                    CommunicationAccountNumber();
+                    CommunicationMobileNumber();
+                    message();
+                    obj.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("This account is not yet eligible to withdrawal", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+                
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             label_WithdrawalTime.Text = DateTime.Now.ToLongTimeString();
@@ -138,14 +199,13 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         conn.Open();
                         SqlCommand cmd1 = new SqlCommand("UPDATE WITHDRAWAL_TRANSACTION SET Account_Name = @Account_Name,Account_Number = @Account_Number,Withdrawal_by = @Withdrawal_by,Transaction_Date = @Transaction_Date,Transaction_Time = @Transaction_Time,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Narration = @Narration WHERE ID_Number = @ID_Number", conn);
 
-                        cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
                         cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
                         cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
                         cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
+                        cmd1.Parameters.AddWithValue("@Amount_In_Words",txt_WithdrawalAmountInWord.Text);
                         cmd1.Parameters.AddWithValue("@Currency", cb_WithdrawalCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Narration", txt_WithdrwalNarration.Text);
 
@@ -325,7 +385,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("This Account number does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -361,7 +421,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("The mobile number of this Account name does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -370,9 +430,93 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public void DepositBalance()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Number= '" + txt_WithdrawalAccountNumber.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    label_deposit.Text = dt.Rows[0]["AmountSum"].ToString();
+                }
+                else
+                {
+                    label_deposit.Text = "";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+        public void WithdrawalBalance()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM WITHDRAWAL_TRANSACTION WHERE Account_Number= '" + txt_WithdrawalAccountNumber.Text + "'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    label_Withdrawal.Text = dt.Rows[0]["AmountSum"].ToString();
+                }
+                else
+                {
+                    label_Withdrawal.Text = "";
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
         private void panel13_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void txt_WithdrawalAccountName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_WithdrawalAccountNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_WithdrawalName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_WithdrawalAmountInWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_WithdrawalAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+
     }
 }

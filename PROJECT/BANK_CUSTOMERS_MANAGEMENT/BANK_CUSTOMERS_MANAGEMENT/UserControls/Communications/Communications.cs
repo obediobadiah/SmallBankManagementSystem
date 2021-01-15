@@ -77,6 +77,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 MessageBox.Show("With what do you wanna search??", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

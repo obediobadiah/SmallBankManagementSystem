@@ -43,7 +43,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("The entered username is not recognize in the system", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The entered username is wrong", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 conn.Close();
             }
@@ -67,7 +67,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("The entered password doesn't belong to the username","Information",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("The entered password is wrong","Information",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -92,7 +92,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("The entered UserName and Password is wrong", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The entered UserName and Password are wrong", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WithdrawalTransaction));
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -77,6 +77,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
+            this.label_AccountBalance = new System.Windows.Forms.Label();
+            this.label_deposit = new System.Windows.Forms.Label();
+            this.label_Withdrawal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
@@ -87,20 +90,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -482,6 +485,7 @@
             this.txt_WithdrawalAmount.Name = "txt_WithdrawalAmount";
             this.txt_WithdrawalAmount.Size = new System.Drawing.Size(298, 17);
             this.txt_WithdrawalAmount.TabIndex = 3;
+            this.txt_WithdrawalAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_WithdrawalAmount_KeyPress);
             // 
             // label6
             // 
@@ -513,6 +517,7 @@
             this.txt_WithdrawalAmountInWord.Name = "txt_WithdrawalAmountInWord";
             this.txt_WithdrawalAmountInWord.Size = new System.Drawing.Size(298, 17);
             this.txt_WithdrawalAmountInWord.TabIndex = 3;
+            this.txt_WithdrawalAmountInWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_WithdrawalAmountInWord_KeyPress);
             // 
             // txt_WithdrawalAccountName
             // 
@@ -522,6 +527,7 @@
             this.txt_WithdrawalAccountName.Name = "txt_WithdrawalAccountName";
             this.txt_WithdrawalAccountName.Size = new System.Drawing.Size(311, 17);
             this.txt_WithdrawalAccountName.TabIndex = 3;
+            this.txt_WithdrawalAccountName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_WithdrawalAccountName_KeyPress);
             // 
             // txt_WithdrawalAccountNumber
             // 
@@ -531,6 +537,7 @@
             this.txt_WithdrawalAccountNumber.Name = "txt_WithdrawalAccountNumber";
             this.txt_WithdrawalAccountNumber.Size = new System.Drawing.Size(311, 17);
             this.txt_WithdrawalAccountNumber.TabIndex = 3;
+            this.txt_WithdrawalAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_WithdrawalAccountNumber_KeyPress);
             // 
             // txt_WithdrawalName
             // 
@@ -540,6 +547,7 @@
             this.txt_WithdrawalName.Name = "txt_WithdrawalName";
             this.txt_WithdrawalName.Size = new System.Drawing.Size(311, 17);
             this.txt_WithdrawalName.TabIndex = 3;
+            this.txt_WithdrawalName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_WithdrawalName_KeyPress);
             // 
             // panel1
             // 
@@ -628,11 +636,50 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
+            // label_AccountBalance
+            // 
+            this.label_AccountBalance.AutoSize = true;
+            this.label_AccountBalance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AccountBalance.ForeColor = System.Drawing.Color.Gray;
+            this.label_AccountBalance.Location = new System.Drawing.Point(13, 416);
+            this.label_AccountBalance.Name = "label_AccountBalance";
+            this.label_AccountBalance.Size = new System.Drawing.Size(109, 17);
+            this.label_AccountBalance.TabIndex = 60;
+            this.label_AccountBalance.Text = "Account Balance";
+            this.label_AccountBalance.Visible = false;
+            // 
+            // label_deposit
+            // 
+            this.label_deposit.AutoSize = true;
+            this.label_deposit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_deposit.ForeColor = System.Drawing.Color.Gray;
+            this.label_deposit.Location = new System.Drawing.Point(13, 369);
+            this.label_deposit.Name = "label_deposit";
+            this.label_deposit.Size = new System.Drawing.Size(56, 17);
+            this.label_deposit.TabIndex = 60;
+            this.label_deposit.Text = "Deposit";
+            this.label_deposit.Visible = false;
+            // 
+            // label_Withdrawal
+            // 
+            this.label_Withdrawal.AutoSize = true;
+            this.label_Withdrawal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Withdrawal.ForeColor = System.Drawing.Color.Gray;
+            this.label_Withdrawal.Location = new System.Drawing.Point(13, 393);
+            this.label_Withdrawal.Name = "label_Withdrawal";
+            this.label_Withdrawal.Size = new System.Drawing.Size(79, 17);
+            this.label_Withdrawal.TabIndex = 60;
+            this.label_Withdrawal.Text = "Withdrawal";
+            this.label_Withdrawal.Visible = false;
+            // 
             // WithdrawalTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label_Withdrawal);
+            this.Controls.Add(this.label_deposit);
+            this.Controls.Add(this.label_AccountBalance);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Controls.Add(this.groupBox1);
@@ -652,6 +699,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -702,5 +750,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txt_Search;
+        private System.Windows.Forms.Label label_AccountBalance;
+        private System.Windows.Forms.Label label_deposit;
+        private System.Windows.Forms.Label label_Withdrawal;
     }
 }

@@ -206,5 +206,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
             }
         }
+
+        private void txt_BankIdentifier_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

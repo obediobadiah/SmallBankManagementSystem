@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepaymentTransaction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_RemainingAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button_deposit_clear = new System.Windows.Forms.Button();
@@ -203,20 +203,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -348,6 +348,7 @@
             this.txt_RepaymentAmountInWords.Name = "txt_RepaymentAmountInWords";
             this.txt_RepaymentAmountInWords.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAmountInWords.TabIndex = 3;
+            this.txt_RepaymentAmountInWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAmountInWords_KeyPress);
             // 
             // groupBox1
             // 
@@ -399,6 +400,7 @@
             this.txt_RepaymentBorrower.Name = "txt_RepaymentBorrower";
             this.txt_RepaymentBorrower.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentBorrower.TabIndex = 3;
+            this.txt_RepaymentBorrower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentBorrower_KeyPress);
             // 
             // txt_RepaymentAccountNumber
             // 
@@ -409,6 +411,7 @@
             this.txt_RepaymentAccountNumber.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAccountNumber.TabIndex = 3;
             this.txt_RepaymentAccountNumber.TextChanged += new System.EventHandler(this.txt_RepaymentAccountNumber_TextChanged);
+            this.txt_RepaymentAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAccountNumber_KeyPress);
             this.txt_RepaymentAccountNumber.MouseLeave += new System.EventHandler(this.txt_RepaymentAccountNumber_MouseLeave);
             // 
             // txt_RepaymentAmount
@@ -420,6 +423,7 @@
             this.txt_RepaymentAmount.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAmount.TabIndex = 3;
             this.txt_RepaymentAmount.TextChanged += new System.EventHandler(this.txt_RepaymentAmount_TextChanged);
+            this.txt_RepaymentAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAmount_KeyPress);
             this.txt_RepaymentAmount.MouseLeave += new System.EventHandler(this.txt_RepaymentAmount_MouseLeave);
             // 
             // bunifuCards1
@@ -542,6 +546,7 @@
             this.txt_RemainingAmounInWord.Name = "txt_RemainingAmounInWord";
             this.txt_RemainingAmounInWord.Size = new System.Drawing.Size(311, 17);
             this.txt_RemainingAmounInWord.TabIndex = 3;
+            this.txt_RemainingAmounInWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RemainingAmounInWord_KeyPress);
             // 
             // groupBox3
             // 

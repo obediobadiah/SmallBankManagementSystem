@@ -120,6 +120,7 @@
             this.txt_ApplicantTown.Name = "txt_ApplicantTown";
             this.txt_ApplicantTown.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantTown.TabIndex = 3;
+            this.txt_ApplicantTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantTown_KeyPress);
             // 
             // txt_ApplicantQuarter
             // 
@@ -138,6 +139,7 @@
             this.txt_ApplicantHouseNumber.Name = "txt_ApplicantHouseNumber";
             this.txt_ApplicantHouseNumber.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantHouseNumber.TabIndex = 3;
+            this.txt_ApplicantHouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantHouseNumber_KeyPress);
             // 
             // bunifuCards1
             // 
@@ -221,6 +223,7 @@
             this.cb_ApplicantMeritalStatus.TabIndex = 9;
             this.cb_ApplicantMeritalStatus.Text = "--Select--";
             this.cb_ApplicantMeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_ApplicantMeritalStatus_SelectedIndexChanged);
+            this.cb_ApplicantMeritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_ApplicantMeritalStatus_KeyPress);
             // 
             // cb_ApplicantNationality
             // 
@@ -239,6 +242,7 @@
             this.cb_ApplicantNationality.Size = new System.Drawing.Size(351, 26);
             this.cb_ApplicantNationality.TabIndex = 8;
             this.cb_ApplicantNationality.Text = "--Select--";
+            this.cb_ApplicantNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_ApplicantNationality_KeyPress);
             // 
             // date_ApplicantBirth
             // 
@@ -465,6 +469,7 @@
             this.txt_ApplicantConsideration.Name = "txt_ApplicantConsideration";
             this.txt_ApplicantConsideration.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantConsideration.TabIndex = 3;
+            this.txt_ApplicantConsideration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantConsideration_KeyPress);
             // 
             // txt_ApplicantIdCard
             // 
@@ -494,6 +499,7 @@
             this.txt_ApplicantNameOfSpouse.Name = "txt_ApplicantNameOfSpouse";
             this.txt_ApplicantNameOfSpouse.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantNameOfSpouse.TabIndex = 3;
+            this.txt_ApplicantNameOfSpouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantNameOfSpouse_KeyPress);
             // 
             // label6
             // 
@@ -556,6 +562,7 @@
             this.txt_ApplicantFirstName.Name = "txt_ApplicantFirstName";
             this.txt_ApplicantFirstName.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantFirstName.TabIndex = 3;
+            this.txt_ApplicantFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantFirstName_KeyPress);
             // 
             // txt_ApplicantMobileNumber
             // 
@@ -565,6 +572,7 @@
             this.txt_ApplicantMobileNumber.Name = "txt_ApplicantMobileNumber";
             this.txt_ApplicantMobileNumber.Size = new System.Drawing.Size(257, 17);
             this.txt_ApplicantMobileNumber.TabIndex = 3;
+            this.txt_ApplicantMobileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantMobileNumber_KeyPress);
             // 
             // txt_ApplicantSecondName
             // 
@@ -574,6 +582,7 @@
             this.txt_ApplicantSecondName.Name = "txt_ApplicantSecondName";
             this.txt_ApplicantSecondName.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantSecondName.TabIndex = 3;
+            this.txt_ApplicantSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantSecondName_KeyPress);
             // 
             // txt_ApplicantPlaceOfBirth
             // 
@@ -583,6 +592,7 @@
             this.txt_ApplicantPlaceOfBirth.Name = "txt_ApplicantPlaceOfBirth";
             this.txt_ApplicantPlaceOfBirth.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantPlaceOfBirth.TabIndex = 3;
+            this.txt_ApplicantPlaceOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantPlaceOfBirth_KeyPress);
             // 
             // txt_ApplicantProvince
             // 
@@ -592,6 +602,7 @@
             this.txt_ApplicantProvince.Name = "txt_ApplicantProvince";
             this.txt_ApplicantProvince.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantProvince.TabIndex = 3;
+            this.txt_ApplicantProvince.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantProvince_KeyPress);
             // 
             // panel1
             // 
@@ -654,6 +665,7 @@
             this.txt_ApplicantIdentifier.Name = "txt_ApplicantIdentifier";
             this.txt_ApplicantIdentifier.Size = new System.Drawing.Size(387, 17);
             this.txt_ApplicantIdentifier.TabIndex = 5;
+            this.txt_ApplicantIdentifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantIdentifier_KeyPress);
             // 
             // label25
             // 
@@ -899,6 +911,7 @@
             this.txt_ApplicantAvenue.Name = "txt_ApplicantAvenue";
             this.txt_ApplicantAvenue.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantAvenue.TabIndex = 3;
+            this.txt_ApplicantAvenue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantAvenue_KeyPress);
             // 
             // txt_ApplicantCountryName
             // 
@@ -908,6 +921,7 @@
             this.txt_ApplicantCountryName.Name = "txt_ApplicantCountryName";
             this.txt_ApplicantCountryName.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantCountryName.TabIndex = 3;
+            this.txt_ApplicantCountryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantCountryName_KeyPress);
             // 
             // pictureBox1
             // 

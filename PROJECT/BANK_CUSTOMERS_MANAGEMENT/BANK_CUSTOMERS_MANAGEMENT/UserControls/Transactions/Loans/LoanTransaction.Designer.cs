@@ -532,6 +532,7 @@
             this.txt_LoanAmountInWords.Name = "txt_LoanAmountInWords";
             this.txt_LoanAmountInWords.Size = new System.Drawing.Size(311, 17);
             this.txt_LoanAmountInWords.TabIndex = 3;
+            this.txt_LoanAmountInWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_LoanAmountInWords_KeyPress);
             // 
             // label9
             // 
@@ -583,6 +584,7 @@
             this.txt_LoanBorrower.Name = "txt_LoanBorrower";
             this.txt_LoanBorrower.Size = new System.Drawing.Size(311, 17);
             this.txt_LoanBorrower.TabIndex = 3;
+            this.txt_LoanBorrower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_LoanBorrower_KeyPress);
             // 
             // txt_LoanAccountNumber
             // 
@@ -592,6 +594,7 @@
             this.txt_LoanAccountNumber.Name = "txt_LoanAccountNumber";
             this.txt_LoanAccountNumber.Size = new System.Drawing.Size(311, 17);
             this.txt_LoanAccountNumber.TabIndex = 3;
+            this.txt_LoanAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_LoanAccountNumber_KeyPress);
             // 
             // txt_LoanAmount
             // 
@@ -601,6 +604,7 @@
             this.txt_LoanAmount.Name = "txt_LoanAmount";
             this.txt_LoanAmount.Size = new System.Drawing.Size(311, 17);
             this.txt_LoanAmount.TabIndex = 3;
+            this.txt_LoanAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_LoanAmount_KeyPress);
             // 
             // panel1
             // 

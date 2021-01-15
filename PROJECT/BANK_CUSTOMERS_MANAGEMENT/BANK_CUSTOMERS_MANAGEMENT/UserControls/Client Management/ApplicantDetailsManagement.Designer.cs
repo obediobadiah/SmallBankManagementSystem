@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicantDetailsManagement));
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -252,6 +252,7 @@
             this.txt_ApplicantTownship.Name = "txt_ApplicantTownship";
             this.txt_ApplicantTownship.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantTownship.TabIndex = 174;
+            this.txt_ApplicantTownship.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantTownship_KeyPress);
             // 
             // txt_ApplicantAvenue
             // 
@@ -271,6 +272,7 @@
             this.txt_ApplicantCountryName.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantCountryName.TabIndex = 172;
             this.txt_ApplicantCountryName.TextChanged += new System.EventHandler(this.txt_PersonnalCountryName_TextChanged);
+            this.txt_ApplicantCountryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantCountryName_KeyPress);
             // 
             // txt_ApplicantTown
             // 
@@ -280,6 +282,7 @@
             this.txt_ApplicantTown.Name = "txt_ApplicantTown";
             this.txt_ApplicantTown.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantTown.TabIndex = 171;
+            this.txt_ApplicantTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantTown_KeyPress);
             // 
             // txt_ApplicantProvince
             // 
@@ -289,6 +292,7 @@
             this.txt_ApplicantProvince.Name = "txt_ApplicantProvince";
             this.txt_ApplicantProvince.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantProvince.TabIndex = 170;
+            this.txt_ApplicantProvince.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantProvince_KeyPress);
             // 
             // txt_ApplicantQuarter
             // 
@@ -307,6 +311,7 @@
             this.txt_ApplicantHouseNumber.Name = "txt_ApplicantHouseNumber";
             this.txt_ApplicantHouseNumber.Size = new System.Drawing.Size(346, 17);
             this.txt_ApplicantHouseNumber.TabIndex = 175;
+            this.txt_ApplicantHouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantHouseNumber_KeyPress);
             // 
             // label_IDNumber
             // 
@@ -345,6 +350,7 @@
             this.cb_ApplicantMeritalStatus.TabIndex = 158;
             this.cb_ApplicantMeritalStatus.Text = "--Select--";
             this.cb_ApplicantMeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_ApplicantMeritalStatus_SelectedIndexChanged);
+            this.cb_ApplicantMeritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_ApplicantMeritalStatus_KeyPress);
             // 
             // cb_ApplicantNationality
             // 
@@ -363,6 +369,7 @@
             this.cb_ApplicantNationality.TabIndex = 157;
             this.cb_ApplicantNationality.Text = "--Select--";
             this.cb_ApplicantNationality.SelectedIndexChanged += new System.EventHandler(this.cb_PersonnalNationality_SelectedIndexChanged);
+            this.cb_ApplicantNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_ApplicantNationality_KeyPress);
             // 
             // date_ApplicantBirth
             // 
@@ -569,6 +576,7 @@
             this.txt_ApplicantConsideration.Name = "txt_ApplicantConsideration";
             this.txt_ApplicantConsideration.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantConsideration.TabIndex = 138;
+            this.txt_ApplicantConsideration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantConsideration_KeyPress);
             // 
             // txt_ApplicantIdCard
             // 
@@ -598,6 +606,7 @@
             this.txt_ApplicantNameOfSpouse.Name = "txt_ApplicantNameOfSpouse";
             this.txt_ApplicantNameOfSpouse.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantNameOfSpouse.TabIndex = 141;
+            this.txt_ApplicantNameOfSpouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantNameOfSpouse_KeyPress);
             // 
             // label6
             // 
@@ -649,6 +658,7 @@
             this.txt_ApplicantFirstName.Name = "txt_ApplicantFirstName";
             this.txt_ApplicantFirstName.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantFirstName.TabIndex = 139;
+            this.txt_ApplicantFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantFirstName_KeyPress);
             // 
             // txt_ApplicantMobileNumber
             // 
@@ -658,6 +668,7 @@
             this.txt_ApplicantMobileNumber.Name = "txt_ApplicantMobileNumber";
             this.txt_ApplicantMobileNumber.Size = new System.Drawing.Size(258, 17);
             this.txt_ApplicantMobileNumber.TabIndex = 140;
+            this.txt_ApplicantMobileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantMobileNumber_KeyPress);
             // 
             // txt_ApplicantSecondName
             // 
@@ -667,22 +678,23 @@
             this.txt_ApplicantSecondName.Name = "txt_ApplicantSecondName";
             this.txt_ApplicantSecondName.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantSecondName.TabIndex = 143;
+            this.txt_ApplicantSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantSecondName_KeyPress);
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -714,6 +726,7 @@
             this.txt_ApplicantPlaceOfBirth.Name = "txt_ApplicantPlaceOfBirth";
             this.txt_ApplicantPlaceOfBirth.Size = new System.Drawing.Size(349, 17);
             this.txt_ApplicantPlaceOfBirth.TabIndex = 142;
+            this.txt_ApplicantPlaceOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantPlaceOfBirth_KeyPress);
             // 
             // groupBox4
             // 
@@ -829,6 +842,7 @@
             this.txt_ApplicantIdentifier.Name = "txt_ApplicantIdentifier";
             this.txt_ApplicantIdentifier.Size = new System.Drawing.Size(350, 17);
             this.txt_ApplicantIdentifier.TabIndex = 192;
+            this.txt_ApplicantIdentifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ApplicantIdentifier_KeyPress);
             // 
             // label25
             // 

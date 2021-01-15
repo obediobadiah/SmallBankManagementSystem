@@ -36,9 +36,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
             else
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
+                    
                     SqlCommand cmd1 = new SqlCommand("UPDATE PERSONAL_DETAILS SET  First_Name = @First_Name, Second_Name = @Second_Name,Gender = @Gender,Date_of_Birth = @Date_of_Birth,Place_of_Birth = @Place_of_Birth,Nationality = @Nationality,Merital_Status = @Merital_Status,Name_of_Spouse = @Name_of_Spouse,Proffesion = @Proffesion,Mobile_Number_Code = @Mobile_Number_Code,Mobile_Number = @Mobile_Number,IDCard_Number = @IDCard_Number,Country_Name = @Country_Name,Province = @Province,Town = @Town,Township = @Township,Quarter = @Quarter,Avenue = @Avenue,House_Number = @House_Number,Picture = @Picture WHERE ID_Number = @ID_Number", conn);
 
                     cmd1.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
@@ -57,10 +58,10 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     }
                     cmd1.Parameters.AddWithValue("@Gender", gender);
                     cmd1.Parameters.AddWithValue("@Date_of_Birth", date_PersonnalBirth.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Place_of_Birth", txt_PersonnalPlaceOfBirth.Text);
+                    cmd1.Parameters.AddWithValue("@Place_of_Birth",txt_PersonnalPlaceOfBirth.Text);
                     cmd1.Parameters.AddWithValue("@Nationality", cb_PersonnalNationality.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Merital_Status", cb_PersonnalMeritalStatus.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@Name_of_Spouse", txt_PersonnalNameOfSpouse.Text);
+                    cmd1.Parameters.AddWithValue("@Merital_Status",cb_PersonnalMeritalStatus.SelectedItem);
+                    cmd1.Parameters.AddWithValue("@Name_of_Spouse",txt_PersonnalNameOfSpouse.Text);
                     cmd1.Parameters.AddWithValue("@Proffesion", txt_PersonnalProffesional.Text);
                     cmd1.Parameters.AddWithValue("@Mobile_Number_Code", cb_Personnalcode.SelectedItem);
                     cmd1.Parameters.AddWithValue("@Mobile_Number", txt_PersonnalMobileNumber.Text);
@@ -73,20 +74,23 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     cmd1.Parameters.AddWithValue("@Avenue", txt_PersonnalAvenue.Text);
                     cmd1.Parameters.AddWithValue("@House_Number", txt_PersonalHouseNumber.Text);
                     cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
+
+
                     int i;
                     i = cmd1.ExecuteNonQuery();
                     if (i > 0)
                     {
                         MessageBox.Show("Customer personnal details edited successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                   conn.Close();
+                   
                    Display();
 
                 }
-                    catch (Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                conn.Close();
             }
         }
         public byte[] savephoto()
@@ -283,6 +287,78 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 txt_PersonnalNameOfSpouse.Text = "";
             }
+        }
+
+        private void txt_PersonnalFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalSecondName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalPlaceOfBirth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void cb_PersonnalNationality_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void cb_PersonnalMeritalStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalNameOfSpouse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalCountryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalProvince_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalTown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalTownship_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonnalMobileNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PersonalHouseNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

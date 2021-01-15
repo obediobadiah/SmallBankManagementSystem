@@ -81,10 +81,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         }
         public void clear()
         {
-            date_DateofCreation.Text = "";
             txt_BankAcccountIdentifier.Text = "";
-            cb_BankAccountType.SelectedItem = "";
-            Date_BankAccountLimitDate.Text = "";
         }
 
         public void Save()
@@ -111,7 +108,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     conn.Close();
-                    clear();
                 }
                 else if (cb_BankAccountType.SelectedItem == "Savings Account")
                 {
@@ -130,7 +126,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         MessageBox.Show("Process finished successfully, Account created", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     conn.Close();
-                    clear();
                 }
             }
             catch (Exception ex)
@@ -144,20 +139,20 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                
+                conn.Open();
                 SqlCommand cmd2 = new SqlCommand("SELECT ID_Number FROM BANK_ACCOUNT_DETAILS where Identifier = '" + txt_BankAcccountIdentifier.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
-                if (dt1.Rows.Count > 0)
+                if (dt1.Rows.Count == 1)
                 {
                     obj.label_AccountNumber.Text = dt1.Rows[0]["ID_Number"].ToString();
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("This Account number does not exist", "Information", MessageBoxButtons.OK);
                 }
-               
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -176,7 +171,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 string Code;
                 string Number;
-                
+
+                conn.Open();
                 SqlCommand cmd2 = new SqlCommand("SELECT Mobile_Number_Code,Mobile_Number FROM PERSONAL_DETAILS where First_Name = '" + txt_BankAcccountIdentifier.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
@@ -190,14 +186,20 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("The mobile number of this Account name does not exist", "Information", MessageBoxButtons.OK);
                 }
-                
+                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txt_BankAcccountIdentifier_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

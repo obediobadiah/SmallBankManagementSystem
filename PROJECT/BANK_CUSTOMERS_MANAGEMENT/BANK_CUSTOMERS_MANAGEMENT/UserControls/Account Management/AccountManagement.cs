@@ -83,7 +83,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT Bank_Account_Type FROM BANK_ACCOUNT_DETAILS where Identifier = '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Bank_Account_Type FROM BANK_ACCOUNT_DETAILS where  ID_Number = '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
@@ -104,7 +104,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION WHERE Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM LOAN_TRANSACTION WHERE Account_Number = '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -161,7 +161,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM DEPOSIT_TRANSACTION WHERE Account_Number= '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -188,7 +188,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM WITHDRAWAL_TRANSACTION WHERE Account_Name= '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT SUM(Amount) as AmountSum FROM WITHDRAWAL_TRANSACTION WHERE Account_Number= '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -213,27 +213,34 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         public void BalanceCalculation()
         {
+            try
+            {
+                if (label10.Text == "")
+                {
+                    label_AccountBalance.Text = "----";
+                    label_BalanceCurrency.Text = "";
+                }
+                else if(label9.Text == "")
+                {
+                    label_AccountBalance.Text = label10.Text;
+                }
+                else
+                {
+                    double DepTrans;
+                    double WithTrans;
+                    double result;
+                    DepTrans = Convert.ToDouble(label10.Text);
+                    WithTrans = Convert.ToDouble(label9.Text);
 
-            if (label10.Text == "")
-            {
-                label_AccountBalance.Text = "----";
-                label_BalanceCurrency.Text = "";
+                    result = DepTrans - WithTrans;
+                    label_AccountBalance.Text = result.ToString();
+                }
             }
-            else if(label9.Text == "")
+            catch(Exception ex)
             {
-                label_AccountBalance.Text = label10.Text;
+                MessageBox.Show(ex.Message.ToString());
             }
-            else
-            {
-                double DepTrans;
-                double WithTrans;
-                double result;
-                DepTrans = Convert.ToDouble(label10.Text);
-                WithTrans = Convert.ToDouble(label9.Text);
 
-                result = DepTrans - WithTrans;
-                label_AccountBalance.Text = result.ToString();
-            }
 
         }
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -274,7 +281,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Amount FROM LOAN_TRANSACTION where Account_Number = '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
@@ -297,7 +304,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM LOAN_TRANSACTION where Borrower = '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM LOAN_TRANSACTION where Account_Number = '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
@@ -316,7 +323,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM DEPOSIT_TRANSACTION where Account_Name = '" + label_FirstName.Text + "'", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT Currency FROM DEPOSIT_TRANSACTION where Account_Number = '" + label_AccountNumber.Text + "'", conn);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd2);
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);

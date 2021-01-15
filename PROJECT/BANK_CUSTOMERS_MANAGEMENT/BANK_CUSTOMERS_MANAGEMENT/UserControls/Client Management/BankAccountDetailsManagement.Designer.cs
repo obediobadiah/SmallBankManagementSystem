@@ -181,6 +181,7 @@
             this.txt_BankIdentifier.Name = "txt_BankIdentifier";
             this.txt_BankIdentifier.Size = new System.Drawing.Size(350, 26);
             this.txt_BankIdentifier.TabIndex = 45;
+            this.txt_BankIdentifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BankIdentifier_KeyPress);
             // 
             // label_IDNumber
             // 

@@ -24,47 +24,57 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         CommunicationsSender obj = new CommunicationsSender();
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
-            LoanAmountEditor ();
+            
             try
             {
+
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_RepaymentAccountNumber.Text + "' AND Identifier = '" + txt_RepaymentBorrower.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    if (txt_RepaymentBorrower.Text == " " || txt_RepaymentAccountNumber.Text == "" || txt_RepaymentAmount.Text == "" || txt_RepaymentAmountInWords.Text == "" || label_RemainingAmount.Text=="")
-                    {
-                        MessageBox.Show("Make sure you complete all required fields");
-                    }
-                    else
-                    {
-                        conn.Open();
-                        SqlCommand cmd1 = new SqlCommand("INSERT into REPAYMENT_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Remaining_Time,@Transaction_Time)", conn);
 
-                        cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
-                        cmd1.Parameters.AddWithValue("@Borrower", txt_RepaymentBorrower.Text);
-                        cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Amount",txt_RepaymentAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RepaymentAmountInWords.Text);
-                        cmd1.Parameters.AddWithValue("@Remaining_Time", label_RemainingAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_RepaymentTime.Text);
-
-                        int i;
-                        i = cmd1.ExecuteNonQuery();
-                        if (i > 0)
+                        if (txt_RepaymentBorrower.Text == " " || txt_RepaymentAccountNumber.Text == "" || txt_RepaymentAmount.Text == "" || txt_RepaymentAmountInWords.Text == "" || label_RemainingAmount.Text == "")
                         {
-                            MessageBox.Show("Repayment transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Make sure you complete all required fields");
                         }
-                        Display();
-                        conn.Close();
+                        else
+                        {
+                            if (Convert.ToInt32(txt_RepaymentAmount.Text) == 0)
+                            {
+                               MessageBox.Show("Wrong entered Repayment Amount, You cannot make the Repayment of 000");
+                            }
+                            else
+                            {
+                                LoanAmountEditor();
 
-                        CommunicationAccountNumber();
-                        CommunicationMobileNumber();
-                        message();
-                        obj.ShowDialog();
-                    }
+                                conn.Open();
+                                SqlCommand cmd1 = new SqlCommand("INSERT into REPAYMENT_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Remaining_Time,@Transaction_Time)", conn);
 
+                                cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
+                                cmd1.Parameters.AddWithValue("@Borrower", txt_RepaymentBorrower.Text);
+                                cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
+                                cmd1.Parameters.AddWithValue("@Amount", txt_RepaymentAmount.Text);
+                                cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RepaymentAmountInWords.Text);
+                                cmd1.Parameters.AddWithValue("@Remaining_Time", label_RemainingAmount.Text);
+                                cmd1.Parameters.AddWithValue("@Transaction_Time", label_RepaymentTime.Text);
+
+                                int i;
+                                i = cmd1.ExecuteNonQuery();
+                                if (i > 0)
+                                {
+                                    MessageBox.Show("Repayment transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                Display();
+                                conn.Close();
+
+                                CommunicationAccountNumber();
+                                CommunicationMobileNumber();
+                                message();
+                                obj.ShowDialog();
+                            }
+                        }
                 }
                 else
                 {
@@ -227,7 +237,8 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
                 cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
                 cmd1.Parameters.AddWithValue("@Amount",label_RemainingAmount.Text);
-                cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_RemainingAmounInWord.Text);
+                cmd1.Parameters.Add(new SqlParameter("@Amount_In_Words", SqlDbType.VarChar)).Value = txt_RemainingAmounInWord.Text;
+
                 int i;
                 i = cmd1.ExecuteNonQuery();
                 if (i > 0)
@@ -398,7 +409,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("This Account number does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -434,7 +445,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("The mobile number of this Account name does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -442,6 +453,36 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txt_RepaymentBorrower_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_RepaymentAccountNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_RepaymentAmountInWords_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_RemainingAmounInWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_RepaymentAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
         }
     }
 }

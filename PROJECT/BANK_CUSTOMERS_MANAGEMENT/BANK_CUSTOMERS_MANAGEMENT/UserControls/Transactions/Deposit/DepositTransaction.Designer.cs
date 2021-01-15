@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepositTransaction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
@@ -410,6 +410,7 @@
             this.txt_DepositAmount.Name = "txt_DepositAmount";
             this.txt_DepositAmount.Size = new System.Drawing.Size(350, 17);
             this.txt_DepositAmount.TabIndex = 3;
+            this.txt_DepositAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DepositAmount_KeyPress);
             // 
             // label6
             // 
@@ -441,6 +442,7 @@
             this.txt_DepositAmountInWord.Name = "txt_DepositAmountInWord";
             this.txt_DepositAmountInWord.Size = new System.Drawing.Size(350, 17);
             this.txt_DepositAmountInWord.TabIndex = 3;
+            this.txt_DepositAmountInWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DepositAmountInWord_KeyPress);
             // 
             // txt_DepositAccountName
             // 
@@ -450,6 +452,7 @@
             this.txt_DepositAccountName.Name = "txt_DepositAccountName";
             this.txt_DepositAccountName.Size = new System.Drawing.Size(350, 17);
             this.txt_DepositAccountName.TabIndex = 3;
+            this.txt_DepositAccountName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DepositAccountName_KeyPress);
             // 
             // txt_DepositAccountNumber
             // 
@@ -459,6 +462,8 @@
             this.txt_DepositAccountNumber.Name = "txt_DepositAccountNumber";
             this.txt_DepositAccountNumber.Size = new System.Drawing.Size(350, 17);
             this.txt_DepositAccountNumber.TabIndex = 3;
+            this.txt_DepositAccountNumber.TextChanged += new System.EventHandler(this.txt_DepositAccountNumber_TextChanged);
+            this.txt_DepositAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DepositAccountNumber_KeyPress);
             // 
             // txt_DepositDeposerName
             // 
@@ -468,6 +473,7 @@
             this.txt_DepositDeposerName.Name = "txt_DepositDeposerName";
             this.txt_DepositDeposerName.Size = new System.Drawing.Size(350, 17);
             this.txt_DepositDeposerName.TabIndex = 3;
+            this.txt_DepositDeposerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DepositDeposerName_KeyPress);
             // 
             // groupBox1
             // 
@@ -536,20 +542,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;

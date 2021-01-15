@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonnalDetailsManagement));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,19 +130,19 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -288,6 +288,7 @@
             this.cb_PersonnalMeritalStatus.TabIndex = 91;
             this.cb_PersonnalMeritalStatus.Text = "--Select--";
             this.cb_PersonnalMeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_PersonnalMeritalStatus_SelectedIndexChanged);
+            this.cb_PersonnalMeritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_PersonnalMeritalStatus_KeyPress);
             // 
             // cb_PersonnalNationality
             // 
@@ -305,6 +306,7 @@
             this.cb_PersonnalNationality.Size = new System.Drawing.Size(349, 28);
             this.cb_PersonnalNationality.TabIndex = 90;
             this.cb_PersonnalNationality.Text = "--Select--";
+            this.cb_PersonnalNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_PersonnalNationality_KeyPress);
             // 
             // date_PersonnalBirth
             // 
@@ -511,6 +513,7 @@
             this.txt_PersonnalNameOfSpouse.Name = "txt_PersonnalNameOfSpouse";
             this.txt_PersonnalNameOfSpouse.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalNameOfSpouse.TabIndex = 74;
+            this.txt_PersonnalNameOfSpouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalNameOfSpouse_KeyPress);
             // 
             // label6
             // 
@@ -562,6 +565,7 @@
             this.txt_PersonnalFirstName.Name = "txt_PersonnalFirstName";
             this.txt_PersonnalFirstName.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalFirstName.TabIndex = 72;
+            this.txt_PersonnalFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalFirstName_KeyPress);
             // 
             // txt_PersonnalMobileNumber
             // 
@@ -571,6 +575,7 @@
             this.txt_PersonnalMobileNumber.Name = "txt_PersonnalMobileNumber";
             this.txt_PersonnalMobileNumber.Size = new System.Drawing.Size(257, 19);
             this.txt_PersonnalMobileNumber.TabIndex = 73;
+            this.txt_PersonnalMobileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalMobileNumber_KeyPress);
             // 
             // txt_PersonnalSecondName
             // 
@@ -580,6 +585,7 @@
             this.txt_PersonnalSecondName.Name = "txt_PersonnalSecondName";
             this.txt_PersonnalSecondName.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalSecondName.TabIndex = 76;
+            this.txt_PersonnalSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalSecondName_KeyPress);
             // 
             // txt_PersonnalPlaceOfBirth
             // 
@@ -589,6 +595,7 @@
             this.txt_PersonnalPlaceOfBirth.Name = "txt_PersonnalPlaceOfBirth";
             this.txt_PersonnalPlaceOfBirth.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalPlaceOfBirth.TabIndex = 75;
+            this.txt_PersonnalPlaceOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalPlaceOfBirth_KeyPress);
             // 
             // rb_PersonalFemale
             // 
@@ -743,6 +750,7 @@
             this.txt_PersonnalTownship.Name = "txt_PersonnalTownship";
             this.txt_PersonnalTownship.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalTownship.TabIndex = 107;
+            this.txt_PersonnalTownship.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalTownship_KeyPress);
             // 
             // txt_PersonnalAvenue
             // 
@@ -761,6 +769,7 @@
             this.txt_PersonnalCountryName.Name = "txt_PersonnalCountryName";
             this.txt_PersonnalCountryName.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalCountryName.TabIndex = 105;
+            this.txt_PersonnalCountryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalCountryName_KeyPress);
             // 
             // txt_PersonnalTown
             // 
@@ -770,6 +779,7 @@
             this.txt_PersonnalTown.Name = "txt_PersonnalTown";
             this.txt_PersonnalTown.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalTown.TabIndex = 104;
+            this.txt_PersonnalTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalTown_KeyPress);
             // 
             // txt_PersonnalProvince
             // 
@@ -779,6 +789,7 @@
             this.txt_PersonnalProvince.Name = "txt_PersonnalProvince";
             this.txt_PersonnalProvince.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonnalProvince.TabIndex = 103;
+            this.txt_PersonnalProvince.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonnalProvince_KeyPress);
             // 
             // txt_PersonnalQuarter
             // 
@@ -797,6 +808,7 @@
             this.txt_PersonalHouseNumber.Name = "txt_PersonalHouseNumber";
             this.txt_PersonalHouseNumber.Size = new System.Drawing.Size(348, 19);
             this.txt_PersonalHouseNumber.TabIndex = 108;
+            this.txt_PersonalHouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PersonalHouseNumber_KeyPress);
             // 
             // pictureBox1
             // 
