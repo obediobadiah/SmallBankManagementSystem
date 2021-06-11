@@ -21,7 +21,7 @@ Township VARCHAR(50),
 Quarter VARCHAR(50),
 Avenue VARCHAR(50),
 House_Number int,
-Picture IMAGE
+Picture IMAGE,
 );
 
 
@@ -50,7 +50,7 @@ Township VARCHAR(50),
 Quarter VARCHAR(50),
 Avenue VARCHAR(50),
 House_Number int,
-Picture IMAGE
+Picture IMAGE,
 );
 
 
@@ -109,7 +109,7 @@ Currency VARCHAR(15),
 Purpose VARCHAR(100),
 Schedule NVARCHAR(100),
 Limit_Date NVARCHAR(50),
-Transaction_Time NVARCHAR(50)
+Transaction_Time NVARCHAR(50),
 );
 
 
@@ -123,6 +123,7 @@ Amount FLOAT,
 Amount_In_Words VARCHAR(50),
 Remaining_Time NVARCHAR(50),
 Transaction_Time NVARCHAR(50)
+
 );
 
 

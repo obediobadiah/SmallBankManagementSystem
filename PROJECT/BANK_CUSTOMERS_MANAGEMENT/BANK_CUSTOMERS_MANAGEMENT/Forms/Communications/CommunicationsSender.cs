@@ -44,6 +44,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             {
                 MessageSender();
                 Save();
+                this.Hide();
             }
 
         }
@@ -53,8 +54,9 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             try
             {
                 var accountSid = "AC740f653389f8611072ddeb1c5f2eda4a";
-                var authToken = "611fffbbfe5b1795c1d9855f4b48b587";
-
+                var authToken = "fa997571a553fb968531879aca426c24";
+                
+                //611fffbbfe5b1795c1d9855f4b48b587
                 TwilioClient.Init(accountSid, authToken);
 
                 var messageOptions = new CreateMessageOptions(

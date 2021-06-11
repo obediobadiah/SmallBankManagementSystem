@@ -38,9 +38,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Date_BankAccountLimitDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.date_DateofCreation = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_BankAcccountIdentifier = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(538, 41);
+            this.panel1.Size = new System.Drawing.Size(538, 55);
             this.panel1.TabIndex = 27;
             // 
             // label1
@@ -60,7 +60,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(109, 5);
+            this.label1.Location = new System.Drawing.Point(90, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 31);
             this.label1.TabIndex = 0;
@@ -155,14 +155,6 @@
             this.label5.Text = "Limit Date ( Delay )";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // date_DateofCreation
-            // 
-            this.date_DateofCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_DateofCreation.Location = new System.Drawing.Point(99, 127);
-            this.date_DateofCreation.Name = "date_DateofCreation";
-            this.date_DateofCreation.Size = new System.Drawing.Size(350, 24);
-            this.date_DateofCreation.TabIndex = 34;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -183,14 +175,27 @@
             this.txt_BankAcccountIdentifier.Name = "txt_BankAcccountIdentifier";
             this.txt_BankAcccountIdentifier.Size = new System.Drawing.Size(352, 19);
             this.txt_BankAcccountIdentifier.TabIndex = 37;
+            this.txt_BankAcccountIdentifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BankAcccountIdentifier_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(224, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 25);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Date";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BankAccountDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_BankAcccountIdentifier);
-            this.Controls.Add(this.date_DateofCreation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -200,6 +205,7 @@
             this.Controls.Add(this.button_save_acc_cr);
             this.Name = "BankAccountDetails";
             this.Size = new System.Drawing.Size(538, 711);
+            this.Load += new System.EventHandler(this.BankAccountDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -221,7 +227,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cb_BankAccountType;
-        public System.Windows.Forms.DateTimePicker date_DateofCreation;
         public System.Windows.Forms.TextBox txt_BankAcccountIdentifier;
+        private System.Windows.Forms.Label label9;
     }
 }

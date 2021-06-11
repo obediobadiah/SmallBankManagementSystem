@@ -73,6 +73,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -178,6 +179,7 @@
             this.cb_AdminNationality.Name = "cb_AdminNationality";
             this.cb_AdminNationality.Size = new System.Drawing.Size(277, 28);
             this.cb_AdminNationality.TabIndex = 242;
+            this.cb_AdminNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_AdminNationality_KeyPress);
             // 
             // label13
             // 
@@ -232,6 +234,7 @@
             this.txt_AdminSecondName.Name = "txt_AdminSecondName";
             this.txt_AdminSecondName.Size = new System.Drawing.Size(273, 19);
             this.txt_AdminSecondName.TabIndex = 237;
+            this.txt_AdminSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_AdminSecondName_KeyPress);
             // 
             // panel11
             // 
@@ -305,6 +308,7 @@
             this.txt_AdminFirstName.Name = "txt_AdminFirstName";
             this.txt_AdminFirstName.Size = new System.Drawing.Size(275, 19);
             this.txt_AdminFirstName.TabIndex = 227;
+            this.txt_AdminFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_AdminFirstName_KeyPress);
             // 
             // button2
             // 
@@ -388,8 +392,9 @@
             this.txt_AdminPassword.Location = new System.Drawing.Point(566, 116);
             this.txt_AdminPassword.MaxLength = 15;
             this.txt_AdminPassword.Name = "txt_AdminPassword";
-            this.txt_AdminPassword.Size = new System.Drawing.Size(306, 19);
+            this.txt_AdminPassword.Size = new System.Drawing.Size(293, 19);
             this.txt_AdminPassword.TabIndex = 207;
+            this.txt_AdminPassword.UseSystemPasswordChar = true;
             // 
             // bunifuElipse1
             // 
@@ -524,12 +529,30 @@
             this.label4.TabIndex = 240;
             this.label4.Text = "First Name";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(878, 112);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(34, 24);
+            this.button5.TabIndex = 250;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // AdministratorCreaation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(932, 749);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.bunifuCustomDataGrid1);
@@ -625,5 +648,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }

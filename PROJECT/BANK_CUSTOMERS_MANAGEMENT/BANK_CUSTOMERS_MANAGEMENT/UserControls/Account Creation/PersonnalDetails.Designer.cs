@@ -124,6 +124,7 @@
             this.cb_MeritalStatus.TabIndex = 9;
             this.cb_MeritalStatus.Text = "--Select--";
             this.cb_MeritalStatus.SelectedIndexChanged += new System.EventHandler(this.cb_MeritalStatus_SelectedIndexChanged);
+            this.cb_MeritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_MeritalStatus_KeyPress);
             // 
             // panel17
             // 
@@ -367,6 +368,7 @@
             this.txt_Township.Name = "txt_Township";
             this.txt_Township.Size = new System.Drawing.Size(350, 17);
             this.txt_Township.TabIndex = 3;
+            this.txt_Township.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Township_KeyPress);
             // 
             // txt_Avenue
             // 
@@ -385,6 +387,7 @@
             this.txt_CountryName.Name = "txt_CountryName";
             this.txt_CountryName.Size = new System.Drawing.Size(350, 17);
             this.txt_CountryName.TabIndex = 3;
+            this.txt_CountryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CountryName_KeyPress);
             // 
             // txt_Town
             // 
@@ -394,6 +397,7 @@
             this.txt_Town.Name = "txt_Town";
             this.txt_Town.Size = new System.Drawing.Size(350, 17);
             this.txt_Town.TabIndex = 3;
+            this.txt_Town.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Town_KeyPress);
             // 
             // txt_Province
             // 
@@ -403,6 +407,7 @@
             this.txt_Province.Name = "txt_Province";
             this.txt_Province.Size = new System.Drawing.Size(350, 17);
             this.txt_Province.TabIndex = 3;
+            this.txt_Province.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Province_KeyPress);
             // 
             // txt_Quarter
             // 
@@ -421,6 +426,7 @@
             this.txt_HouseNumber.Name = "txt_HouseNumber";
             this.txt_HouseNumber.Size = new System.Drawing.Size(350, 17);
             this.txt_HouseNumber.TabIndex = 3;
+            this.txt_HouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_HouseNumber_KeyPress);
             // 
             // cb_Nationality
             // 
@@ -439,6 +445,7 @@
             this.cb_Nationality.Size = new System.Drawing.Size(351, 26);
             this.cb_Nationality.TabIndex = 8;
             this.cb_Nationality.Text = "--Select--";
+            this.cb_Nationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_Nationality_KeyPress);
             // 
             // button1
             // 
@@ -821,6 +828,7 @@
             this.txt_NameOfSpouse.Name = "txt_NameOfSpouse";
             this.txt_NameOfSpouse.Size = new System.Drawing.Size(350, 17);
             this.txt_NameOfSpouse.TabIndex = 3;
+            this.txt_NameOfSpouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NameOfSpouse_KeyPress);
             // 
             // label6
             // 
@@ -852,6 +860,7 @@
             this.txt_Proffesional.Name = "txt_Proffesional";
             this.txt_Proffesional.Size = new System.Drawing.Size(350, 17);
             this.txt_Proffesional.TabIndex = 3;
+            this.txt_Proffesional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Proffesional_KeyPress);
             // 
             // label12
             // 
@@ -872,6 +881,7 @@
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(350, 17);
             this.txt_FirstName.TabIndex = 3;
+            this.txt_FirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_FirstName_KeyPress);
             // 
             // txt_MobileNumber
             // 
@@ -881,6 +891,7 @@
             this.txt_MobileNumber.Name = "txt_MobileNumber";
             this.txt_MobileNumber.Size = new System.Drawing.Size(257, 17);
             this.txt_MobileNumber.TabIndex = 3;
+            this.txt_MobileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MobileNumber_KeyPress);
             // 
             // txt_SecondName
             // 
@@ -890,6 +901,7 @@
             this.txt_SecondName.Name = "txt_SecondName";
             this.txt_SecondName.Size = new System.Drawing.Size(350, 17);
             this.txt_SecondName.TabIndex = 3;
+            this.txt_SecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SecondName_KeyPress);
             // 
             // txt_PlaceOfBirth
             // 
@@ -899,6 +911,7 @@
             this.txt_PlaceOfBirth.Name = "txt_PlaceOfBirth";
             this.txt_PlaceOfBirth.Size = new System.Drawing.Size(350, 17);
             this.txt_PlaceOfBirth.TabIndex = 3;
+            this.txt_PlaceOfBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PlaceOfBirth_KeyPress);
             // 
             // panel1
             // 

@@ -26,13 +26,15 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
+            label7.Text = DateTime.Today.ToShortDateString();
         }
 
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
+
             try
             {
-                
+
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_LoanAccountNumber.Text + "' AND Identifier = '" + txt_LoanBorrower.Text + "'", conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -56,39 +58,46 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         }
                         else
                         {
-                            if (txt_LoanBorrower.Text == "" || txt_LoanAccountNumber.Text == " " || txt_LoanAmount.Text == "" || txt_LoanAmountInWords.Text == "" || txt_LoanPurpose.Text == "")
-                            {
-                                MessageBox.Show("Make sure you complete all required fields");
-                            }
-                            else
-                            {
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
-
-                                cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
-                                cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
-                                cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
-                                cmd1.Parameters.AddWithValue("@Amount",txt_LoanAmount.Text);
-                                cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
-                                cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
-                                cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);
-                                cmd1.Parameters.AddWithValue("@Schedule", cb_LoanScheduler.SelectedItem);
-                                cmd1.Parameters.AddWithValue("@Limit_Date", date_LoanLimitDate.Value.Date.ToShortDateString());
-                                cmd1.Parameters.AddWithValue("@Transaction_Time", label_LoanTime.Text);
-
-                                int i;
-                                i = cmd1.ExecuteNonQuery();
-                                if (i > 0)
+                                if (txt_LoanBorrower.Text == "" || txt_LoanAccountNumber.Text == "" || txt_LoanAmount.Text == "" || txt_LoanAmountInWords.Text == "" || txt_LoanPurpose.Text == "")
                                 {
-                                    MessageBox.Show("Loan transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Make sure you complete all required fields");
                                 }
-                                Display();
-                                conn.Close();
+                                else
+                                {
+                                    if (Convert.ToInt32(txt_LoanAmount.Text) == 0)
+                                    {
+                                        MessageBox.Show("Wrong entered Loan Amount, you cannot make the Loan of 000");
+                                    }
+                                    else
+                                    {
+                                        conn.Open();
+                                        SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
 
-                                CommunicationAccountNumber();
-                                CommunicationMobileNumber();
-                                message();
-                                obj.ShowDialog();
+                                        cmd1.Parameters.AddWithValue("@Loan_Date", label7.Text);
+                                        cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
+                                        cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
+                                        cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
+                                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
+                                        cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
+                                        cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);
+                                        cmd1.Parameters.AddWithValue("@Schedule", cb_LoanScheduler.SelectedItem);
+                                        cmd1.Parameters.AddWithValue("@Limit_Date", date_LoanLimitDate.Value.Date.ToShortDateString());
+                                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_LoanTime.Text);
+
+                                        int i;
+                                        i = cmd1.ExecuteNonQuery();
+                                        if (i > 0)
+                                        {
+                                            MessageBox.Show("Loan transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                        Display();
+                                        conn.Close();
+
+                                        CommunicationAccountNumber();
+                                        CommunicationMobileNumber();
+                                        message();
+                                        obj.ShowDialog();
+                                    }
                             }
                         }
                     }
@@ -192,16 +201,17 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         SqlCommand cmd1 = new SqlCommand("UPDATE LOAN_TRANSACTION SET  Loan_Date = @Loan_Date,Borrower = @Borrower,Account_Number = @Account_Number,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Purpose = @Purpose,Schedule = @Schedule,Limit_Date = @Limit_Date,Transaction_Time = @Transaction_Time WHERE ID_Number = @ID_Number", conn);
 
                         cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
-                        cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
-                        cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
+                        cmd1.Parameters.AddWithValue("@Loan_Date", label7.Text);
+                        cmd1.Parameters.AddWithValue("@Borrower",txt_LoanBorrower.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Amount",txt_LoanAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_LoanAmountInWords.Text);
+                        cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount_In_Words",txt_LoanAmountInWords.Text);
                         cmd1.Parameters.AddWithValue("@Currency", cb_LoanCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Purpose", txt_LoanPurpose.Text);
                         cmd1.Parameters.AddWithValue("@Schedule", cb_LoanScheduler.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Limit_Date", date_LoanLimitDate.Value.Date.ToShortDateString());
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_LoanTime.Text);
+
                         int i;
                         i = cmd1.ExecuteNonQuery();
                         if (i > 0)
@@ -240,7 +250,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     DataGridViewRow row = this.bunifuCustomDataGrid1.Rows[e.RowIndex];
 
                     ID_NumberLabel.Text = row.Cells["ID_Number"].Value.ToString();
-                    Date_Loan.Text = row.Cells["Loan_Date"].Value.ToString();
+                    label7.Text = row.Cells["Loan_Date"].Value.ToString();
                     txt_LoanBorrower.Text = row.Cells["Borrower"].Value.ToString();
                     txt_LoanAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                     txt_LoanAmount.Text = row.Cells["Amount"].Value.ToString();
@@ -295,7 +305,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void button_deposit_clear_Click(object sender, EventArgs e)
         {
             ID_NumberLabel.Text = "";
-            Date_Loan.Text = "";
             txt_LoanBorrower.Text = "";
             txt_LoanAccountNumber.Text = "";
             txt_LoanAmount.Text = "";
@@ -321,7 +330,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text40"];
             TextObject text8 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text39"];
             TextObject text9 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text3"];
-            text.Text = Date_Loan.Text;
+            text.Text = label7.Text;
             text1.Text = txt_LoanBorrower.Text;
             text2.Text = txt_LoanAccountNumber.Text;
             text3.Text = txt_LoanAmount.Text;
@@ -350,7 +359,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("This Account number does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -386,7 +395,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("The mobile number of this Account name does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
                 
@@ -400,6 +409,30 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txt_LoanBorrower_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_LoanAmountInWords_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_LoanAccountNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_LoanAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
         }
     }
 }

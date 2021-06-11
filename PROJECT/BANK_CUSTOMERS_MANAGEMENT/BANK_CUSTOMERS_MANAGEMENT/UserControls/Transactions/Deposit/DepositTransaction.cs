@@ -26,15 +26,13 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
-
+            label9.Text = DateTime.Today.ToShortDateString();
         }
 
         private void button_save_deposit_Click(object sender, EventArgs e)
         {
             try
             {
-                double Amount;
-                Amount = Convert.ToDouble(txt_DepositAmount.Text);
 
                 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BANK_ACCOUNT_DETAILS WHERE ID_Number = '" + txt_DepositAccountNumber.Text + "' AND Identifier = '" + txt_DepositAccountName.Text + "'", conn);
@@ -43,40 +41,46 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 da.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    if(txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == " " || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
+                    if (txt_DepositAccountName.Text == "" || txt_DepositAccountNumber.Text == "" || txt_DepositAmount.Text == "" || txt_DepositAmountInWord.Text == "" || txt_DepositDeposerName.Text == "" || txt_DepositNarration.Text == "" || cb_DepositCurrency.Text == "" || label_DepositTime.Text == "")
                     {
                         MessageBox.Show("Make sure you complete all required fields");
                     }
                     else
                     {
-                        conn.Open();
-                        SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANSACTION (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
-
-                        cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
-                        cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
-                        cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
-                        cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                        cmd1.Parameters.AddWithValue("@Amount",txt_DepositAmount.Text);
-                        cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
-                        cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
-                        cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
-
-                        int i;
-                        i = cmd1.ExecuteNonQuery();
-                        if (i > 0)
+                        if (Convert.ToInt32(txt_DepositAmount.Text) == 0)
                         {
-                            MessageBox.Show("Deposit transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Wrong entered Deposit Amount, you cannot make the Deposit of 000");
                         }
-                        Display();
-                        conn.Close();
-                        
-                        CommunicationAccountNumber();
-                        CommunicationMobileNumber();
-                        message();
-                        obj.ShowDialog();
-                    }
+                        else
+                        {
+                            conn.Open();
+                            SqlCommand cmd1 = new SqlCommand("INSERT into DEPOSIT_TRANSACTION (Account_Name,Account_Number,Deposer_Name,Transaction_Date,Transaction_Time,Amount,Amount_In_Words,Currency,Narration) values (@Account_Name,@Account_Number,@Deposer_Name,@Transaction_Date,@Transaction_Time,@Amount,@Amount_In_Words,@Currency,@Narration)", conn);
 
+                            cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
+                            cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
+                            cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
+                            cmd1.Parameters.AddWithValue("@Transaction_Date",label9.Text);
+                            cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
+                            cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
+                            cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
+                            cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
+                            cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
+
+                            int i;
+                            i = cmd1.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                MessageBox.Show("Deposit transaction done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            Display();
+                            conn.Close();
+
+                            CommunicationAccountNumber();
+                            CommunicationMobileNumber();
+                            message();
+                            obj.ShowDialog();
+                        }
+                    }
                 }
                 else
                 {
@@ -120,7 +124,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 txt_DepositAccountName.Text = row.Cells["Account_Name"].Value.ToString();
                 txt_DepositAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                 txt_DepositDeposerName.Text = row.Cells["Deposer_Name"].Value.ToString();
-                Date_Deposit.Text = row.Cells["Transaction_Date"].Value.ToString();
+                label9.Text = row.Cells["Transaction_Date"].Value.ToString();
                 txt_DepositAmount.Text = row.Cells["Amount"].Value.ToString();
                 txt_DepositAmountInWord.Text = row.Cells["Amount_In_Words"].Value.ToString();
                 cb_DepositCurrency.Text = row.Cells["Currency"].Value.ToString();
@@ -152,11 +156,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
                         cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Transaction_Date", label9.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
-                        cmd1.Parameters.AddWithValue("@Amount",txt_DepositAmount.Text);
+                        cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
-                        cmd1.Parameters.AddWithValue("@Currency", cb_DepositCurrency.SelectedItem);
+                        cmd1.Parameters.AddWithValue("@Currency",  cb_DepositCurrency.SelectedItem);
                         cmd1.Parameters.AddWithValue("@Narration", txt_DepositNarration.Text);
 
                         int i;
@@ -276,7 +280,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             txt_DepositAccountName.Text = "";
             txt_DepositAccountNumber.Text = "";
             txt_DepositDeposerName.Text = "";
-            Date_Deposit.Text = "";
             label_DepositTime.Text = "";
             txt_DepositAmount.Text = "";
             txt_DepositAmountInWord.Text = "";
@@ -300,7 +303,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text.Text = txt_DepositAccountName.Text;
             text1.Text = txt_DepositAccountNumber.Text;
             text2.Text = txt_DepositDeposerName.Text;
-            text3.Text = Date_Deposit.Text;
+            text3.Text = label9.Text;
             text4.Text = label_DepositTime.Text;
             text5.Text = txt_DepositAmount.Text;
             text6.Text = txt_DepositAmountInWord.Text;
@@ -325,7 +328,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("This Account number does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -361,7 +364,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("This Account name does not exist in the Deposit storage", "Information", MessageBoxButtons.OK);
+                    MessageBox.Show("The mobile number of this  Account name does not exist", "Information", MessageBoxButtons.OK);
                 }
                 conn.Close();
             }
@@ -374,6 +377,41 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void bunifuCards1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_DepositAccountName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_DepositAccountNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_DepositAccountNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_DepositDeposerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_DepositAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void txt_DepositAmountInWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

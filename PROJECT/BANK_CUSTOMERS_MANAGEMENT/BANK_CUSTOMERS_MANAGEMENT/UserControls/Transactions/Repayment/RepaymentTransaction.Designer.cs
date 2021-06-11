@@ -30,17 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepaymentTransaction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_RemainingAmount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button_deposit_clear = new System.Windows.Forms.Button();
             this.button_print_deposit = new System.Windows.Forms.Button();
-            this.Date_Loan = new System.Windows.Forms.DateTimePicker();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_RepaymentTime = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -75,6 +73,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,14 +137,6 @@
             this.button_print_deposit.UseVisualStyleBackColor = false;
             this.button_print_deposit.Click += new System.EventHandler(this.button_print_deposit_Click);
             // 
-            // Date_Loan
-            // 
-            this.Date_Loan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_Loan.Location = new System.Drawing.Point(184, 104);
-            this.Date_Loan.Name = "Date_Loan";
-            this.Date_Loan.Size = new System.Drawing.Size(311, 24);
-            this.Date_Loan.TabIndex = 7;
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.SteelBlue;
@@ -174,14 +165,6 @@
             this.panel9.Size = new System.Drawing.Size(311, 2);
             this.panel9.TabIndex = 4;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(184, 128);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 2);
-            this.panel5.TabIndex = 4;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
@@ -203,20 +186,20 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -348,6 +331,7 @@
             this.txt_RepaymentAmountInWords.Name = "txt_RepaymentAmountInWords";
             this.txt_RepaymentAmountInWords.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAmountInWords.TabIndex = 3;
+            this.txt_RepaymentAmountInWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAmountInWords_KeyPress);
             // 
             // groupBox1
             // 
@@ -399,6 +383,7 @@
             this.txt_RepaymentBorrower.Name = "txt_RepaymentBorrower";
             this.txt_RepaymentBorrower.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentBorrower.TabIndex = 3;
+            this.txt_RepaymentBorrower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentBorrower_KeyPress);
             // 
             // txt_RepaymentAccountNumber
             // 
@@ -409,6 +394,7 @@
             this.txt_RepaymentAccountNumber.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAccountNumber.TabIndex = 3;
             this.txt_RepaymentAccountNumber.TextChanged += new System.EventHandler(this.txt_RepaymentAccountNumber_TextChanged);
+            this.txt_RepaymentAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAccountNumber_KeyPress);
             this.txt_RepaymentAccountNumber.MouseLeave += new System.EventHandler(this.txt_RepaymentAccountNumber_MouseLeave);
             // 
             // txt_RepaymentAmount
@@ -420,6 +406,7 @@
             this.txt_RepaymentAmount.Size = new System.Drawing.Size(311, 17);
             this.txt_RepaymentAmount.TabIndex = 3;
             this.txt_RepaymentAmount.TextChanged += new System.EventHandler(this.txt_RepaymentAmount_TextChanged);
+            this.txt_RepaymentAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepaymentAmount_KeyPress);
             this.txt_RepaymentAmount.MouseLeave += new System.EventHandler(this.txt_RepaymentAmount_MouseLeave);
             // 
             // bunifuCards1
@@ -429,6 +416,7 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.SteelBlue;
+            this.bunifuCards1.Controls.Add(this.label11);
             this.bunifuCards1.Controls.Add(this.ID_NumberLabel);
             this.bunifuCards1.Controls.Add(this.label_LoanAmount);
             this.bunifuCards1.Controls.Add(this.label10);
@@ -437,11 +425,9 @@
             this.bunifuCards1.Controls.Add(this.button_deposit_clear);
             this.bunifuCards1.Controls.Add(this.button1);
             this.bunifuCards1.Controls.Add(this.button_print_deposit);
-            this.bunifuCards1.Controls.Add(this.Date_Loan);
             this.bunifuCards1.Controls.Add(this.panel13);
             this.bunifuCards1.Controls.Add(this.panel7);
             this.bunifuCards1.Controls.Add(this.panel9);
-            this.bunifuCards1.Controls.Add(this.panel5);
             this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.Controls.Add(this.panel3);
             this.bunifuCards1.Controls.Add(this.label_RepaymentTime);
@@ -542,6 +528,7 @@
             this.txt_RemainingAmounInWord.Name = "txt_RemainingAmounInWord";
             this.txt_RemainingAmounInWord.Size = new System.Drawing.Size(311, 17);
             this.txt_RemainingAmounInWord.TabIndex = 3;
+            this.txt_RemainingAmounInWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RemainingAmounInWord_KeyPress);
             // 
             // groupBox3
             // 
@@ -605,6 +592,17 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(179, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 21);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Date";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // RepaymentTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,11 +635,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_deposit_clear;
         private System.Windows.Forms.Button button_print_deposit;
-        private System.Windows.Forms.DateTimePicker Date_Loan;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_RepaymentTime;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
@@ -676,5 +672,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_RemainingAmounInWord;
+        private System.Windows.Forms.Label label11;
     }
 }

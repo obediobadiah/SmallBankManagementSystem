@@ -127,13 +127,14 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 else
                 {
+                    conn.Open();
                     try
                     {
-                        conn.Open();
+                       
                         SqlCommand cmd1 = new SqlCommand("INSERT into PERSONAL_DETAILS values (@First_Name,@Second_Name,@Gender,@Date_of_Birth,@Place_of_Birth,@Nationality,@Merital_Status,@Name_of_Spouse,@Proffesion,@Mobile_Number_Code,@Mobile_Number,@IDCard_Number,@Country_Name,@Province,@Town,@Township,@Quarter,@Avenue,@House_Number,@Picture)", conn);
 
-                        cmd1.Parameters.AddWithValue("@First_Name", txt_FirstName.Text);
-                        cmd1.Parameters.AddWithValue("@Second_Name", txt_SecondName.Text);
+                            cmd1.Parameters.AddWithValue("@First_Name", txt_FirstName.Text);
+                            cmd1.Parameters.AddWithValue("@Second_Name", txt_SecondName.Text);
 
                         String gender = string.Empty;
 
@@ -145,7 +146,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         {
                             gender = "Female";
                         }
-                            cmd1.Parameters.AddWithValue("@Gender", gender);
+                            cmd1.Parameters.AddWithValue("@Gender",gender);
                             cmd1.Parameters.AddWithValue("@Date_of_Birth", date_Birth.Value.Date.ToShortDateString());
                             cmd1.Parameters.AddWithValue("@Place_of_Birth", txt_PlaceOfBirth.Text);
                             cmd1.Parameters.AddWithValue("@Nationality", cb_Nationality.SelectedItem);
@@ -169,13 +170,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         {
                             MessageBox.Show("Personnal details saved successfully, Pass to the next level!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        conn.Close();
-
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
                     }
+                    conn.Close();
                 }
             }
             catch (Exception ex)
@@ -201,6 +201,84 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void rb_Female_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_FirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_SecondName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_PlaceOfBirth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void cb_Nationality_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void cb_MeritalStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_NameOfSpouse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_Proffesional_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_CountryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_Province_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_Town_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_Township_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_MobileNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_HouseNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

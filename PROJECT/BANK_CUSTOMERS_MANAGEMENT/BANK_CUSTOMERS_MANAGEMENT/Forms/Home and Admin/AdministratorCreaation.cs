@@ -58,46 +58,59 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             }
             else
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("INSERT into ADMINISTRATOR_DETAILS (First_Name,Second_Name,Fonction,Gender,Date_of_Birth,Nationality,E_Mail,User_Name,Password,Picture) values (@First_Name,@Second_Name,@Fonction,@Gender,@Date_of_Birth,@Nationality,@E_Mail,@User_Name,@Password,@Picture)", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM ADMINISTRATOR_DETAILS WHERE First_Name = '" + txt_AdminFirstName.Text + "'", conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-
-                    cmd1.Parameters.AddWithValue("@First_Name", txt_AdminFirstName.Text);
-                    cmd1.Parameters.AddWithValue("@Second_Name", txt_AdminSecondName.Text);
-                    cmd1.Parameters.AddWithValue("@Fonction", txt_AdminFunction.Text);
-
-                    String gender = string.Empty;
-
-                    if (rb_AdminMale.Checked)
+                    if (dt.Rows.Count >= 1)
                     {
-                        gender = "Male";
+                        MessageBox.Show("This Administrator name already exist", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if (rb_AdminFemale.Checked)
+                    else
                     {
-                        gender = "Female";
+                            SqlCommand cmd1 = new SqlCommand("INSERT into ADMINISTRATOR_DETAILS (First_Name,Second_Name,Fonction,Gender,Date_of_Birth,Nationality,E_Mail,User_Name,Password,Picture) values (@First_Name,@Second_Name,@Fonction,@Gender,@Date_of_Birth,@Nationality,@E_Mail,@User_Name,@Password,@Picture)", conn);
+
+
+                        cmd1.Parameters.AddWithValue("@First_Name",txt_AdminFirstName.Text);
+                        cmd1.Parameters.AddWithValue("@Second_Name",txt_AdminSecondName.Text);
+                        cmd1.Parameters.AddWithValue("@Fonction", txt_AdminFunction.Text);
+
+                        String gender = string.Empty;
+
+                        if (rb_AdminMale.Checked)
+                        {
+                            gender = "Male";
+                        }
+                        else if (rb_AdminFemale.Checked)
+                        {
+                            gender = "Female";
+                        }
+                        cmd1.Parameters.AddWithValue("@Gender", gender);
+                        cmd1.Parameters.AddWithValue("@Date_of_Birth", date_AdminBirth.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Nationality",cb_AdminNationality.SelectedItem);
+                        cmd1.Parameters.AddWithValue("@E_Mail", txt_AdminEmail.Text);
+                        cmd1.Parameters.AddWithValue("@User_Name", txt_AdminUserName.Text);
+                        cmd1.Parameters.AddWithValue("@Password", txt_AdminPassword.Text);
+                        cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
+                        int i;
+                        i = cmd1.ExecuteNonQuery();
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Administrator details saved successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        Display();
                     }
-                    cmd1.Parameters.AddWithValue("@Gender", gender);
-                    cmd1.Parameters.AddWithValue("@Date_of_Birth", date_AdminBirth.Value.Date.ToShortDateString());
-                    cmd1.Parameters.AddWithValue("@Nationality", cb_AdminNationality.SelectedItem);
-                    cmd1.Parameters.AddWithValue("@E_Mail", txt_AdminEmail.Text);
-                    cmd1.Parameters.AddWithValue("@User_Name", txt_AdminUserName.Text);
-                    cmd1.Parameters.AddWithValue("@Password", txt_AdminPassword.Text);
-                    cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
-                    int i;
-                    i = cmd1.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Administrator details saved successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    conn.Close();
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                conn.Close();
             }
         }
         public byte[] savephoto()
@@ -220,7 +233,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
                 cmd1.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
                 cmd1.Parameters.AddWithValue("@First_Name", txt_AdminFirstName.Text);
-                cmd1.Parameters.AddWithValue("@Second_Name", txt_AdminSecondName.Text);
+                cmd1.Parameters.AddWithValue("@Second_Name",txt_AdminSecondName.Text);
                 cmd1.Parameters.AddWithValue("@Fonction", txt_AdminFunction.Text);
 
                 String gender = string.Empty;
@@ -235,11 +248,12 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 }
                 cmd1.Parameters.AddWithValue("@Gender", gender);
                 cmd1.Parameters.AddWithValue("@Date_of_Birth", date_AdminBirth.Value.Date.ToShortDateString());
-                cmd1.Parameters.AddWithValue("@Nationality", cb_AdminNationality.SelectedItem);
+                cmd1.Parameters.AddWithValue("@Nationality",cb_AdminNationality.SelectedItem);
                 cmd1.Parameters.AddWithValue("@E_Mail", txt_AdminEmail.Text);
                 cmd1.Parameters.AddWithValue("@User_Name", txt_AdminUserName.Text);
                 cmd1.Parameters.AddWithValue("@Password", txt_AdminPassword.Text);
                 cmd1.Parameters.Add(new SqlParameter("@Picture", savephoto()));
+
                 int i;
                 i = cmd1.ExecuteNonQuery();
                 if (i > 0)
@@ -291,6 +305,36 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_AdminFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_AdminSecondName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void cb_AdminNationality_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(txt_AdminPassword.UseSystemPasswordChar == true)
+            {
+                txt_AdminPassword.UseSystemPasswordChar = false;
+            }
+            else/* if (txt_AdminPassword.UseSystemPasswordChar == true)*/
+            {
+                txt_AdminPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }
