@@ -52,7 +52,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                                 conn.Open();
                                 SqlCommand cmd1 = new SqlCommand("INSERT into REPAYMENT_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Remaining_Time,@Transaction_Time)", conn);
 
-                                cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
+                                cmd1.Parameters.AddWithValue("@Loan_Date", label11.Text);
                                 cmd1.Parameters.AddWithValue("@Borrower", txt_RepaymentBorrower.Text);
                                 cmd1.Parameters.AddWithValue("@Account_Number", txt_RepaymentAccountNumber.Text);
                                 cmd1.Parameters.AddWithValue("@Amount", txt_RepaymentAmount.Text);
@@ -93,6 +93,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
+            label11.Text = DateTime.Today.ToShortDateString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     DataGridViewRow row = this.bunifuCustomDataGrid1.Rows[e.RowIndex];
 
                     ID_NumberLabel.Text = row.Cells["ID_Number"].Value.ToString();
-                    Date_Loan.Text = row.Cells["Loan_Date"].Value.ToString();
+                    label11.Text = row.Cells["Loan_Date"].Value.ToString();
                     txt_RepaymentBorrower.Text = row.Cells["Borrower"].Value.ToString();
                     txt_RepaymentAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                 }
@@ -382,7 +383,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             TextObject text5 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text39"];
             TextObject text6 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text14"];
             TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section2"].ReportObjects["Text3"];
-            text.Text = Date_Loan.Text;
+            text.Text = label11.Text;
             text1.Text = txt_RepaymentBorrower.Text;
             text2.Text = txt_RepaymentAccountNumber.Text;
             text3.Text = txt_RepaymentAmount.Text;

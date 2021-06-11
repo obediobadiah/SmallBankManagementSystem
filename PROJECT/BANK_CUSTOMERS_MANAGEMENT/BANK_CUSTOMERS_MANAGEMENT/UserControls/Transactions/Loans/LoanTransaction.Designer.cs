@@ -44,12 +44,10 @@
             this.cb_LoanScheduler = new System.Windows.Forms.ComboBox();
             this.cb_LoanCurrency = new System.Windows.Forms.ComboBox();
             this.date_LoanLimitDate = new System.Windows.Forms.DateTimePicker();
-            this.Date_Loan = new System.Windows.Forms.DateTimePicker();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -80,6 +78,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
@@ -189,17 +188,16 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.SkyBlue;
+            this.bunifuCards1.Controls.Add(this.label7);
             this.bunifuCards1.Controls.Add(this.ID_NumberLabel);
             this.bunifuCards1.Controls.Add(this.button_deposit_clear);
             this.bunifuCards1.Controls.Add(this.button_print_deposit);
             this.bunifuCards1.Controls.Add(this.cb_LoanScheduler);
             this.bunifuCards1.Controls.Add(this.cb_LoanCurrency);
             this.bunifuCards1.Controls.Add(this.date_LoanLimitDate);
-            this.bunifuCards1.Controls.Add(this.Date_Loan);
             this.bunifuCards1.Controls.Add(this.panel13);
             this.bunifuCards1.Controls.Add(this.panel8);
             this.bunifuCards1.Controls.Add(this.panel9);
-            this.bunifuCards1.Controls.Add(this.panel5);
             this.bunifuCards1.Controls.Add(this.panel11);
             this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.Controls.Add(this.panel3);
@@ -336,14 +334,6 @@
             this.date_LoanLimitDate.Size = new System.Drawing.Size(311, 24);
             this.date_LoanLimitDate.TabIndex = 7;
             // 
-            // Date_Loan
-            // 
-            this.Date_Loan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_Loan.Location = new System.Drawing.Point(184, 100);
-            this.Date_Loan.Name = "Date_Loan";
-            this.Date_Loan.Size = new System.Drawing.Size(311, 24);
-            this.Date_Loan.TabIndex = 7;
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.SkyBlue;
@@ -379,14 +369,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(311, 2);
             this.panel9.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(184, 117);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 2);
-            this.panel5.TabIndex = 4;
             // 
             // panel11
             // 
@@ -693,6 +675,17 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(180, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 21);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Date";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // LoanTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,11 +724,9 @@
         private System.Windows.Forms.Button button_deposit_clear;
         private System.Windows.Forms.Button button_print_deposit;
         private System.Windows.Forms.ComboBox cb_LoanCurrency;
-        private System.Windows.Forms.DateTimePicker Date_Loan;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
@@ -770,5 +761,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Label ID_NumberLabel;
+        private System.Windows.Forms.Label label7;
     }
 }

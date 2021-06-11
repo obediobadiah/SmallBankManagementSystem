@@ -88,7 +88,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                if (date_DateofCreation.Text == "" || txt_BankAcccountIdentifier.Text == "" || cb_BankAccountType.Text == "")
+                if (txt_BankAcccountIdentifier.Text == "" || cb_BankAccountType.Text == "")
                 {
                     MessageBox.Show("You cannot end the procees without filling all required fields");
                 }
@@ -96,7 +96,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 {
                     conn.Open();
                     SqlCommand cmd2 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
-                    cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                    cmd2.Parameters.AddWithValue("@Date_of_creation", label9.Text);
                     cmd2.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
                     cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
                     cmd2.Parameters.AddWithValue("@Limit_Date", "----");
@@ -114,7 +114,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     conn.Open();
                     SqlCommand cmd2 = new SqlCommand("INSERT into BANK_ACCOUNT_DETAILS values (@Date_of_creation,@Identifier,@Bank_Account_Type,@Limit_Date)", conn);
 
-                    cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                    cmd2.Parameters.AddWithValue("@Date_of_creation", label9.Text);
                     cmd2.Parameters.AddWithValue("@Identifier", txt_BankAcccountIdentifier.Text);
                     cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
                     cmd2.Parameters.AddWithValue("@Limit_Date", Date_BankAccountLimitDate.Value.Date.ToShortDateString());
@@ -162,7 +162,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
 
         public void message()
         {
-            obj.txt_Message.Text = "You have created on IMARA Cooperative of Savings and Credtis an " + cb_BankAccountType.SelectedItem.ToString() + " Number " + obj.label_AccountNumber.Text + " named " + txt_BankAcccountIdentifier.Text + " on " + date_DateofCreation.Value.Date.ToShortDateString();
+            obj.txt_Message.Text = "You have created on IMARA Cooperative of Savings and Credtis an " + cb_BankAccountType.SelectedItem.ToString() + " Number " + obj.label_AccountNumber.Text + " named " + txt_BankAcccountIdentifier.Text + " on " + label9.Text;
         }
 
         public void CommunicationMobileNumber()
@@ -200,6 +200,11 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void BankAccountDetails_Load(object sender, EventArgs e)
+        {
+            label9.Text = DateTime.Today.ToShortDateString();
         }
     }
 }

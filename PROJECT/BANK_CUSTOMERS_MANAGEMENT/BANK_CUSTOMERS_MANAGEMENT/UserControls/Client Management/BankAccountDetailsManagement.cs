@@ -38,7 +38,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             try
             {
-                if (date_DateofCreation.Text == "" || txt_BankIdentifier.Text == "" || cb_BankAccountType.Text == "")
+                if (txt_BankIdentifier.Text == "" || cb_BankAccountType.Text == "")
                 {
                     MessageBox.Show("You cannot edit without filling all required fields");
                 }
@@ -48,7 +48,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     SqlCommand cmd2 = new SqlCommand("UPDATE BANK_ACCOUNT_DETAILS SET Date_of_creation = @Date_of_creation, Identifier = @Identifier, Bank_Account_Type = @Bank_Account_Type, Limit_Date = @Limit_Date WHERE ID_Number = @ID_Number", conn);
 
                     cmd2.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
-                    cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                    cmd2.Parameters.AddWithValue("@Date_of_creation", label9.Text);
                     cmd2.Parameters.AddWithValue("@Identifier", txt_BankIdentifier.Text);
                     cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
                     cmd2.Parameters.AddWithValue("@Limit_Date", "----");
@@ -68,7 +68,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     SqlCommand cmd2 = new SqlCommand("UPDATE BANK_ACCOUNT_DETAILS SET Date_of_creation = @Date_of_creation, Identifier = @Identifier, Bank_Account_Type = @Bank_Account_Type, Limit_Date = @Limit_Date WHERE ID_Number = @ID_Number", conn);
 
                     cmd2.Parameters.AddWithValue("@ID_Number", label_IDNumber.Text);
-                    cmd2.Parameters.AddWithValue("@Date_of_creation", date_DateofCreation.Value.Date.ToShortDateString());
+                    cmd2.Parameters.AddWithValue("@Date_of_creation",label9.Text);
                     cmd2.Parameters.AddWithValue("@Identifier", txt_BankIdentifier.Text);
                     cmd2.Parameters.AddWithValue("@Bank_Account_Type", cb_BankAccountType.SelectedItem);
                     cmd2.Parameters.AddWithValue("@Limit_Date", Date_BankAccountLimitDate.Value.Date.ToShortDateString());
@@ -109,6 +109,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void BankAccountDetailsManagement_Load(object sender, EventArgs e)
         {
             Display();
+            label9.Text = DateTime.Today.ToShortDateString();
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -121,7 +122,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 if (row.Cells["Limit_Date"].Value.Equals("----"))
                 {
                     label_IDNumber.Text = row.Cells["ID_Number"].Value.ToString();
-                    date_DateofCreation.Text = row.Cells["Date_of_creation"].Value.ToString();
+                    label9.Text = row.Cells["Date_of_creation"].Value.ToString();
                     txt_BankIdentifier.Text = row.Cells["Identifier"].Value.ToString();
                     cb_BankAccountType.Text = row.Cells["Bank_Account_Type"].Value.ToString();
                     Date_BankAccountLimitDate.Visible = false;
@@ -129,7 +130,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 else
                 {
                     label_IDNumber.Text = row.Cells["ID_Number"].Value.ToString();
-                    date_DateofCreation.Text = row.Cells["Date_of_creation"].Value.ToString();
+                    label9.Text = row.Cells["Date_of_creation"].Value.ToString();
                     txt_BankIdentifier.Text = row.Cells["Identifier"].Value.ToString();
                     cb_BankAccountType.Text = row.Cells["Bank_Account_Type"].Value.ToString();
                     Date_BankAccountLimitDate.Text = row.Cells["Limit_Date"].Value.ToString();

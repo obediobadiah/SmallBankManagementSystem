@@ -26,7 +26,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
-
+            label9.Text = DateTime.Today.ToShortDateString();
         }
 
         private void button_save_deposit_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                             cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
                             cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
                             cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                            cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
+                            cmd1.Parameters.AddWithValue("@Transaction_Date",label9.Text);
                             cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
                             cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
                             cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
@@ -124,7 +124,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                 txt_DepositAccountName.Text = row.Cells["Account_Name"].Value.ToString();
                 txt_DepositAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                 txt_DepositDeposerName.Text = row.Cells["Deposer_Name"].Value.ToString();
-                Date_Deposit.Text = row.Cells["Transaction_Date"].Value.ToString();
+                label9.Text = row.Cells["Transaction_Date"].Value.ToString();
                 txt_DepositAmount.Text = row.Cells["Amount"].Value.ToString();
                 txt_DepositAmountInWord.Text = row.Cells["Amount_In_Words"].Value.ToString();
                 cb_DepositCurrency.Text = row.Cells["Currency"].Value.ToString();
@@ -156,7 +156,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Account_Name", txt_DepositAccountName.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_DepositAccountNumber.Text);
                         cmd1.Parameters.AddWithValue("@Deposer_Name", txt_DepositDeposerName.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Deposit.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Transaction_Date", label9.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_DepositTime.Text);
                         cmd1.Parameters.AddWithValue("@Amount", txt_DepositAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_DepositAmountInWord.Text);
@@ -280,7 +280,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             txt_DepositAccountName.Text = "";
             txt_DepositAccountNumber.Text = "";
             txt_DepositDeposerName.Text = "";
-            Date_Deposit.Text = "";
             label_DepositTime.Text = "";
             txt_DepositAmount.Text = "";
             txt_DepositAmountInWord.Text = "";
@@ -304,7 +303,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text.Text = txt_DepositAccountName.Text;
             text1.Text = txt_DepositAccountNumber.Text;
             text2.Text = txt_DepositDeposerName.Text;
-            text3.Text = Date_Deposit.Text;
+            text3.Text = label9.Text;
             text4.Text = label_DepositTime.Text;
             text5.Text = txt_DepositAmount.Text;
             text6.Text = txt_DepositAmountInWord.Text;

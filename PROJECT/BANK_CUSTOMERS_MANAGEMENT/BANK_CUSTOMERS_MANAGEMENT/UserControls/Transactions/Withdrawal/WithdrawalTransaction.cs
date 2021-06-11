@@ -121,7 +121,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
                     cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
                     cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
-                    cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
+                    cmd1.Parameters.AddWithValue("@Transaction_Date", label9.Text);
                     cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
                     cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
                     cmd1.Parameters.AddWithValue("@Amount_In_Words", txt_WithdrawalAmountInWord.Text);
@@ -162,6 +162,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
+            label9.Text = DateTime.Today.ToShortDateString();
         }
         public void Display()
         {
@@ -202,7 +203,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         cmd1.Parameters.AddWithValue("@Account_Name", txt_WithdrawalAccountName.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_WithdrawalAccountNumber.Text);
                         cmd1.Parameters.AddWithValue("@Withdrawal_by", txt_WithdrawalName.Text);
-                        cmd1.Parameters.AddWithValue("@Transaction_Date", Date_Withdrawal.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Transaction_Date", label9.Text);
                         cmd1.Parameters.AddWithValue("@Transaction_Time", label_WithdrawalTime.Text);
                         cmd1.Parameters.AddWithValue("@Amount", txt_WithdrawalAmount.Text);
                         cmd1.Parameters.AddWithValue("@Amount_In_Words",txt_WithdrawalAmountInWord.Text);
@@ -248,7 +249,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     txt_WithdrawalAccountName.Text = row.Cells["Account_Name"].Value.ToString();
                     txt_WithdrawalAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                     txt_WithdrawalName.Text = row.Cells["Withdrawal_by"].Value.ToString();
-                    Date_Withdrawal.Text = row.Cells["Transaction_Date"].Value.ToString();
+                    label9.Text = row.Cells["Transaction_Date"].Value.ToString();
                     txt_WithdrawalAmount.Text = row.Cells["Amount"].Value.ToString();
                     txt_WithdrawalAmountInWord.Text = row.Cells["Amount_In_Words"].Value.ToString();
                     cb_WithdrawalCurrency.Text = row.Cells["Currency"].Value.ToString();
@@ -360,7 +361,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             text.Text = txt_WithdrawalAccountName.Text;
             text1.Text = txt_WithdrawalAccountNumber.Text;
             text2.Text = txt_WithdrawalName.Text;
-            text3.Text = Date_Withdrawal.Text;
+            text3.Text = label9.Text;
             text4.Text = label_WithdrawalTime.Text;
             text5.Text = txt_WithdrawalAmount.Text;
             text6.Text = txt_WithdrawalAmountInWord.Text;

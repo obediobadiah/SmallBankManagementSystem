@@ -26,6 +26,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         {
             timer1.Start();
             Display();
+            label7.Text = DateTime.Today.ToShortDateString();
         }
 
         private void button_save_deposit_Click(object sender, EventArgs e)
@@ -72,7 +73,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                                         conn.Open();
                                         SqlCommand cmd1 = new SqlCommand("INSERT into LOAN_TRANSACTION values (@Loan_Date,@Borrower,@Account_Number,@Amount,@Amount_In_Words,@Currency,@Purpose,@Schedule,@Limit_Date,@Transaction_Time)", conn);
 
-                                        cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
+                                        cmd1.Parameters.AddWithValue("@Loan_Date", label7.Text);
                                         cmd1.Parameters.AddWithValue("@Borrower", txt_LoanBorrower.Text);
                                         cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
                                         cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
@@ -200,7 +201,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                         SqlCommand cmd1 = new SqlCommand("UPDATE LOAN_TRANSACTION SET  Loan_Date = @Loan_Date,Borrower = @Borrower,Account_Number = @Account_Number,Amount = @Amount,Amount_In_Words = @Amount_In_Words,Currency = @Currency,Purpose = @Purpose,Schedule = @Schedule,Limit_Date = @Limit_Date,Transaction_Time = @Transaction_Time WHERE ID_Number = @ID_Number", conn);
 
                         cmd1.Parameters.AddWithValue("@ID_Number", ID_NumberLabel.Text);
-                        cmd1.Parameters.AddWithValue("@Loan_Date", Date_Loan.Value.Date.ToShortDateString());
+                        cmd1.Parameters.AddWithValue("@Loan_Date", label7.Text);
                         cmd1.Parameters.AddWithValue("@Borrower",txt_LoanBorrower.Text);
                         cmd1.Parameters.AddWithValue("@Account_Number", txt_LoanAccountNumber.Text);
                         cmd1.Parameters.AddWithValue("@Amount", txt_LoanAmount.Text);
@@ -249,7 +250,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
                     DataGridViewRow row = this.bunifuCustomDataGrid1.Rows[e.RowIndex];
 
                     ID_NumberLabel.Text = row.Cells["ID_Number"].Value.ToString();
-                    Date_Loan.Text = row.Cells["Loan_Date"].Value.ToString();
+                    label7.Text = row.Cells["Loan_Date"].Value.ToString();
                     txt_LoanBorrower.Text = row.Cells["Borrower"].Value.ToString();
                     txt_LoanAccountNumber.Text = row.Cells["Account_Number"].Value.ToString();
                     txt_LoanAmount.Text = row.Cells["Amount"].Value.ToString();
@@ -304,7 +305,6 @@ namespace BANK_CUSTOMERS_MANAGEMENT
         private void button_deposit_clear_Click(object sender, EventArgs e)
         {
             ID_NumberLabel.Text = "";
-            Date_Loan.Text = "";
             txt_LoanBorrower.Text = "";
             txt_LoanAccountNumber.Text = "";
             txt_LoanAmount.Text = "";
@@ -330,7 +330,7 @@ namespace BANK_CUSTOMERS_MANAGEMENT
             TextObject text7 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text40"];
             TextObject text8 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text39"];
             TextObject text9 = (TextObject)cr.ReportDefinition.Sections["Section3"].ReportObjects["Text3"];
-            text.Text = Date_Loan.Text;
+            text.Text = label7.Text;
             text1.Text = txt_LoanBorrower.Text;
             text2.Text = txt_LoanAccountNumber.Text;
             text3.Text = txt_LoanAmount.Text;

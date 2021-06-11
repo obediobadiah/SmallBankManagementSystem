@@ -38,9 +38,9 @@
             this.button_edit_deposit = new System.Windows.Forms.Button();
             this.button_delete_deposit = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_BankIdentifier = new System.Windows.Forms.TextBox();
             this.label_IDNumber = new System.Windows.Forms.Label();
-            this.date_DateofCreation = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Date_BankAccountLimitDate = new System.Windows.Forms.DateTimePicker();
@@ -156,9 +156,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.txt_BankIdentifier);
             this.groupBox5.Controls.Add(this.label_IDNumber);
-            this.groupBox5.Controls.Add(this.date_DateofCreation);
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label20);
@@ -172,6 +172,17 @@
             this.groupBox5.TabIndex = 38;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Account Details";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(219, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 21);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Date";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_BankIdentifier
             // 
@@ -191,14 +202,6 @@
             this.label_IDNumber.Name = "label_IDNumber";
             this.label_IDNumber.Size = new System.Drawing.Size(0, 36);
             this.label_IDNumber.TabIndex = 44;
-            // 
-            // date_DateofCreation
-            // 
-            this.date_DateofCreation.Font = new System.Drawing.Font("Nexa Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_DateofCreation.Location = new System.Drawing.Point(93, 130);
-            this.date_DateofCreation.Name = "date_DateofCreation";
-            this.date_DateofCreation.Size = new System.Drawing.Size(350, 26);
-            this.date_DateofCreation.TabIndex = 43;
             // 
             // label2
             // 
@@ -381,7 +384,6 @@
         private System.Windows.Forms.Button button_edit_deposit;
         private System.Windows.Forms.Button button_delete_deposit;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DateTimePicker date_DateofCreation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker Date_BankAccountLimitDate;
@@ -396,5 +398,6 @@
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Label label_IDNumber;
         private System.Windows.Forms.TextBox txt_BankIdentifier;
+        private System.Windows.Forms.Label label9;
     }
 }

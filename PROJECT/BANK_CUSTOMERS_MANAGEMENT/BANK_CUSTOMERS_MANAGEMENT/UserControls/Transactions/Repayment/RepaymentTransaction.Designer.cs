@@ -36,11 +36,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button_deposit_clear = new System.Windows.Forms.Button();
             this.button_print_deposit = new System.Windows.Forms.Button();
-            this.Date_Loan = new System.Windows.Forms.DateTimePicker();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_RepaymentTime = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -75,6 +73,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,14 +137,6 @@
             this.button_print_deposit.UseVisualStyleBackColor = false;
             this.button_print_deposit.Click += new System.EventHandler(this.button_print_deposit_Click);
             // 
-            // Date_Loan
-            // 
-            this.Date_Loan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_Loan.Location = new System.Drawing.Point(184, 104);
-            this.Date_Loan.Name = "Date_Loan";
-            this.Date_Loan.Size = new System.Drawing.Size(311, 24);
-            this.Date_Loan.TabIndex = 7;
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.SteelBlue;
@@ -173,14 +164,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(311, 2);
             this.panel9.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(184, 128);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 2);
-            this.panel5.TabIndex = 4;
             // 
             // panel3
             // 
@@ -433,6 +416,7 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.SteelBlue;
+            this.bunifuCards1.Controls.Add(this.label11);
             this.bunifuCards1.Controls.Add(this.ID_NumberLabel);
             this.bunifuCards1.Controls.Add(this.label_LoanAmount);
             this.bunifuCards1.Controls.Add(this.label10);
@@ -441,11 +425,9 @@
             this.bunifuCards1.Controls.Add(this.button_deposit_clear);
             this.bunifuCards1.Controls.Add(this.button1);
             this.bunifuCards1.Controls.Add(this.button_print_deposit);
-            this.bunifuCards1.Controls.Add(this.Date_Loan);
             this.bunifuCards1.Controls.Add(this.panel13);
             this.bunifuCards1.Controls.Add(this.panel7);
             this.bunifuCards1.Controls.Add(this.panel9);
-            this.bunifuCards1.Controls.Add(this.panel5);
             this.bunifuCards1.Controls.Add(this.label2);
             this.bunifuCards1.Controls.Add(this.panel3);
             this.bunifuCards1.Controls.Add(this.label_RepaymentTime);
@@ -610,6 +592,17 @@
             this.txt_Search.Size = new System.Drawing.Size(379, 17);
             this.txt_Search.TabIndex = 5;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(179, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 21);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Date";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // RepaymentTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,11 +635,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_deposit_clear;
         private System.Windows.Forms.Button button_print_deposit;
-        private System.Windows.Forms.DateTimePicker Date_Loan;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_RepaymentTime;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
@@ -681,5 +672,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_RemainingAmounInWord;
+        private System.Windows.Forms.Label label11;
     }
 }
